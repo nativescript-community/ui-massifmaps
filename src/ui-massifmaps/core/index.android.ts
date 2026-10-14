@@ -73,8 +73,8 @@ export function toNativeMapPos<T = DefaultLatLonKeys>(position: GenericMapPos<T>
 }
 export function fromNativeScreenPos(position: com.massifmaps.core.ScreenPos) {
     return {
-        x: position.getY(),
-        y: position.getX()
+        x: position.getX(),
+        y: position.getY()
     } as ScreenPos;
 }
 export function toNativeScreenPos(position: ScreenPos) {
