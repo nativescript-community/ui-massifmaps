@@ -3,7 +3,7 @@ export default {
     SPMPackages: [
       // DEBUGMASSIF=1 links the SDK built from source, as android does (carto: scripts/ios-dev/build-plugin-catalyst.sh)
       process.env.DEBUGMASSIF
-        ? { name: 'massifmaps-sdk', libs: ['MassifMaps'], path: process.env.MASSIF_SPM_LOCAL || '/Volumes/dev/carto/mobile-sdk/build/spm-local' }
+        ? { name: 'massifmaps-sdk', libs: ['MassifMaps'], path: process.env.MASSIF_SPM_LOCAL || `${process.env.MASSIF_SDK_HOME || '/Volumes/dev/massif/massif-sdk'}/build/spm-local` }
         : {
             name: 'massifmaps-sdk',
             libs: ['MassifMaps'],
