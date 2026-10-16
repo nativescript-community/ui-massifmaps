@@ -905,23 +905,22 @@ export class MassifLayer<C extends ClassName = any> extends MassifObject<C> {
         if (this.mBridged[event] || !this.id) {
             return;
         }
-        const native = bridge.getNativeLayer(this.id);
-        if (!native) {
-            return;
-        }
+        let attached = true;
         if (event === 'vectortile.clicked') {
-            bridge.attachVectorTileEvents(native, this.handle);
+            attached = bridge.attachVectorTileEvents(this.handle);
         } else if (event === 'vectorelement.clicked') {
-            bridge.attachVectorElementEvents(native, this.handle);
+            attached = bridge.attachVectorElementEvents(this.handle);
         } else if (event === 'celestial.clicked' || event === 'sky.clicked') {
             // One native bridge emits both: attaching a second would report every click twice.
             if (!this.mBridged['celestial.clicked'] && !this.mBridged['sky.clicked']) {
-                bridge.attachCelestialEvents(native, this.handle);
+                attached = bridge.attachCelestialEvents(this.handle);
             }
         } else {
             return;
         }
-        this.mBridged[event] = true;
+        if (attached) {
+            this.mBridged[event] = true;
+        }
     }
 
     get native(): any {
