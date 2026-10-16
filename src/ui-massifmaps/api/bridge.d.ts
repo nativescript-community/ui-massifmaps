@@ -79,9 +79,10 @@ export interface NativeBridge {
 
     // Each chains the listener already installed, so existing handlers keep firing.
     attachMapEvents(mapView: any, handle: number): void;
-    attachVectorTileEvents(layer: any, handle: number): void;
-    attachVectorElementEvents(layer: any, handle: number): void;
-    attachCelestialEvents(layer: any, handle: number): void;
+    /** The layer is named by handle, so the native Layer class never has to be reachable from JS. False if it is not a layer of that kind. */
+    attachVectorTileEvents(handle: number): boolean;
+    attachVectorElementEvents(handle: number): boolean;
+    attachCelestialEvents(handle: number): boolean;
 
     /** Leaf class name, e.g. `com.massifmaps.layers.VectorTileLayer` / `MSFVectorTileLayer` -> `VectorTileLayer`. */
     nativeShortClassName(nativeObject: any): string | null;

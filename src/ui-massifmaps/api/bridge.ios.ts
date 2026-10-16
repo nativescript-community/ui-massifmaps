@@ -133,14 +133,29 @@ export const bridge: NativeBridge = {
         eventBridges.set(mapView, bridgeListener);
         mapView.setMapEventListener(bridgeListener);
     },
-    attachVectorTileEvents(layer, handle) {
+    attachVectorTileEvents(handle) {
+        const layer = MassifInterop.getLayerByHandle(handle);
+        if (!layer) {
+            return false;
+        }
         layer.setVectorTileEventListener(MassifInterop.createVectorTileEventBridgeChained(handle, layer.getVectorTileEventListener()));
+        return true;
     },
-    attachVectorElementEvents(layer, handle) {
+    attachVectorElementEvents(handle) {
+        const layer = MassifInterop.getLayerByHandle(handle);
+        if (!layer) {
+            return false;
+        }
         layer.setVectorElementEventListener(MassifInterop.createVectorElementEventBridgeChained(handle, layer.getVectorElementEventListener()));
+        return true;
     },
-    attachCelestialEvents(layer, handle) {
+    attachCelestialEvents(handle) {
+        const layer = MassifInterop.getLayerByHandle(handle);
+        if (!layer) {
+            return false;
+        }
         layer.setCelestialEventListener(MassifInterop.createCelestialEventBridgeChained(handle, layer.getCelestialEventListener()));
+        return true;
     },
 
     nativeShortClassName(nativeObject) {

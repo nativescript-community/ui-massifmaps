@@ -158,15 +158,9 @@ export const bridge: NativeBridge = {
     attachMapEvents(mapView, handle) {
         mapView.setMapEventListener(MassifInterop.createEventBridge(handle, mapView.getMapEventListener()));
     },
-    attachVectorTileEvents(layer, handle) {
-        layer.setVectorTileEventListener(MassifInterop.createVectorTileEventBridge(handle, layer.getVectorTileEventListener()));
-    },
-    attachVectorElementEvents(layer, handle) {
-        layer.setVectorElementEventListener(MassifInterop.createVectorElementEventBridge(handle, layer.getVectorElementEventListener()));
-    },
-    attachCelestialEvents(layer, handle) {
-        layer.setCelestialEventListener(MassifInterop.createCelestialEventBridge(handle, layer.getCelestialEventListener()));
-    },
+    attachVectorTileEvents: (handle) => MassifInterop.attachVectorTileEvents(handle),
+    attachVectorElementEvents: (handle) => MassifInterop.attachVectorElementEvents(handle),
+    attachCelestialEvents: (handle) => MassifInterop.attachCelestialEvents(handle),
 
     nativeShortClassName(nativeObject) {
         if (!nativeObject || typeof nativeObject.getClass !== 'function') {
