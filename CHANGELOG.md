@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.1](https://github.com/nativescript-community/ui-massifmaps/compare/v4.0.0...v4.0.1) (2026-10-19)
+
+### Features
+
+* **api:** attach layer events by handle ([ebc4fd8](https://github.com/nativescript-community/ui-massifmaps/commit/ebc4fd8f29fcc0b858fd081fa9999191db9aaa16))
+
+### Bug Fixes
+
+* return a native screen position's x and y in order ([be8887e](https://github.com/nativescript-community/ui-massifmaps/commit/be8887eec2b15593025c76b2638d7ef7f4655bbb))
+
 ## [4.0.0](https://github.com/nativescript-community/ui-massifmaps/compare/v3.0.1...v4.0.0) (2026-10-09)
 
 ### ⚠ BREAKING CHANGES
