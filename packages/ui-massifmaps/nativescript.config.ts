@@ -8,7 +8,7 @@ export default {
             name: 'massifmaps-sdk',
             libs: ['MassifMaps'],
             repositoryURL: 'https://github.com/massif-maps/MassifMaps-ios-swift.git',
-            version: '6.1.2',
+            version: '6.2.1',
           },
       {
         name: 'massifmaps-SwiftTryCatch-sdk',

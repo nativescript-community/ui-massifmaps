@@ -14,7 +14,7 @@ dependencies {
 
     } else {
 
-	    def massifSDKVersion =  project.hasProperty("massifSDKVersion") ? project.massifSDKVersion : "6.1.2"
+	    def massifSDKVersion =  project.hasProperty("massifSDKVersion") ? project.massifSDKVersion : "6.2.1"
 	    def massifSDKVariant =  project.hasProperty("massifSDKVariant") ? project.massifSDKVariant : "full"
 
         if (massifSDKVariant == "full") {
