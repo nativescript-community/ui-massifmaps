@@ -27,6 +27,11 @@ export interface ExampleHost {
      * exaggeration. The label is shown with the current value appended.
      */
     slider(label: string, min: number, max: number, value: number, action: (value: number) => void): void;
+    /**
+     * Moves the slider with that label, for a value that changes by itself: a clock. Does not call
+     * the slider's action, which is for the hand.
+     */
+    setSlider(label: string, value: number): void;
     /** Runs something after a delay, cancelled when the example stops. */
     after(millis: number, action: () => void): void;
 }

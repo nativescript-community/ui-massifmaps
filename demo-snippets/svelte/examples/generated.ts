@@ -62,6 +62,7 @@ export const exampleSections: ExampleSection[] = [
         description: "Where tiles and features come from.",
         examples: [
             entry("geojson-line", "Add a GeoJSON line", "A \"geojson\" source re-tiles the document on the fly, so the features are styled with CartoCSS and drawn by the same renderer as a tile server's.", "https://raw.githubusercontent.com/massif-maps/MassifMaps/master/docs/examples/screenshots/geojson-line.png", () => require('./GeojsonLine.svelte')),
+            entry("animated-radar", "Animate a weather radar", "Each time step is a tile of its own. The layer draws a step and the next in one pass and mixes the values, so the fade has no pop at a step boundary. Play, scrub, change the speed, or switch to 3D and watch it drape over the Alps.", "https://raw.githubusercontent.com/massif-maps/MassifMaps/master/docs/examples/screenshots/animated-radar.png", () => require('./AnimatedRadar.svelte')),
         ]
     },
     {
