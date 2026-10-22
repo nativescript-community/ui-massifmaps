@@ -78,6 +78,13 @@
                     ...controls,
                     { label, toggle: false, slider: true, min, max, value, on: false, action }
                 ]),
+            setSlider: (label, value) => {
+                const control = controls.find((c) => c.slider && c.label === label);
+                if (control) {
+                    control.value = value;
+                    controls = controls;
+                }
+            },
             after: (millis, action) => timers.push(setTimeout(action, millis))
         };
     }

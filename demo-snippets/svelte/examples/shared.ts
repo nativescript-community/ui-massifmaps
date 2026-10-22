@@ -16,7 +16,7 @@ export const UA = 'MassifMapsExamples/1.0 (+https://github.com/massif-maps/Massi
  * Every example that reads from a server goes through one: a demo that gets panned around
  * otherwise re-fetches the same tiles from somebody else's free service on every run.
  */
-function cached(name: string, capacityMb: number, source: SourceSpec): SourceSpec {
+export function cached(name: string, capacityMb: number, source: SourceSpec): SourceSpec {
     const databasePath = path.join(knownFolders.documents().path, name);
     console.log(`[massif-ex] cache ${databasePath} exists ${File.exists(databasePath)}`);
     return {
