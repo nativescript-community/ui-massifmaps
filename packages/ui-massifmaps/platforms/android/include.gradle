@@ -30,6 +30,22 @@ android {
             java {
                 def massifSDKVariant =  project.hasProperty("massifSDKVariant") ? project.massifSDKVariant : "full"
                 
+                // The plugin's own Java listeners and callbacks extend SDK classes that only the
+                // object API ships. A surface-only AAR (the default) has none of them: keep
+                // SynchronousHandler and api/ - the surface API's listener - and drop the rest.
+                def objectApi = massifSDKVariant.contains("objectapi") || project.hasProperty("massifObjectApi")
+                if (!objectApi) {
+                    exclude '**/additions/*Listener.java'
+                    exclude '**/additions/ClusterElementBuilder.java'
+                    exclude '**/additions/FeatureCollectionSearchServiceCallback.java'
+                    exclude '**/additions/HillshadeRasterTileLayer.java'
+                    exclude '**/additions/Utils.java'
+                    exclude '**/additions2/**'
+                    exclude '**/geocoding/**'
+                    exclude '**/packagemanager/**'
+                    exclude '**/routing/**'
+                }
+
                 // Exclude geocoding and routing if not using full variant
                 if (massifSDKVariant != "full") {
                     exclude '**/geocoding/**'

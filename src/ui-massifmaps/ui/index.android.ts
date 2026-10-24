@@ -1,20 +1,5 @@
 import { FogOptions, LightOptions, MapOptions, SkyOptions, TerrainOptions } from '../components';
-import {
-    ClickType,
-    DefaultLatLonKeys,
-    MapBounds,
-    MapPos,
-    ScreenBounds,
-    ScreenPos,
-    fromNativeMapBounds,
-    fromNativeMapPos,
-    fromNativeScreenPos,
-    nativeVectorToArray,
-    toNativeMapBounds,
-    toNativeMapPos,
-    toNativeScreenBounds,
-    toNativeScreenPos
-} from '../core';
+import { AltitudeKey, ClickType, DefaultLatLonKeys, LatitudeKey, LongitudeKey, MapBounds, MapPos, ScreenBounds, ScreenPos, fromNativeMapBounds, fromNativeMapPos, fromNativeScreenPos, nativeVectorToArray, toNativeMapBounds, toNativeMapPos, toNativeScreenBounds, toNativeScreenPos } from '../core';
 import { Layer, TileLayer } from '../layers';
 import { IProjection } from '../projections';
 import { restrictedPanningProperty } from './cssproperties';
@@ -46,6 +31,29 @@ export const PanningMode = {
     }
 };
 
+/** The object API ships in the `objectapi` AAR only; what needs it says so instead of failing on a missing class. */
+function objectApi(what: string): any {
+    const interop = (com as any)?.massifmaps?.api?.MassifInterop;
+    if (!interop) {
+        throw new Error(`${what} needs the object API: use the "objectapi" variant of the Massif Maps AAR, or the surface API (map.api)`);
+    }
+    return interop;
+}
+
+/** The view's positions in the facade's `[lng, lat]`: no SDK class involved, so it works in a surface-only AAR. */
+function toFacadePos(position: MapPos<any>): [number, number] | [number, number, number] {
+    const altitude = position[AltitudeKey];
+    return altitude === undefined ? [position[LongitudeKey], position[LatitudeKey]] : [position[LongitudeKey], position[LatitudeKey], altitude];
+}
+
+function fromFacadePos<T = DefaultLatLonKeys>(position: number[]): MapPos<T> {
+    const result: any = { [LatitudeKey]: position[1], [LongitudeKey]: position[0] };
+    if (position.length > 2) {
+        result[AltitudeKey] = position[2];
+    }
+    return result;
+}
+
 export class MassifMap<T = DefaultLatLonKeys> extends MassifMapViewBase {
     public static setRunOnMainThread(value: boolean) {
         com.nativescript.massifmaps.additions.SynchronousHandler.setRunOnMainThread(value);
@@ -59,15 +67,43 @@ export class MassifMap<T = DefaultLatLonKeys> extends MassifMapViewBase {
         return super.mapView;
     }
 
-    // A MapView carries no object API: the camera, the options and the layers are read back from its handles.
-    private get nativeBaseView() {
-        return this.mapView ? com.massifmaps.api.MassifInterop.getViewByHandle(this.mapView.getViewHandle()) : null;
+    // A MapView carries no object API: what still needs one reads it back from the view's handles, in the objectapi AAR.
+    // `what` names the caller, so the error says which method needs it.
+    private objectApiView(what: string) {
+        return this.mapView ? objectApi(what).getViewByHandle(this.mapView.getViewHandle()) : null;
     }
-    private get nativeOptions() {
-        return this.mapView ? com.massifmaps.api.MassifInterop.getOptionsByHandle(this.mapView.getMapHandle()) : null;
+    private objectApiOptions(what: string) {
+        return this.mapView ? objectApi(what).getOptionsByHandle(this.mapView.getMapHandle()) : null;
     }
-    private get nativeLayers() {
-        return this.mapView ? com.massifmaps.api.MassifInterop.getLayerListByHandle(this.mapView.getLayersHandle()) : null;
+    private objectApiLayers(what: string) {
+        return this.mapView ? objectApi(what).getLayerListByHandle(this.mapView.getLayersHandle()) : null;
+    }
+
+    private get camera() {
+        return this.api.camera();
+    }
+
+    /** What `zoom`, `tilt`... read: from the camera, since a native MapView has no getters. */
+    readMapProperty(key: string) {
+        if (!this.mapView || !this.mapReady) {
+            return undefined;
+        }
+        switch (key) {
+            case 'zoom':
+                return this.camera.zoom();
+            case 'tilt':
+                return this.camera.tilt();
+            case 'bearing':
+                return this.camera.rotation();
+            case 'focusPos':
+                return fromFacadePos(this.camera.position());
+            case 'minZoom':
+            case 'maxZoom':
+            case 'restrictedPanning':
+                return this.api.get(key);
+            default:
+                return undefined;
+        }
     }
 
     get projection() {
@@ -75,8 +111,8 @@ export class MassifMap<T = DefaultLatLonKeys> extends MassifMapViewBase {
     }
     set projection(proj: IProjection) {
         this.mProjection = proj;
-        if (this.nativeViewProtected) {
-            this.nativeOptions.setBaseProjection(proj ? proj.getNative() : null);
+        if (this.nativeViewProtected && (com as any)?.massifmaps?.api?.MassifInterop) {
+            this.objectApiOptions('projection').setBaseProjection(proj ? proj.getNative() : null);
         }
     }
     public createNativeView() {
@@ -111,7 +147,7 @@ export class MassifMap<T = DefaultLatLonKeys> extends MassifMapViewBase {
         if (!this.mapReady) {
             return null;
         }
-        const native = this.nativeOptions;
+        const native = this.objectApiOptions('getOptions');
         if (this.mOptions?.getNative() !== native) {
             this.mOptions = new MapOptions(undefined, native);
         }
@@ -144,7 +180,7 @@ export class MassifMap<T = DefaultLatLonKeys> extends MassifMapViewBase {
     }
     mPostProcessEffect: PostProcessEffect;
     getPostProcessEffect() {
-        const native = this.nativeBaseView?.getMapRenderer().getPostProcessEffect();
+        const native = this.objectApiView('getPostProcessEffect')?.getMapRenderer().getPostProcessEffect();
         if (!native) {
             return null;
         }
@@ -155,25 +191,25 @@ export class MassifMap<T = DefaultLatLonKeys> extends MassifMapViewBase {
     }
     setPostProcessEffect(effect: PostProcessEffect) {
         this.mPostProcessEffect = effect;
-        this.nativeBaseView?.getMapRenderer().setPostProcessEffect(effect?.getNative() ?? null);
+        this.objectApiView('setPostProcessEffect')?.getMapRenderer().setPostProcessEffect(effect?.getNative() ?? null);
     }
 
     flyTo(position: MapPos, options: FlyToOptions = {}) {
-        const { bearing = this.nativeBaseView.getRotation(), climbHeight = 0, duration = 0, tilt = this.nativeBaseView.getTilt(), zoom = this.nativeBaseView.getZoom() } = options;
-        this.nativeBaseView.flyTo(toNativeMapPos(position), zoom, bearing, tilt, climbHeight, duration / 1000);
+        const { bearing, climbHeight = 0, duration = 0, tilt, zoom } = options;
+        this.camera.moveTo(toFacadePos(position), { zoom, rotation: bearing, tilt, climbHeight, duration });
     }
     getFlightProgress() {
-        return this.nativeBaseView.getFlightProgress();
+        return this.camera.progress();
     }
     isFlightActive() {
-        return this.nativeBaseView.isFlightActive();
+        return this.camera.isMoving();
     }
     stopFlight() {
-        this.nativeBaseView.stopFlight();
+        this.camera.stop();
     }
     initNativeView(): void {
         super.initNativeView();
-        if (!this.projection) {
+        if (!this.projection && (com as any)?.massifmaps?.api?.MassifInterop) {
             this.projection = new EPSG4326();
         }
     }
@@ -203,55 +239,59 @@ export class MassifMap<T = DefaultLatLonKeys> extends MassifMapViewBase {
     }
 
     setFocusPos(value: MapPos, duration: number = 0) {
-        this.nativeBaseView.setFocusPos(toNativeMapPos(value), duration / 1000);
+        this.camera.animate(duration).position(toFacadePos(value));
     }
 
     getFocusPos() {
-        return fromNativeMapPos<T>(this.nativeBaseView.getFocusPos());
+        return fromFacadePos<T>(this.camera.position());
     }
     getMapBounds() {
-        const screenBounds = toNativeScreenBounds({ min: { x: this.getMeasuredWidth(), y: 0 }, max: { x: 0, y: this.getMeasuredHeight() } }) as com.massifmaps.core.ScreenBounds;
-        return new MapBounds<T>(fromNativeMapPos(this.nativeBaseView.screenToMap(screenBounds.getMin())), fromNativeMapPos(this.nativeBaseView.screenToMap(screenBounds.getMax())));
+        const min = this.camera.screenToMap(this.getMeasuredWidth(), 0);
+        const max = this.camera.screenToMap(0, this.getMeasuredHeight());
+        return new MapBounds<T>(fromFacadePos<T>(min), fromFacadePos<T>(max));
     }
 
     setMapRotation(value: number, targetPos: MapPos | number, duration: number = 0) {
         if (typeof targetPos === 'number') {
-            this.nativeBaseView.setRotation(value, targetPos / 1000);
+            this.camera.animate(targetPos).rotation(value);
         } else {
-            this.nativeBaseView.setRotation(value, toNativeMapPos(targetPos), duration / 1000);
+            this.camera.animate(duration).moveTo(toFacadePos(targetPos), { rotation: value });
         }
     }
     getZoom() {
-        return this.nativeBaseView.getZoom();
+        return this.camera.zoom();
     }
     setZoom(value: number, targetPos: MapPos | number, duration: number = 0) {
         if (typeof targetPos === 'number') {
-            this.nativeBaseView.setZoom(value, targetPos / 1000);
+            this.camera.animate(targetPos).zoom(value);
         } else {
-            this.nativeBaseView.setZoom(value, toNativeMapPos(targetPos), duration / 1000);
+            this.camera.animate(duration).zoom(value, toFacadePos(targetPos));
         }
     }
     setTilt(value: number, duration: number = 0) {
-        this.nativeBaseView.setTilt(value, duration / 1000);
+        this.camera.animate(duration).tilt(value);
     }
     setBearing(value: number, duration: number = 0) {
-        this.nativeBaseView.setRotation(value, duration / 1000);
+        this.camera.animate(duration).rotation(value);
     }
     moveToFitBounds(mapBounds: MapBounds<T>, screenBounds: ScreenBounds, integerZoom: boolean, resetRotation: boolean, resetTilt: boolean, durationSeconds: number) {
-        if (!screenBounds) {
-            screenBounds = { min: { x: 0, y: 0 }, max: { x: this.getMeasuredWidth(), y: this.getMeasuredHeight() } };
-        }
-        this.nativeBaseView.moveToFitBounds(this.toNativeMapBounds(mapBounds), toNativeScreenBounds(screenBounds), integerZoom, resetRotation, resetTilt, durationSeconds / 1000);
+        this.camera.fitBounds([toFacadePos(mapBounds.southwest), toFacadePos(mapBounds.northeast)], {
+            screen: screenBounds,
+            integerZoom,
+            resetRotation,
+            resetTilt,
+            duration: durationSeconds * 1000
+        });
     }
     [restrictedPanningProperty.setNative](value: boolean) {
         if (!this.nativeViewProtected) {
             return;
         }
-        this.nativeOptions.setRestrictedPanning(value);
+        this.api.set('restrictedPanning', value);
     }
 
     createLayersInstance(): Layers {
-        return new Layers(this.nativeLayers);
+        return new Layers(this.objectApiLayers('getLayers'));
     }
 
     clearAllCaches() {
@@ -261,43 +301,22 @@ export class MassifMap<T = DefaultLatLonKeys> extends MassifMapViewBase {
         this.mapView && this.mapView.clearPreloadingCaches();
     }
     requestRedraw() {
-        this.mapView && this.nativeBaseView.getMapRenderer().requestRedraw();
+        this.mapView?.requestRender();
     }
     cancelAllTasks() {
         this.mapView && this.mapView.cancelAllTasks();
     }
     screenToMap(pos: ScreenPos) {
-        if (this.mapView) {
-            if (pos instanceof com.massifmaps.core.ScreenPos) {
-                return this.fromNativeMapPos(this.nativeBaseView.screenToMap(pos));
-            }
-            return this.fromNativeMapPos(this.nativeBaseView.screenToMap(toNativeScreenPos(pos)));
-        }
-        return null;
+        return this.mapView ? fromFacadePos<T>(this.camera.screenToMap(pos.x, pos.y)) : null;
     }
-    mapToScreen(pos: MapPos | com.massifmaps.core.MapPos) {
-        if (this.mapView) {
-            if (pos instanceof com.massifmaps.core.MapPos) {
-                return fromNativeScreenPos(this.nativeBaseView.mapToScreen(pos));
-            }
-            return fromNativeScreenPos(this.nativeBaseView.mapToScreen(toNativeMapPos(pos)));
-        }
-        return null;
+    mapToScreen(pos: MapPos) {
+        return this.mapView ? this.camera.mapToScreen(toFacadePos(pos)) : null;
     }
 
-    captureRendering(wait = false) {
-        return new Promise((resolve) => {
-            this.nativeBaseView.getMapRenderer().captureRendering(
-                new com.nativescript.massifmaps.additions.RendererCaptureListener(
-                    new com.nativescript.massifmaps.additions.RendererCaptureListener.Listener({
-                        onMapRendered(bitmap: com.massifmaps.graphics.Bitmap) {
-                            resolve(new ImageSource(com.massifmaps.utils.BitmapUtils.createAndroidBitmapFromBitmap(bitmap)));
-                        }
-                    })
-                ),
-                wait
-            );
-        });
+    /** Through the surface API, so it works without the object API. */
+    async captureRendering(wait = false) {
+        const png = await this.api.capturePng(wait);
+        return png ? ImageSource.fromData(png) : null;
     }
 }
 

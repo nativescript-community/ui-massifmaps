@@ -49,6 +49,8 @@ export interface NativeBridge {
     getDoubles(handle: number): number[];
     /** Null when the path is not a blob. */
     getData(handle: number, path: string): ArrayBuffer | null;
+    /** Raw bytes in, copied once with no encoding. 0 when the id is taken or there are no bytes. */
+    createData(id: string, bytes: Uint8Array): number;
 
     /**
      * Keeps the native listener alive: C++ holds it as a raw pointer (iOS ARC would collect it).

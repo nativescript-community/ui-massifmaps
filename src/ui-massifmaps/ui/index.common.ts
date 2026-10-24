@@ -109,6 +109,10 @@ function createGetter(key: string, options: MapPropertyOptions) {
     const nativeGetterName = ((__ANDROID__ ? options.android : options.ios) || options).nativeGetterName || 'get' + key.charAt(0).toUpperCase() + key.slice(1);
     const getConverter = options.getConverter;
     return function () {
+        const fromFacade = this.readMapProperty?.(key);
+        if (fromFacade !== undefined) {
+            return fromFacade;
+        }
         let result;
         if (this.nativeViewProtected && this.nativeViewProtected[nativeGetterName]) {
             result = this.nativeViewProtected[nativeGetterName]();
@@ -298,14 +302,7 @@ export abstract class MassifMapViewBase extends ContentView {
             this.subscribeFacadeEvents();
             return;
         }
-        if (!isApiAvailable()) {
-            console.warn('MassifMap: this MassifMaps build has no surface API, so the map raises no events');
-            return;
-        }
-        try {
-            this.mFacade = attachFacade(this as any, { id: `massif-map-${this._domId}` });
-        } catch (error) {
-            console.warn(`MassifMap: could not attach the map's events - ${error}`);
+        if (!this.ensureFacade()) {
             return;
         }
         this.subscribeFacadeEvents();
@@ -313,6 +310,34 @@ export abstract class MassifMapViewBase extends ContentView {
 
     /** Lets `api.attach()` reuse this handle rather than registering the map twice. Null before load. */
     facadeMap() {
+        return this.mFacade;
+    }
+
+    private ensureFacade(): boolean {
+        if (this.mFacade) {
+            return true;
+        }
+        if (!this.mapView) {
+            return false;
+        }
+        if (!isApiAvailable()) {
+            console.warn('MassifMap: this MassifMaps build has no surface API, so the map raises no events');
+            return false;
+        }
+        try {
+            this.mFacade = attachFacade(this as any, { id: `massif-map-${this._domId}` });
+            return true;
+        } catch (error) {
+            console.warn(`MassifMap: could not attach the map's events - ${error}`);
+            return false;
+        }
+    }
+
+    /** The surface API of this map: its camera, options and layers. Attached on first use, so it works before `mapReady`. */
+    get api() {
+        if (!this.ensureFacade()) {
+            throw new Error('MassifMap: the map has no surface API yet - wait for the mapReady event, and check the AAR has the surface API');
+        }
         return this.mFacade;
     }
 

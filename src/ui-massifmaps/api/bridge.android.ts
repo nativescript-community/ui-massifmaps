@@ -11,7 +11,7 @@ function lookup(): any {
     }
 }
 
-/** MassifInterop takes SDK types; MassifApi is kept to strings, numbers and handles so a hand-written binding can carry it. */
+/** Only the `objectapi` AAR carries it: it takes SDK types, where MassifApi is kept to strings, numbers and handles. */
 function lookupInterop(): any {
     try {
         return (com as any)?.massifmaps?.api?.MassifInterop ?? null;
@@ -34,6 +34,13 @@ function lookupListener(): any {
 
 const MassifApi = lookup();
 const MassifInterop = lookupInterop();
+
+function legacy(what: string): any {
+    if (!MassifInterop) {
+        throw new Error(`${what} needs the object API: use the "objectapi" variant of the Massif Maps AAR, or the surface API`);
+    }
+    return MassifInterop;
+}
 const NativeEventListener = lookupListener();
 
 /** An SDK whose `on` hardcodes consume has 6 parameters; one taking the consume flag has 7. */
@@ -68,7 +75,7 @@ function toArrayBuffer(bytes: androidNative.Array<number>): ArrayBuffer {
 }
 
 export const bridge: NativeBridge = {
-    available: !!MassifApi && !!MassifInterop,
+    available: !!MassifApi,
 
     create: (kind, id, json) => MassifApi.create(kind, id, json),
     destroy: (handle) => MassifApi.destroy(handle),
@@ -116,6 +123,9 @@ export const bridge: NativeBridge = {
         return data && data.length ? toArrayBuffer(data) : null;
     },
 
+    // The runtime marshals a typed array into the byte[] the SDK takes.
+    createData: (id, bytes) => MassifApi.createData(id, bytes) || 0,
+
     canConsume: CAN_CONSUME,
 
     on(handle: number, event: string, handler: NativeEventHandler, delivery: Delivery, coalesce: boolean, projection: string, consume: boolean) {
@@ -149,23 +159,23 @@ export const bridge: NativeBridge = {
         const map = MassifApi.findObject('map', id);
         return map ? { id, map, view: MassifApi.findObject('view', id), layers: MassifApi.findObject('layers', id) } : null;
     },
-    adoptOptions: (kind, id, options) => MassifInterop.adopt(kind, id, options),
-    adoptLayer: (kind, id, layer) => MassifInterop.adopt(kind, id, layer),
-    adoptLayers: (kind, id, layers) => MassifInterop.adopt(kind, id, layers),
-    adoptSource: (kind, id, source) => MassifInterop.adopt(kind, id, source),
-    adoptView: (kind, id, view) => MassifInterop.adopt(kind, id, view),
-    adoptAssets: (kind, id, assets) => MassifInterop.adopt(kind, id, assets),
-    getNativeLayer: (id) => MassifInterop.getLayer(id),
-    getNativeSource: (id) => MassifInterop.getSource(id),
-    getNativeLayerByHandle: (handle) => MassifInterop.getLayerByHandle(handle),
-    getNativeSourceByHandle: (handle) => MassifInterop.getSourceByHandle(handle),
+    adoptOptions: (kind, id, options) => legacy('adopting an options object').adopt(kind, id, options),
+    adoptLayer: (kind, id, layer) => legacy('adopting a layer').adopt(kind, id, layer),
+    adoptLayers: (kind, id, layers) => legacy('adopting a layer list').adopt(kind, id, layers),
+    adoptSource: (kind, id, source) => legacy('adopting a source').adopt(kind, id, source),
+    adoptView: (kind, id, view) => legacy('adopting a view').adopt(kind, id, view),
+    adoptAssets: (kind, id, assets) => legacy('adopting an asset package').adopt(kind, id, assets),
+    getNativeLayer: (id) => legacy('reading a native layer').getLayer(id),
+    getNativeSource: (id) => legacy('reading a native source').getSource(id),
+    getNativeLayerByHandle: (handle) => legacy('reading a native layer').getLayerByHandle(handle),
+    getNativeSourceByHandle: (handle) => legacy('reading a native source').getSourceByHandle(handle),
 
     attachMapEvents() {
         // The native view installs its event bridge when it is created.
     },
-    attachVectorTileEvents: (handle) => MassifInterop.attachVectorTileEvents(handle),
-    attachVectorElementEvents: (handle) => MassifInterop.attachVectorElementEvents(handle),
-    attachCelestialEvents: (handle) => MassifInterop.attachCelestialEvents(handle),
+    attachVectorTileEvents: (handle) => MassifApi.attachVectorTileEvents(handle),
+    attachVectorElementEvents: (handle) => MassifApi.attachVectorElementEvents(handle),
+    attachCelestialEvents: (handle) => MassifApi.attachCelestialEvents(handle),
 
     nativeShortClassName(nativeObject) {
         if (!nativeObject || typeof nativeObject.getClass !== 'function') {

@@ -1123,6 +1123,18 @@ export function destroy(kind: Kind | string, id: string): boolean {
 }
 
 /** Nothing is checked; the class is what the paths resolve against. */
+/**
+ * Raw bytes as a `data` object a spec can name by id - `{ type: 'bitmap', data: id }` decodes an
+ * image from them. Copied once; no base64, no file.
+ */
+export function createData(id: string, bytes: ArrayBuffer | Uint8Array): MassifObject<'massif::BinaryData'> {
+    const handle = bridge.createData(id, bytes instanceof Uint8Array ? bytes : new Uint8Array(bytes));
+    if (!handle) {
+        throw new MassifApiError(`could not create data "${id}": the id is taken or there are no bytes`);
+    }
+    return new MassifObject(handle as Handle<'massif::BinaryData'>, 'massif::BinaryData', id);
+}
+
 export function wrap<C extends ClassName>(handle: number, className: C, id?: string): MassifObject<C> {
     return new MassifObject(handle as Handle<C>, className, id);
 }
@@ -1485,6 +1497,11 @@ export class MapCamera {
         return this;
     }
 
+    /** The map's renderer: where the post-process effect and the frame capture live. */
+    renderer(): MassifObject<'massif::MapRenderer'> {
+        return this.view.child('mapRenderer') as MassifObject<'massif::MapRenderer'>;
+    }
+
     isMoving(): boolean {
         return this.view.get('flightActive') as boolean;
     }
@@ -1721,6 +1738,14 @@ export class MassifMap extends MassifObject<'massif::Options'> {
     requestRedraw(): this {
         this.view.requestRedraw?.();
         return this;
+    }
+
+    /**
+     * The next rendered frame as PNG bytes, through the facade: it needs no object API. `wait` holds
+     * the capture until the tiles have settled. Null when the capture failed or timed out.
+     */
+    capturePng(wait = false): CancellablePromise<ArrayBuffer | null> {
+        return this.camera().renderer().callAsync('capturePNG', [wait] as never, ((result: MassifObject) => result.getData('')) as never) as CancellablePromise<ArrayBuffer | null>;
     }
 
     camera(): MapCamera {
