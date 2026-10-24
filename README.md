@@ -288,6 +288,10 @@ npm run typings.api.check  # typechecks the layer and its typing tests
 
 That is what makes a wrong path, a misspelt spec key, an enum constant from the wrong enum, a method on the wrong class and an unknown event name all **compile errors**.
 
+### Surface-only Android
+
+The default Android AAR no longer ships the object API (`objectapi` is a separate variant). On it the map view runs on the surface API alone: `zoom`, `tilt`, `bearing`, `focusPos`, `flyTo`, `setZoom`, `moveToFitBounds`, `screenToMap`, `mapToScreen`, the map events and `map.api` (the map's surface `MassifMap`) work, and positions use the lon/lat of the view's keys. What still needs the object API fails with a message naming it: the legacy modules (`layers`, `datasources`, `vectorelements`, `components`...), `getOptions()` and its wrappers, `getPostProcessEffect`, `captureRendering`, `requestRedraw`, the `projection` property (the view is lon/lat) and `getLayers()`. The plugin's Java listeners are compiled only for an `objectapi` variant (`-PmassifSDKVariant=objectapi...`, or `-PmassifObjectApi`).
+
 ### Requirements and known gaps
 
 - Needs an SDK built **with** `all/native/api` (`com.massifmaps.api.MassifApi` / `MSFMassifApi`). `api.isAvailable()` says whether it is there, and every call throws a clear error when it is not. On Android, `-PmassifApi=false` drops the plugin's own listener shim so the object API still builds against an older SDK.

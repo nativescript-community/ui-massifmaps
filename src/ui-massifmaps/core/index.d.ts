@@ -1,4 +1,5 @@
 import {
+    AltitudeKey,
     AltitudeKeys,
     DefaultLatLonKeys,
     GenericMapPos,
@@ -15,7 +16,7 @@ import {
     nativeVectorToArray
 } from './index.common';
 import { BaseNative } from '..';
-export { DefaultLatLonKeys, GenericMapPos, LatitudeKey, LatitudeKeys, LongitudeKey, LongitudeKeys, ScreenPos, MapPos, ScreenBounds, MapVec, MapRange, nativeVectorToArray, arrayToNativeVector };
+export { AltitudeKey, AltitudeKeys, DefaultLatLonKeys, GenericMapPos, LatitudeKey, LatitudeKeys, LongitudeKey, LongitudeKeys, ScreenPos, MapPos, ScreenBounds, MapVec, MapRange, nativeVectorToArray, arrayToNativeVector };
 
 export declare function fromNativeMapPos<T = DefaultLatLonKeys>(pos): GenericMapPos<T>;
 export declare function toNativeMapPos<T = DefaultLatLonKeys>(position: GenericMapPos<T>, ignoreAltitude?: boolean): any;
