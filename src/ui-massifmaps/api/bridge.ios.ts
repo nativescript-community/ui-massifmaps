@@ -92,6 +92,9 @@ export const bridge: NativeBridge = {
         return data && data.length ? toArrayBuffer(data) : null;
     },
 
+    // An ArrayBuffer crosses as the NSData the SDK takes.
+    createData: (id, bytes) => MassifApi.createDataBytes(id, bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength)) || 0,
+
     canConsume: CAN_CONSUME,
 
     on(handle: number, event: string, handler: NativeEventHandler, delivery: Delivery, coalesce: boolean, projection: string, consume: boolean) {
