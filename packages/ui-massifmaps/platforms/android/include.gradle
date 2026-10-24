@@ -2,9 +2,13 @@ repositories {
 	mavenCentral()
 	maven { url 'https://jitpack.io' }
 
-	// flatDir {
-	// 	dirs "/home/mguillon/dev/massif-maps/MassifMaps/dist/android"
-	// }
+	// A local AAR: -PmassifAar=<file name without .aar> and -PmassifAarDir=<folder holding it>
+	// (or both as ext properties in before-plugins.gradle).
+	if (project.hasProperty('massifAarDir')) {
+		flatDir {
+			dirs project.massifAarDir
+		}
+	}
 }
 dependencies {
     if (System.env.DEBUGMASSIF) {
