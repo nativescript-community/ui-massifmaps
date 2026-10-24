@@ -313,19 +313,10 @@ export class MassifMap<T = DefaultLatLonKeys> extends MassifMapViewBase {
         return this.mapView ? this.camera.mapToScreen(toFacadePos(pos)) : null;
     }
 
-    captureRendering(wait = false) {
-        return new Promise((resolve) => {
-            this.objectApiView('captureRendering').getMapRenderer().captureRendering(
-                new com.nativescript.massifmaps.additions.RendererCaptureListener(
-                    new com.nativescript.massifmaps.additions.RendererCaptureListener.Listener({
-                        onMapRendered(bitmap: com.massifmaps.graphics.Bitmap) {
-                            resolve(new ImageSource(com.massifmaps.utils.BitmapUtils.createAndroidBitmapFromBitmap(bitmap)));
-                        }
-                    })
-                ),
-                wait
-            );
-        });
+    /** Through the surface API, so it works without the object API. */
+    async captureRendering(wait = false) {
+        const png = await this.api.capturePng(wait);
+        return png ? ImageSource.fromData(png) : null;
     }
 }
 
