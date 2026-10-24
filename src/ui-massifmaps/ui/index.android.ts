@@ -68,14 +68,15 @@ export class MassifMap<T = DefaultLatLonKeys> extends MassifMapViewBase {
     }
 
     // A MapView carries no object API: what still needs one reads it back from the view's handles, in the objectapi AAR.
-    private get nativeBaseView() {
-        return this.mapView ? objectApi('the native view').getViewByHandle(this.mapView.getViewHandle()) : null;
+    // `what` names the caller, so the error says which method needs it.
+    private objectApiView(what: string) {
+        return this.mapView ? objectApi(what).getViewByHandle(this.mapView.getViewHandle()) : null;
     }
-    private get nativeOptions() {
-        return this.mapView ? objectApi('the native options').getOptionsByHandle(this.mapView.getMapHandle()) : null;
+    private objectApiOptions(what: string) {
+        return this.mapView ? objectApi(what).getOptionsByHandle(this.mapView.getMapHandle()) : null;
     }
-    private get nativeLayers() {
-        return this.mapView ? objectApi('the layer list').getLayerListByHandle(this.mapView.getLayersHandle()) : null;
+    private objectApiLayers(what: string) {
+        return this.mapView ? objectApi(what).getLayerListByHandle(this.mapView.getLayersHandle()) : null;
     }
 
     private get camera() {
@@ -111,7 +112,7 @@ export class MassifMap<T = DefaultLatLonKeys> extends MassifMapViewBase {
     set projection(proj: IProjection) {
         this.mProjection = proj;
         if (this.nativeViewProtected && (com as any)?.massifmaps?.api?.MassifInterop) {
-            this.nativeOptions.setBaseProjection(proj ? proj.getNative() : null);
+            this.objectApiOptions('projection').setBaseProjection(proj ? proj.getNative() : null);
         }
     }
     public createNativeView() {
@@ -146,7 +147,7 @@ export class MassifMap<T = DefaultLatLonKeys> extends MassifMapViewBase {
         if (!this.mapReady) {
             return null;
         }
-        const native = this.nativeOptions;
+        const native = this.objectApiOptions('getOptions');
         if (this.mOptions?.getNative() !== native) {
             this.mOptions = new MapOptions(undefined, native);
         }
@@ -179,7 +180,7 @@ export class MassifMap<T = DefaultLatLonKeys> extends MassifMapViewBase {
     }
     mPostProcessEffect: PostProcessEffect;
     getPostProcessEffect() {
-        const native = this.nativeBaseView?.getMapRenderer().getPostProcessEffect();
+        const native = this.objectApiView('getPostProcessEffect')?.getMapRenderer().getPostProcessEffect();
         if (!native) {
             return null;
         }
@@ -190,7 +191,7 @@ export class MassifMap<T = DefaultLatLonKeys> extends MassifMapViewBase {
     }
     setPostProcessEffect(effect: PostProcessEffect) {
         this.mPostProcessEffect = effect;
-        this.nativeBaseView?.getMapRenderer().setPostProcessEffect(effect?.getNative() ?? null);
+        this.objectApiView('setPostProcessEffect')?.getMapRenderer().setPostProcessEffect(effect?.getNative() ?? null);
     }
 
     flyTo(position: MapPos, options: FlyToOptions = {}) {
@@ -290,7 +291,7 @@ export class MassifMap<T = DefaultLatLonKeys> extends MassifMapViewBase {
     }
 
     createLayersInstance(): Layers {
-        return new Layers(this.nativeLayers);
+        return new Layers(this.objectApiLayers('getLayers'));
     }
 
     clearAllCaches() {
@@ -300,7 +301,7 @@ export class MassifMap<T = DefaultLatLonKeys> extends MassifMapViewBase {
         this.mapView && this.mapView.clearPreloadingCaches();
     }
     requestRedraw() {
-        this.mapView && this.nativeBaseView.getMapRenderer().requestRedraw();
+        this.mapView?.requestRender();
     }
     cancelAllTasks() {
         this.mapView && this.mapView.cancelAllTasks();
@@ -314,7 +315,7 @@ export class MassifMap<T = DefaultLatLonKeys> extends MassifMapViewBase {
 
     captureRendering(wait = false) {
         return new Promise((resolve) => {
-            this.nativeBaseView.getMapRenderer().captureRendering(
+            this.objectApiView('captureRendering').getMapRenderer().captureRendering(
                 new com.nativescript.massifmaps.additions.RendererCaptureListener(
                     new com.nativescript.massifmaps.additions.RendererCaptureListener.Listener({
                         onMapRendered(bitmap: com.massifmaps.graphics.Bitmap) {
