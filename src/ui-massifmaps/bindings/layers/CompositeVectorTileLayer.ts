@@ -4,7 +4,7 @@
 import { CompositeSourceType, EnumValue } from '../enums';
 
 /** com.massifmaps.layers.CompositeVectorTileLayer / MSFCompositeVectorTileLayer */
-export const METHODS = ['addExternalDataSource', 'addVectorDataSource', 'clearExternalDataSourceZoomLevelBias', 'getExternalDataSourceMaxOverzoomLevel', 'getExternalDataSourceNames', 'getExternalDataSourceZoomLevelBias', 'removeExternalDataSource', 'setExternalDataSourceMaxOverzoomLevel', 'setExternalDataSourceZoomLevelBias', 'setPreloading', 'setZoomLevelBias'] as const;
+export const METHODS = ['addExternalDataSource', 'addVectorDataSource', 'clearExternalDataSourceZoomLevelBias', 'getExternalDataSourceMaxOverzoomLevel', 'getExternalDataSourceNames', 'getExternalDataSourceZoomLevelBias', 'removeExternalDataSource', 'setExternalDataSourceMaxOverzoomLevel', 'setExternalDataSourceZoomLevelBias', 'setOpacity', 'setPreloading', 'setZoomLevelBias'] as const;
 
 /** the forwarders METHODS installs, so they are visible to TypeScript */
 export interface Methods {
@@ -17,6 +17,7 @@ export interface Methods {
     removeExternalDataSource(arg0: string): boolean;
     setExternalDataSourceMaxOverzoomLevel(arg0: string, arg1: number): void;
     setExternalDataSourceZoomLevelBias(arg0: string, arg1: number): void;
+    setOpacity(arg0: number): void;
     setPreloading(arg0: boolean): void;
     setZoomLevelBias(arg0: number): void;
 }

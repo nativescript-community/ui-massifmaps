@@ -2,10 +2,11 @@
 // Regenerate with `npm run bindings`.
 
 /** com.massifmaps.datasources.HTTPTileDataSource / MSFHTTPTileDataSource */
-export const METHODS = ['buildTileURL', 'getBaseURL', 'getHTTPHeaders', 'getSubdomains', 'getTimeout', 'isMaxAgeHeaderCheck', 'isTMSScheme', 'loadTile', 'setBaseURL', 'setHTTPHeaders', 'setMaxAgeHeaderCheck', 'setSubdomains', 'setTMSScheme', 'setTimeout'] as const;
+export const METHODS = ['buildTagValues', 'buildTileURL', 'getBaseURL', 'getHTTPHeaders', 'getSubdomains', 'getTimeout', 'isMaxAgeHeaderCheck', 'isTMSScheme', 'loadTile', 'setBaseURL', 'setHTTPHeaders', 'setMaxAgeHeaderCheck', 'setSubdomains', 'setTMSScheme', 'setTimeout'] as const;
 
 /** the forwarders METHODS installs, so they are visible to TypeScript */
 export interface Methods {
+    buildTagValues(arg0: any): any;
     buildTileURL(arg0: string, arg1: any): string;
     getBaseURL(): string;
     getHTTPHeaders(): any;

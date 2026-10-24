@@ -2,13 +2,12 @@
 // Regenerate with `npm run bindings`.
 
 /** com.massifmaps.datasources.MBTilesTileDataSource / MSFMBTilesTileDataSource */
-export const METHODS = ['getDataExtent', 'getMaxZoom', 'getMetaData', 'getMinZoom', 'getTileMask', 'loadTile'] as const;
+export const METHODS = ['getDataExtent', 'getMaxZoom', 'getMinZoom', 'getTileMask', 'loadTile'] as const;
 
 /** the forwarders METHODS installs, so they are visible to TypeScript */
 export interface Methods {
     getDataExtent(): any;
     getMaxZoom(): number;
-    getMetaData(arg0: string): string;
     getMinZoom(): number;
     getTileMask(): string;
     loadTile(arg0: any): any;

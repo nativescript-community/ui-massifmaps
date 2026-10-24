@@ -2,7 +2,7 @@
 // Regenerate with `npm run bindings`.
 
 /** com.massifmaps.datasources.CacheTileDataSource / MSFCacheTileDataSource */
-export const METHODS = ['clear', 'getCapacity', 'getDataExtent', 'getDataSource', 'getEncoding', 'getMaxZoom', 'getMetaData', 'getMinZoom', 'notifyTilesChanged', 'setCapacity'] as const;
+export const METHODS = ['clear', 'getCapacity', 'getDataExtent', 'getDataSource', 'getMaxZoom', 'getMinZoom', 'notifyTilesChanged', 'setCapacity'] as const;
 
 /** the forwarders METHODS installs, so they are visible to TypeScript */
 export interface Methods {
@@ -10,9 +10,7 @@ export interface Methods {
     getCapacity(): number;
     getDataExtent(): any;
     getDataSource(): any;
-    getEncoding(): string;
     getMaxZoom(): number;
-    getMetaData(arg0: string): string;
     getMinZoom(): number;
     notifyTilesChanged(arg0: boolean): void;
     setCapacity(arg0: number): void;

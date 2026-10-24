@@ -1560,17 +1560,19 @@ export class MassifMap extends MassifObject<'massif::Options'> {
     constructor(
         handle: Handle<'massif::Options'>,
         id: string,
-        readonly view: MapViewLike
+        readonly view: MapViewLike,
+        /** Set when the native view registered its own map, view and layers: they go with the view, not with this wrapper. */
+        private readonly native: { view: number; layers: number } | null = null
     ) {
         super(handle, 'massif::Options', id);
     }
 
     layers(): MapLayers {
         if (!this.mLayers) {
-            const id = `${this.id}:layers`;
+            const id = this.native ? this.id : `${this.id}:layers`;
             // reuse an existing one: adopt() REFUSES a duplicate id (a map re-attached under the
             // same id), and the id outlives the MassifMap that made it
-            let handle = bridge.findObject('layers', id);
+            let handle = this.native ? this.native.layers : bridge.findObject('layers', id);
             if (!handle) {
                 handle = bridge.adoptLayers('layers', id, this.view.mapView.getLayers());
                 if (!handle) {
@@ -1678,7 +1680,8 @@ export class MassifMap extends MassifObject<'massif::Options'> {
         this.mOwned.length = 0;
         this.mElements = undefined;
         this.mCamera = undefined;
-        return super.destroy();
+        // A native view's ids are the view's: they are released when it is deleted.
+        return this.native ? false : super.destroy();
     }
 
     size(): { width: number; height: number } {
@@ -1703,8 +1706,8 @@ export class MassifMap extends MassifObject<'massif::Options'> {
         if (!this.mCamera) {
             // The map view is adopted under its own kind: it is what carries the camera, and
             // going through the facade is also what gives moveTo the map's projection.
-            const id = `${this.id}:view`;
-            let handle = bridge.findObject('view', id);
+            const id = this.native ? this.id : `${this.id}:view`;
+            let handle = this.native ? this.native.view : bridge.findObject('view', id);
             if (!handle) {
                 handle = bridge.adoptView('view', id, this.view.mapView.getBaseMapView());
                 if (!handle) {
@@ -1780,18 +1783,31 @@ export function attach(view: MapViewLike, options: AttachOptions = {}): MassifMa
         }
         return existing;
     }
-    const nativeOptions = view.getOptions()?.getNative();
-    if (!nativeOptions) {
+    if (!view.mapView) {
         throw new MassifApiError('the map is not ready yet - attach from the mapReady event');
     }
-    const id = options.id ?? 'map';
-    const handle = bridge.adoptOptions('options', id, nativeOptions);
+    // Android: the native view registered itself, under an id of its own.
+    const native = bridge.nativeViewHandles(view.mapView);
+    let id = options.id ?? 'map';
+    let handle: number;
+    if (native) {
+        id = native.id;
+        handle = native.map;
+    } else {
+        const nativeOptions = view.getOptions()?.getNative();
+        if (!nativeOptions) {
+            throw new MassifApiError('the map is not ready yet - attach from the mapReady event');
+        }
+        handle = bridge.adoptOptions('options', id, nativeOptions);
+    }
     if (!handle) {
         throw new MassifApiError(`could not register the map under "${id}" - the id is taken`);
     }
-    bridge.attachMapEvents(view.mapView, handle);
+    if (!native) {
+        bridge.attachMapEvents(view.mapView, handle);
+    }
 
-    const map = new MassifMap(handle as Handle<'massif::Options'>, id, view);
+    const map = new MassifMap(handle as Handle<'massif::Options'>, id, view, native);
     const { projection, throttle, debounce } = options;
     if (projection || throttle || debounce) {
         map.eventOptions({ projection, throttle, debounce });

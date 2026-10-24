@@ -4,13 +4,12 @@
 import { Color } from '@nativescript/core';
 
 /** com.massifmaps.components.FogOptions / MSFFogOptions */
-export const METHODS = ['getColor', 'getHighColor', 'getHorizonAngle', 'getHorizonBlend', 'getRangeEnd', 'getRangeStart', 'getShaderSource', 'getSpaceColor', 'getStarIntensity', 'isEnabled', 'setColor', 'setEnabled', 'setHighColor', 'setHorizonAngle', 'setHorizonBlend', 'setRangeEnd', 'setRangeStart', 'setShaderSource', 'setSpaceColor', 'setStarIntensity'] as const;
+export const METHODS = ['getColor', 'getHighColor', 'getHorizonBlend', 'getRangeEnd', 'getRangeStart', 'getShaderSource', 'getSpaceColor', 'getStarIntensity', 'isEnabled', 'setColor', 'setEnabled', 'setHighColor', 'setHorizonBlend', 'setRangeEnd', 'setRangeStart', 'setShaderSource', 'setSpaceColor', 'setStarIntensity'] as const;
 
 /** the forwarders METHODS installs, so they are visible to TypeScript */
 export interface Methods {
     getColor(): Color;
     getHighColor(): Color;
-    getHorizonAngle(): number;
     getHorizonBlend(): number;
     getRangeEnd(): number;
     getRangeStart(): number;
@@ -21,7 +20,6 @@ export interface Methods {
     setColor(arg0: Color | string): void;
     setEnabled(arg0: boolean): void;
     setHighColor(arg0: Color | string): void;
-    setHorizonAngle(arg0: number): void;
     setHorizonBlend(arg0: number): void;
     setRangeEnd(arg0: number): void;
     setRangeStart(arg0: number): void;
@@ -34,7 +32,6 @@ export const ACCESSORS: Record<string, [string, string]> = {
     color: ['getColor', 'setColor'],
     enabled: ['isEnabled', 'setEnabled'],
     highColor: ['getHighColor', 'setHighColor'],
-    horizonAngle: ['getHorizonAngle', 'setHorizonAngle'],
     horizonBlend: ['getHorizonBlend', 'setHorizonBlend'],
     rangeEnd: ['getRangeEnd', 'setRangeEnd'],
     rangeStart: ['getRangeStart', 'setRangeStart'],
@@ -48,7 +45,6 @@ export interface Accessors {
     color: Color | string;
     enabled: boolean;
     highColor: Color | string;
-    horizonAngle: number;
     horizonBlend: number;
     rangeEnd: number;
     rangeStart: number;
