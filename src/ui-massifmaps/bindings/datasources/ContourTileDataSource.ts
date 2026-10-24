@@ -2,7 +2,7 @@
 // Regenerate with `npm run bindings`.
 
 /** com.massifmaps.datasources.ContourTileDataSource / MSFContourTileDataSource */
-export const METHODS = ['clearIntervalMultipliers', 'clearResolutionsForZoom', 'getBaseInterval', 'getDataExtent', 'getEncoding', 'getIntervalMultiplier', 'getLabelInterval', 'getLayerName', 'getMaxZoom', 'getMetaData', 'getMinVisibleZoom', 'getMinZoom', 'getResolution', 'getResolutionForZoom', 'getSimplifyTolerance', 'getTerrainOptions', 'isLabelStubsEnabled', 'isSeamlessEdgesEnabled', 'loadTile', 'setBaseInterval', 'setIntervalMultiplier', 'setLabelInterval', 'setLabelStubsEnabled', 'setLayerName', 'setMinVisibleZoom', 'setResolution', 'setResolutionForZoom', 'setSeamlessEdgesEnabled', 'setSimplifyTolerance', 'setTerrainOptions'] as const;
+export const METHODS = ['clearIntervalMultipliers', 'clearResolutionsForZoom', 'getBaseInterval', 'getDataExtent', 'getIntervalMultiplier', 'getLabelInterval', 'getLayerName', 'getMaxZoom', 'getMinVisibleZoom', 'getMinZoom', 'getResolution', 'getResolutionForZoom', 'getSimplifyTolerance', 'getTerrainOptions', 'isLabelStubsEnabled', 'isSeamlessEdgesEnabled', 'loadTile', 'setBaseInterval', 'setIntervalMultiplier', 'setLabelInterval', 'setLabelStubsEnabled', 'setLayerName', 'setMinVisibleZoom', 'setResolution', 'setResolutionForZoom', 'setSeamlessEdgesEnabled', 'setSimplifyTolerance', 'setTerrainOptions'] as const;
 
 /** the forwarders METHODS installs, so they are visible to TypeScript */
 export interface Methods {
@@ -10,12 +10,10 @@ export interface Methods {
     clearResolutionsForZoom(): void;
     getBaseInterval(): number;
     getDataExtent(): any;
-    getEncoding(): string;
     getIntervalMultiplier(arg0: number): number;
     getLabelInterval(): number;
     getLayerName(): string;
     getMaxZoom(): number;
-    getMetaData(arg0: string): string;
     getMinVisibleZoom(): number;
     getMinZoom(): number;
     getResolution(): number;

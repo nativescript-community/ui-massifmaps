@@ -9,8 +9,8 @@ export interface Methods {
     onMapClicked(arg0: any): void;
     onMapIdle(): void;
     onMapInteraction(arg0: any): void;
-    onMapMoved(): void;
-    onMapStable(): void;
+    onMapMoved(arg0: number): void;
+    onMapStable(arg0: number): void;
 }
 
 export const ACCESSORS: Record<string, [string, string]> = {};

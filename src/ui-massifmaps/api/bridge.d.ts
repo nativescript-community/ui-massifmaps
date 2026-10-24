@@ -61,6 +61,11 @@ export interface NativeBridge {
     off(subscription: number): boolean;
     offAll(handle: number): number;
 
+    /**
+     * The handles of the map a native view registered itself (Android). Null where the view's objects are adopted instead.
+     */
+    nativeViewHandles(mapView: any): { id: string; map: number; view: number; layers: number } | null;
+
     // One method per adoptable base: `adopt` is overloaded on the C++ type (a distinct ObjC selector
     // / Java overload each). `kind` is the id namespace, never the class.
     adoptOptions(kind: string, id: string, options: any): number;

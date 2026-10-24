@@ -15,7 +15,6 @@ export * as RasterTileLayer from './RasterTileLayer';
 export * as SolidLayer from './SolidLayer';
 export * as TileLayer from './TileLayer';
 export * as TileLoadListener from './TileLoadListener';
-export * as TorqueTileLayer from './TorqueTileLayer';
 export * as UTFGridEventListener from './UTFGridEventListener';
 export * as VectorEditEventListener from './VectorEditEventListener';
 export * as VectorElementEventListener from './VectorElementEventListener';

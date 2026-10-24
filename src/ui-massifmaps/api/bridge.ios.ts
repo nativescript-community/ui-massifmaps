@@ -117,6 +117,7 @@ export const bridge: NativeBridge = {
     },
 
     // One selector per `adopt` overload (adopt:objectId:options: etc).
+    nativeViewHandles: () => null,
     adoptOptions: (kind, id, options) => MassifInterop.adoptObjectIdOptions(kind, id, options),
     adoptLayer: (kind, id, layer) => MassifInterop.adoptObjectIdLayer(kind, id, layer),
     adoptLayers: (kind, id, layers) => MassifInterop.adoptObjectIdLayers(kind, id, layers),

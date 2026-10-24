@@ -43,6 +43,15 @@ export enum CompositeSourceType {
     COMPOSITE_SOURCE_TYPE_VECTOR = 2
 }
 
+/** com.massifmaps.ui.FlightEasing / MSFFlightEasing */
+export enum FlightEasing {
+    FLIGHT_EASING_EASE = 0,
+    FLIGHT_EASING_LINEAR = 1,
+    FLIGHT_EASING_EASE_IN = 2,
+    FLIGHT_EASING_EASE_OUT = 3,
+    FLIGHT_EASING_EASE_IN_OUT = 4
+}
+
 /** com.massifmaps.components.FreeRoamMode / MSFFreeRoamMode */
 export enum FreeRoamMode {
     FREE_ROAM_MODE_OFF = 0,
@@ -73,6 +82,13 @@ export enum LineJoinType {
 export enum LocalSpatialIndexType {
     LOCAL_SPATIAL_INDEX_TYPE_NULL = 0,
     LOCAL_SPATIAL_INDEX_TYPE_KDTREE = 1
+}
+
+/** com.massifmaps.ui.MapMoveReason / MSFMapMoveReason */
+export enum MapMoveReason {
+    MAP_MOVE_REASON_GESTURE = 0,
+    MAP_MOVE_REASON_ANIMATION = 1,
+    MAP_MOVE_REASON_API = 2
 }
 
 /** com.massifmaps.packagemanager.PackageAction / MSFPackageAction */
@@ -128,11 +144,37 @@ export enum RouteMatchingPointType {
     ROUTE_MATCHING_POINT_MATCHED = 2
 }
 
+/** com.massifmaps.components.SkyQuality / MSFSkyQuality */
+export enum SkyQuality {
+    SKY_QUALITY_LOW = 0,
+    SKY_QUALITY_MEDIUM = 1,
+    SKY_QUALITY_HIGH = 2
+}
+
+/** com.massifmaps.components.SkyType / MSFSkyType */
+export enum SkyType {
+    SKY_TYPE_GRADIENT = 0,
+    SKY_TYPE_ATMOSPHERE = 1
+}
+
+/** com.massifmaps.components.TerrainFlattenMode / MSFTerrainFlattenMode */
+export enum TerrainFlattenMode {
+    TERRAIN_FLATTEN_MODE_RENDER = 0,
+    TERRAIN_FLATTEN_MODE_FULL = 1
+}
+
 /** com.massifmaps.vectortiles.TileFormat / MSFTileFormat */
 export enum TileFormat {
     TILE_FORMAT_AUTO = 0,
     TILE_FORMAT_MVT = 1,
     TILE_FORMAT_MLT = 2
+}
+
+/** com.massifmaps.components.TileLODProfile / MSFTileLODProfile */
+export enum TileLODProfile {
+    TILE_LOD_PROFILE_REFERENCE = 0,
+    TILE_LOD_PROFILE_MOBILE = 1,
+    TILE_LOD_PROFILE_DESKTOP = 2
 }
 
 /** com.massifmaps.core.VariantType / MSFVariantType */

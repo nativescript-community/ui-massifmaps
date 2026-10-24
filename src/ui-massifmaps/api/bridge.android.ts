@@ -144,6 +144,11 @@ export const bridge: NativeBridge = {
 
     // One overloaded Java method; the runtime picks by the proxy's own class, so each of these
     // has to be handed a concrete native object - never null, which would be ambiguous.
+    nativeViewHandles(mapView) {
+        const id: string = mapView.getMapId();
+        const map = MassifApi.findObject('map', id);
+        return map ? { id, map, view: MassifApi.findObject('view', id), layers: MassifApi.findObject('layers', id) } : null;
+    },
     adoptOptions: (kind, id, options) => MassifInterop.adopt(kind, id, options),
     adoptLayer: (kind, id, layer) => MassifInterop.adopt(kind, id, layer),
     adoptLayers: (kind, id, layers) => MassifInterop.adopt(kind, id, layers),
@@ -155,8 +160,8 @@ export const bridge: NativeBridge = {
     getNativeLayerByHandle: (handle) => MassifInterop.getLayerByHandle(handle),
     getNativeSourceByHandle: (handle) => MassifInterop.getSourceByHandle(handle),
 
-    attachMapEvents(mapView, handle) {
-        mapView.setMapEventListener(MassifInterop.createEventBridge(handle, mapView.getMapEventListener()));
+    attachMapEvents() {
+        // The native view installs its event bridge when it is created.
     },
     attachVectorTileEvents: (handle) => MassifInterop.attachVectorTileEvents(handle),
     attachVectorElementEvents: (handle) => MassifInterop.attachVectorElementEvents(handle),

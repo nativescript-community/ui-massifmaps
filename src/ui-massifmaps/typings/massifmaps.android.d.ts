@@ -25,6 +25,7 @@ declare namespace com {
                 public static ACTION: com.massifmaps.api.MassifObject.Key<string>;
                 public static ADDRESS: com.massifmaps.api.MassifObject.Key<string>;
                 public static ALTITUDE: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static ALWAYS_DECODE: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static AMBIENT_COLOR: com.massifmaps.api.MassifObject.Key<java.lang.Integer>;
                 public static AMBIENT_INTENSITY: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static AMBIENT_LIGHT_COLOR: com.massifmaps.api.MassifObject.Key<java.lang.Integer>;
@@ -33,20 +34,28 @@ declare namespace com {
                 public static ANCHOR_SCREEN_POS: com.massifmaps.api.MassifObject.Key<string>;
                 public static ANGULAR_SIZE: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static ANIMATED_CLUSTERS: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
-                public static ANIMATION_DURATION: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static ANIMATION_POSITION: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static ANIMATION_STARTED: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static ANIMATION_STYLE: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
                 public static ARRAY_SIZE: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static ASPECT_RATIO: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static ASSET_NAMES: com.massifmaps.api.MassifObject.Key<string>;
                 public static ASSET_PACKAGE: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
+                public static ATMOSPHERE_COLOR: com.massifmaps.api.MassifObject.Key<java.lang.Integer>;
+                public static ATMOSPHERE_LUMINANCE: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static ATMOSPHERE_SUN_INTENSITY: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static ATTACH_ANCHOR_POINT_X: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static ATTACH_ANCHOR_POINT_Y: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static AUTO_FLATTEN_DURATION: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static AUTO_FLATTEN_PARALLAX: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static AUTO_FLATTEN_RISE_DURATION: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static AUTO_FLATTEN_TILT: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static AUTOCOMPLETE: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static AZIMUTH: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static B: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static BACKGROUND_BITMAP: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
                 public static BACKGROUND_COLOR: com.massifmaps.api.MassifObject.Key<java.lang.Integer>;
+                public static BACKGROUND_RADIUS: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static BALLOON_POPUP_EVENT_LISTENER: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
                 public static BASE_BILLBOARD: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
                 public static BASE_INTERVAL: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
@@ -57,6 +66,7 @@ declare namespace com {
                 public static BIG_ENDIAN: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static BILLBOARD_OCCLUSION_ENABLED: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static BILLBOARD_OCCLUSION_TOLERANCE: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static BILLBOARDS_UNDER_LABELS: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static BITMAP: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
                 public static BITMAP_SCALE: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static BOOL: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
@@ -65,6 +75,7 @@ declare namespace com {
                 public static BOTTOM: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static BOUNDS: com.massifmaps.api.MassifObject.Key<string>;
                 public static BREAK_LINES: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
+                public static BRIDGES3_DENABLED: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static BUILDING_RENDER_ORDER: com.massifmaps.api.MassifObject.Key<string>;
                 public static BUTTON: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
                 public static BUTTON_MARGINS: com.massifmaps.api.MassifObject.Key<string>;
@@ -74,23 +85,28 @@ declare namespace com {
                 public static CAMERA_CHANGED: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static CAMERA_CLAMP_DURATION: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static CAMERA_CLEARANCE: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static CAMERA_CLEARANCE_FRACTION: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static CAMERA_POS: com.massifmaps.api.MassifObject.Key<string>;
                 public static CAPACITY: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static CARTO_CSS: com.massifmaps.api.MassifObject.Key<string>;
                 public static CARTO_CSSSTYLE: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
                 public static CATEGORIES: com.massifmaps.api.MassifObject.Key<string>;
                 public static CAUSES_OVERLAP: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static CELESTIAL_EVENT_LISTENER: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
+                public static CELESTIAL_OBJECT: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
                 public static CENTER: com.massifmaps.api.MassifObject.Key<string>;
                 public static CENTER_POS: com.massifmaps.api.MassifObject.Key<string>;
                 public static CLEAR_COLOR: com.massifmaps.api.MassifObject.Key<java.lang.Integer>;
                 public static CLICK_HANDLER_LAYER_FILTER: com.massifmaps.api.MassifObject.Key<string>;
                 public static CLICK_INFO: com.massifmaps.api.MassifObject.Key<string>;
+                public static CLICK_MOVING_TOLERANCE: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static CLICK_POS: com.massifmaps.api.MassifObject.Key<string>;
                 public static CLICK_RADIUS: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static CLICK_SIZE: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static CLICK_TYPE: com.massifmaps.api.MassifObject.Key<string>;
                 public static CLICK_TYPE_DETECTION: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static CLICK_WIDTH: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static CLICKABLE: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static CLUSTER_ELEMENT_BUILDER: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
                 public static COLOR: com.massifmaps.api.MassifObject.Key<java.lang.Integer>;
                 public static COLOR_FORMAT: com.massifmaps.api.MassifObject.Key<string>;
@@ -111,6 +127,9 @@ declare namespace com {
                 public static DATA: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
                 public static DATA_EXTENT: com.massifmaps.api.MassifObject.Key<string>;
                 public static DATA_SOURCE: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
+                public static DAY_CYCLE_LIGHT_STOPS: com.massifmaps.api.MassifObject.Key<string>;
+                public static DAY_CYCLE_LIGHTS_ENABLED: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
+                public static DAY_CYCLE_RISING_LIGHT_STOPS: com.massifmaps.api.MassifObject.Key<string>;
                 public static DEBUG_TILE_BORDERS: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static DEFAULT_LAYER_BUFFER: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static DELTA: com.massifmaps.api.MassifObject.Key<string>;
@@ -122,25 +141,28 @@ declare namespace com {
                 public static DESCRIPTION_FONT_SIZE: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static DESCRIPTION_MARGINS: com.massifmaps.api.MassifObject.Key<string>;
                 public static DESCRIPTION_WRAP: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
+                public static DETAIL_ZOOM: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static DIR_PATH: com.massifmaps.api.MassifObject.Key<string>;
                 public static DIRECTION_ANCHORED: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static DISTANCE: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static DOUBLE: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static DOUBLE_CLICK_DETECTION: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static DOUBLE_CLICK_MAX_DURATION: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static DRAPE_CACHE_SIZE: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static DRAPE_FILLS_ENABLED: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static DRAPE_LINES_ENABLED: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static DRAPE_RESOLUTION: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
+                public static DRAPE_WORKING_SET: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static DRAW_DISTANCE: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static DURATION: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static EDGE_INDEX: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static ELEMENT_CLICK_POS: com.massifmaps.api.MassifObject.Key<string>;
                 public static ELEMENT_INFO: com.massifmaps.api.MassifObject.Key<string>;
                 public static ELEMENTS: com.massifmaps.api.MassifObject.Key<string>;
+                public static ELEVATION_CACHE_SIZE: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static ELEVATION_ENCODING_ENABLED: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static ELEVATION_PREFETCH_ENABLED: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static ENABLED: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
-                public static ENCODING: com.massifmaps.api.MassifObject.Key<string>;
                 public static ENVELOPE_THREAD_POOL_SIZE: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static EXAGERATE_HEIGHT_SCALE_ENABLED: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static EXAGGERATION: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
@@ -155,11 +177,15 @@ declare namespace com {
                 public static FEATURE_LAYER_NAME: com.massifmaps.api.MassifObject.Key<string>;
                 public static FEATURE_POS: com.massifmaps.api.MassifObject.Key<string>;
                 public static FEATURE_POS_INDEX: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
-                public static FIELD_OF_VIEW_Y: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
+                public static FIELD_OF_VIEW_Y: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static FILTER_EXPRESSION: com.massifmaps.api.MassifObject.Key<string>;
+                public static FLATTEN_MODE: com.massifmaps.api.MassifObject.Key<string>;
+                public static FLATTEN_RATIO: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static FLATTENED: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static FLIGHT_ACTIVE: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static FLIGHT_PROGRESS: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static FLIPPABLE: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
+                public static FOCUS_LIFT: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static FOCUS_POINT_OFFSET: com.massifmaps.api.MassifObject.Key<string>;
                 public static FOCUS_POS: com.massifmaps.api.MassifObject.Key<string>;
                 public static FOG_OPTIONS: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
@@ -167,18 +193,21 @@ declare namespace com {
                 public static FONT_NAME: com.massifmaps.api.MassifObject.Key<string>;
                 public static FONT_SIZE: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static FRAGMENT_SHADER: com.massifmaps.api.MassifObject.Key<string>;
-                public static FRAME_COUNT: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static FRAME_NR: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
+                public static FRAME_TIMESTAMPS: com.massifmaps.api.MassifObject.Key<string>;
                 public static FREE_ROAM_LOOK_SENSITIVITY: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static FREE_ROAM_MODE: com.massifmaps.api.MassifObject.Key<string>;
                 public static FREE_ROAM_MOVE_SPEED: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static G: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
+                public static GEO_JSON: com.massifmaps.api.MassifObject.Key<string>;
                 public static GEOMETRY: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
                 public static GEOMETRY_COUNT: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static GEOMETRY_GEO_JSON: com.massifmaps.api.MassifObject.Key<string>;
                 public static GEOMETRY_SIMPLIFIER: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
                 public static GEOMETRY_TAG: com.massifmaps.api.MassifObject.Key<string>;
                 public static GROUND_COLOR: com.massifmaps.api.MassifObject.Key<java.lang.Integer>;
+                public static HALO_COLOR: com.massifmaps.api.MassifObject.Key<java.lang.Integer>;
+                public static HALO_WIDTH: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static HEIGHT: com.massifmaps.api.MassifObject.Key<string>;
                 public static HEIGHT_SCALE: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static HIDE_IF_OVERLAPPED: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
@@ -186,7 +215,6 @@ declare namespace com {
                 public static HIGHLIGHT_COLOR: com.massifmaps.api.MassifObject.Key<java.lang.Integer>;
                 public static HILLSHADE_METHOD: com.massifmaps.api.MassifObject.Key<string>;
                 public static HOLES: com.massifmaps.api.MassifObject.Key<string>;
-                public static HORIZON_ANGLE: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static HORIZON_BLEND: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static HORIZON_COLOR: com.massifmaps.api.MassifObject.Key<java.lang.Integer>;
                 public static HORIZONTAL_OFFSET: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
@@ -197,14 +225,18 @@ declare namespace com {
                 public static INSTRUCTION: com.massifmaps.api.MassifObject.Key<string>;
                 public static INSTRUCTION_COUNT: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static INSTRUCTIONS: com.massifmaps.api.MassifObject.Key<string>;
+                public static INSTRUCTIONS_JSON: com.massifmaps.api.MassifObject.Key<string>;
                 public static INTERPOLATED_COLOR: com.massifmaps.api.MassifObject.Key<java.lang.Integer>;
                 public static KINETIC_PAN: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static KINETIC_ROTATION: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static KINETIC_ZOOM: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static LABEL_BLENDING_SPEED: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static LABEL_INTERVAL: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static LABEL_PADDING: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static LABEL_PERSPECTIVE_SCALING: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static LABEL_RENDER_ORDER: com.massifmaps.api.MassifObject.Key<string>;
                 public static LABEL_STUBS_ENABLED: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
+                public static LABEL_VIEW_DISTANCE: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static LANGUAGE: com.massifmaps.api.MassifObject.Key<string>;
                 public static LAYER: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
                 public static LAYER_BLENDING_SPEED: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
@@ -231,9 +263,11 @@ declare namespace com {
                 public static LOG_EVENT_LISTENER: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
                 public static LONG: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static LONG_CLICK_DURATION: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static LUMINANCE_ALPHA: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static MAIN_LIGHT_COLOR: com.massifmaps.api.MassifObject.Key<java.lang.Integer>;
                 public static MAIN_LIGHT_DIRECTION: com.massifmaps.api.MassifObject.Key<string>;
                 public static MAP_POS: com.massifmaps.api.MassifObject.Key<string>;
+                public static MAP_RENDERER: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
                 public static MAP_RENDERER_LISTENER: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
                 public static MAP_TILE: com.massifmaps.api.MassifObject.Key<string>;
                 public static MATCHING_EDGES: com.massifmaps.api.MassifObject.Key<string>;
@@ -241,6 +275,8 @@ declare namespace com {
                 public static MAX: com.massifmaps.api.MassifObject.Key<string>;
                 public static MAX_AGE: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static MAX_AGE_HEADER_CHECK: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
+                public static MAX_DETAIL_LEVELS: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
+                public static MAX_FEATURES: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static MAX_OVERZOOM_LEVEL: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static MAX_RESULTS: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static MAX_TILE_ZOOM_COARSENING: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
@@ -249,6 +285,7 @@ declare namespace com {
                 public static MAX_ZOOM: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static MAX_ZOOM_LEVEL: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static MAXIMUM_CLUSTER_ZOOM: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static MESH_CACHE_SIZE: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static MESH_RESOLUTION: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static META_DATA: com.massifmaps.api.MassifObject.Key<string>;
                 public static META_INFO: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
@@ -257,26 +294,36 @@ declare namespace com {
                 public static MIN_VISIBLE_ZOOM: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static MIN_ZOOM: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static MINIMUM_CLUSTER_DISTANCE: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static MODEL_ANIMATIONS_ENABLED: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static MODEL_ASSET: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
+                public static MODEL_SHADOWS_ENABLED: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static NAME: com.massifmaps.api.MassifObject.Key<string>;
                 public static NEAR: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static NEAREST_COLOR: com.massifmaps.api.MassifObject.Key<java.lang.Integer>;
                 public static NEIGHBOURHOOD: com.massifmaps.api.MassifObject.Key<string>;
                 public static NO_DRAPE_LAYER_FILTER: com.massifmaps.api.MassifObject.Key<string>;
                 public static NORMAL_MAP_LIGHTING_SHADER: com.massifmaps.api.MassifObject.Key<string>;
+                public static NORMAL_SAMPLE_DISTANCE: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static NORMALIZED: com.massifmaps.api.MassifObject.Key<string>;
                 public static OBJECT_KEYS: com.massifmaps.api.MassifObject.Key<string>;
+                public static OCCLUDED_BY_MAP: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
+                public static OFFSET_X: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static OFFSET_Y: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static OPACITY: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static OPEN: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
+                public static ORBIT_AROUND_PIVOT: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static ORIENTATION_MODE: com.massifmaps.api.MassifObject.Key<string>;
                 public static PACKAGE_ID: com.massifmaps.api.MassifObject.Key<string>;
                 public static PACKAGE_MANAGER: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
                 public static PACKAGE_MANAGER_LISTENER: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
                 public static PACKAGE_TYPE: com.massifmaps.api.MassifObject.Key<string>;
+                public static PADDING_X: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static PADDING_Y: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static PAN_ACTION: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static PAN_BOUNDS: com.massifmaps.api.MassifObject.Key<string>;
                 public static PANNING_MODE: com.massifmaps.api.MassifObject.Key<string>;
                 public static PANNING_SPEED_MODE: com.massifmaps.api.MassifObject.Key<string>;
+                public static PARAMS: com.massifmaps.api.MassifObject.Key<string>;
                 public static PAUSED: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static PHASE_IN_DURATION: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static PHASE_OUT_DURATION: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
@@ -293,22 +340,31 @@ declare namespace com {
                 public static POSES: com.massifmaps.api.MassifObject.Key<string>;
                 public static POSITION: com.massifmaps.api.MassifObject.Key<string>;
                 public static POSITION_ALTITUDE: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static POST_PROCESS_DOWNSCALE: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
+                public static POST_PROCESS_EFFECT: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
                 public static POST_PROCESSED: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static POSTCODE: com.massifmaps.api.MassifObject.Key<string>;
+                public static PREFETCH_BUDGET: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
+                public static PREFETCH_FRAMES: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static PRELOADING: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
+                public static PRELOADING_TILE_COUNT: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static PREVENT_DUPLICATES: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static PROFILE: com.massifmaps.api.MassifObject.Key<string>;
                 public static PROGRESS: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static PROJECTION: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
                 public static PROPERTIES: com.massifmaps.api.MassifObject.Key<string>;
+                public static QUALITY: com.massifmaps.api.MassifObject.Key<string>;
                 public static QUERY: com.massifmaps.api.MassifObject.Key<string>;
                 public static R: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static RADIUS: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static RANGE_END: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static RANGE_START: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static RANK: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static RANK_PROPERTY: com.massifmaps.api.MassifObject.Key<string>;
                 public static RASTER_TILE_EVENT_LISTENER: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
+                public static RAW_PIXELS: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static RAW_RESULT: com.massifmaps.api.MassifObject.Key<string>;
+                public static REASON: com.massifmaps.api.MassifObject.Key<string>;
                 public static REGEX_FILTER: com.massifmaps.api.MassifObject.Key<string>;
                 public static REGION: com.massifmaps.api.MassifObject.Key<string>;
                 public static RELATIVE_SPEED: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
@@ -329,6 +385,7 @@ declare namespace com {
                 public static ROTATION: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static ROTATION_ANGLE: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static ROTATION_AXIS: com.massifmaps.api.MassifObject.Key<string>;
+                public static ROTATION_GESTURES: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static SCALE: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static SCALE_WITH_DPI: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static SCALING_MODE: com.massifmaps.api.MassifObject.Key<string>;
@@ -346,23 +403,25 @@ declare namespace com {
                 public static SERVER_PACKAGE_LIST_AGE: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static SERVER_PACKAGE_LIST_META_INFO: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
                 public static SERVER_PACKAGES: com.massifmaps.api.MassifObject.Key<string>;
+                public static SHADER_PARAMETERS: com.massifmaps.api.MassifObject.Key<string>;
                 public static SHADER_SOURCE: com.massifmaps.api.MassifObject.Key<string>;
                 public static SHADOW_BIAS: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static SHADOW_CASCADES: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static SHADOW_CASTER_MARGIN: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static SHADOW_COLOR: com.massifmaps.api.MassifObject.Key<java.lang.Integer>;
                 public static SHADOW_DISTANCE: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static SHADOW_FOLLOWS_BUILDING_HEIGHT: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static SHADOW_MAP_SIZE: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static SHADOW_NORMAL_OFFSET: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static SHADOW_SOFTNESS: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static SHADOW_STRENGTH: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static SHARED_GROUND_ENABLED: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static SHOW_DEBUG: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static SHOW_ERROR: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static SHOW_INFO: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static SHOW_WARN: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static SIDE_COLOR: com.massifmaps.api.MassifObject.Key<java.lang.Integer>;
                 public static SIMPLIFY_TOLERANCE: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
-                public static SINGLE_PASS_RENDERING_ENABLED: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static SIZE: com.massifmaps.api.MassifObject.Key<string>;
                 public static SIZE_ANIMATION_TYPE: com.massifmaps.api.MassifObject.Key<string>;
                 public static SKY_COLOR: com.massifmaps.api.MassifObject.Key<java.lang.Integer>;
@@ -384,22 +443,27 @@ declare namespace com {
                 public static STYLE_LAYER_NAMES: com.massifmaps.api.MassifObject.Key<string>;
                 public static STYLE_NAME: com.massifmaps.api.MassifObject.Key<string>;
                 public static STYLE_PARAMETERS: com.massifmaps.api.MassifObject.Key<string>;
-                public static STYLE_SET: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
+                public static SUBDIVIDE_DISTANCE: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static SUBDOMAINS: com.massifmaps.api.MassifObject.Key<string>;
                 public static SUN_ALTITUDE: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static SUN_AZIMUTH: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static SUN_COLOR: com.massifmaps.api.MassifObject.Key<java.lang.Integer>;
                 public static SUN_DISC_ENABLED: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static SUN_INTENSITY: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static SUN_OVERRIDING_STYLE: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
+                public static SURFACE_NODE_RESOLUTION: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static SURFACE_SHADER_SOURCE: com.massifmaps.api.MassifObject.Key<string>;
+                public static SWITCHING: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static SYNCHRONIZED_REFRESH: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static TAG: com.massifmaps.api.MassifObject.Key<string>;
                 public static TARGET_PROJECTION: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
                 public static TERRAIN_DEPTH_REQUIRED: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static TERRAIN_LIGHTING_ENABLED: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
+                public static TERRAIN_NORMALS_REQUIRED: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static TERRAIN_OPTIONS: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
                 public static TERRAIN_PAINT_ENABLED: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static TERRAIN_PAINT_FULL_DETAIL_ENABLED: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
+                public static TERRAIN_SHADOW_CASTING_ENABLED: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static TEXT: com.massifmaps.api.MassifObject.Key<string>;
                 public static TEXT_COLOR: com.massifmaps.api.MassifObject.Key<java.lang.Integer>;
                 public static TEXT_FIELD: com.massifmaps.api.MassifObject.Key<string>;
@@ -408,8 +472,10 @@ declare namespace com {
                 public static TEXT_MARGINS: com.massifmaps.api.MassifObject.Key<string>;
                 public static TEXT_OCCLUSION_OPACITY: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static TEXTURE_CACHE_CAPACITY: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
+                public static TILE: com.massifmaps.api.MassifObject.Key<string>;
                 public static TILE_BLENDING_SPEED: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static TILE_CACHE_CAPACITY: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
+                public static TILE_COUNT: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static TILE_DECODER: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
                 public static TILE_DRAW_SIZE: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static TILE_EDGE_STITCHING_ENABLED: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
@@ -417,9 +483,11 @@ declare namespace com {
                 public static TILE_FORMAT: com.massifmaps.api.MassifObject.Key<string>;
                 public static TILE_ID: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static TILE_LODFACTOR: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
-                public static TILE_LODFORESHORTENING_LIMIT: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static TILE_LODMAX_ZOOM_LEVELS_ON_SCREEN: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static TILE_LODTILE_COUNT_RATIO: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static TILE_LOAD_LISTENER: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
                 public static TILE_MASK: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
+                public static TILE_STYLE_ZOOM_LIFT: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static TILE_SUBSTITUTION_POLICY: com.massifmaps.api.MassifObject.Key<string>;
                 public static TILE_THREAD_POOL_SIZE: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static TILT: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
@@ -454,10 +522,14 @@ declare namespace com {
                 public static VECTOR_TILE_EVENT_LISTENER: com.massifmaps.api.MassifObject.Key<com.massifmaps.api.MassifObject>;
                 public static VERSION: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static VERTICAL_OFFSET: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static VERTICAL_RANGE_END: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static VERTICAL_RANGE_START: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static VIEW_DISTANCE: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static VIEW_DISTANCE_FACTOR: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static VIEW_DISTANCE_MAX: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static VIEW_STATE: com.massifmaps.api.MassifObject.Key<string>;
                 public static VISIBLE: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
+                public static VISIBLE_TILE_COUNT: com.massifmaps.api.MassifObject.Key<java.lang.Long>;
                 public static VISIBLE_ZOOM_RANGE: com.massifmaps.api.MassifObject.Key<string>;
                 public static WIDTH: com.massifmaps.api.MassifObject.Key<string>;
                 public static X: com.massifmaps.api.MassifObject.Key<string>;
@@ -468,43 +540,98 @@ declare namespace com {
                 public static ZOOM_ACTION: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static ZOOM_GESTURES: com.massifmaps.api.MassifObject.Key<java.lang.Boolean>;
                 public static ZOOM_LEVEL_BIAS: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
+                public static ZOOM_OFFSET: com.massifmaps.api.MassifObject.Key<java.lang.Double>;
                 public static ZOOM_RANGE: com.massifmaps.api.MassifObject.Key<string>;
                 public static METHOD_ADD: string = "add";
+                public static METHOD_ADD_DATA_SOURCE: string = "addDataSource";
+                public static METHOD_ADD_EXTERNAL_DATA_SOURCE: string = "addExternalDataSource";
+                public static METHOD_ADD_FALLBACK_FONT: string = "addFallbackFont";
+                public static METHOD_ADD_FEATURE: string = "addFeature";
+                public static METHOD_ADD_LOCALE: string = "addLocale";
+                public static METHOD_ADD_VECTOR_DATA_SOURCE: string = "addVectorDataSource";
+                public static METHOD_BUILD_ARROW: string = "buildArrow";
+                public static METHOD_BUILD_ARROW_AT_INDEX: string = "buildArrowAtIndex";
+                public static METHOD_CALCULATE_ADDRESSES: string = "calculateAddresses";
+                public static METHOD_CALCULATE_HORIZON: string = "calculateHorizon";
                 public static METHOD_CALCULATE_ROUTE: string = "calculateRoute";
+                public static METHOD_CANCEL_ALL_TASKS: string = "cancelAllTasks";
                 public static METHOD_CLEAR: string = "clear";
+                public static METHOD_CLEAR_ALL_CACHES: string = "clearAllCaches";
+                public static METHOD_CLEAR_MODEL_HIGHLIGHT: string = "clearModelHighlight";
+                public static METHOD_CLEAR_PRELOADING_CACHES: string = "clearPreloadingCaches";
                 public static METHOD_CLEAR_TILE_CACHES: string = "clearTileCaches";
                 public static METHOD_CREATE_LAYER: string = "createLayer";
                 public static METHOD_DELETE_LAYER: string = "deleteLayer";
                 public static METHOD_FIND_FEATURES: string = "findFeatures";
                 public static METHOD_FIT_BOUNDS: string = "fitBounds";
                 public static METHOD_FLY_TO: string = "flyTo";
+                public static METHOD_GET: string = "get";
                 public static METHOD_GET_ELEVATION: string = "getElevation";
                 public static METHOD_GET_ELEVATIONS: string = "getElevations";
+                public static METHOD_GET_EXTERNAL_CHILD_LAYER: string = "getExternalChildLayer";
+                public static METHOD_GET_EXTERNAL_DATA_SOURCE_NAMES: string = "getExternalDataSourceNames";
                 public static METHOD_GET_FEATURE: string = "getFeature";
                 public static METHOD_GET_INSTRUCTION: string = "getInstruction";
+                public static METHOD_GET_LEGEND: string = "getLegend";
+                public static METHOD_GET_META_DATA_ELEMENT: string = "getMetaDataElement";
                 public static METHOD_GET_POINTS: string = "getPoints";
                 public static METHOD_GET_STYLE_PARAMETER: string = "getStyleParameter";
+                public static METHOD_INSERT: string = "insert";
                 public static METHOD_LOAD_TILE: string = "loadTile";
                 public static METHOD_MAP_TO_SCREEN: string = "mapToScreen";
+                public static METHOD_MATCH_ROUTE: string = "matchRoute";
+                public static METHOD_MOVE_CAMERA_TO: string = "moveCameraTo";
                 public static METHOD_MOVE_TO: string = "moveTo";
                 public static METHOD_REFRESH: string = "refresh";
                 public static METHOD_REMOVE: string = "remove";
+                public static METHOD_REMOVE_EXTERNAL_DATA_SOURCE: string = "removeExternalDataSource";
+                public static METHOD_REMOVE_FEATURE: string = "removeFeature";
                 public static METHOD_SCREEN_TO_MAP: string = "screenToMap";
+                public static METHOD_SET: string = "set";
+                public static METHOD_SET_ANCHOR_POINT: string = "setAnchorPoint";
+                public static METHOD_SET_ANCHORS: string = "setAnchors";
+                public static METHOD_SET_CIRCLE: string = "setCircle";
+                public static METHOD_SET_CONFIGURATION_PARAMETER: string = "setConfigurationParameter";
                 public static METHOD_SET_CUSTOM_PARAMETER: string = "setCustomParameter";
+                public static METHOD_SET_DIRECTION: string = "setDirection";
+                public static METHOD_SET_DIRECTIONS: string = "setDirections";
+                public static METHOD_SET_EXTERNAL_DATA_SOURCE_MAX_OVERZOOM_LEVEL: string = "setExternalDataSourceMaxOverzoomLevel";
+                public static METHOD_SET_EXTERNAL_DATA_SOURCE_ZOOM_LEVEL_BIAS: string = "setExternalDataSourceZoomLevelBias";
+                public static METHOD_SET_FLOAT_PARAMETER: string = "setFloatParameter";
                 public static METHOD_SET_LAYER_GEO_JSON: string = "setLayerGeoJSON";
+                public static METHOD_SET_META_DATA_ELEMENT: string = "setMetaDataElement";
+                public static METHOD_SET_MODEL_HIGHLIGHT: string = "setModelHighlight";
+                public static METHOD_SET_OFFSET: string = "setOffset";
+                public static METHOD_SET_POSITION: string = "setPosition";
+                public static METHOD_SET_SEGMENTS: string = "setSegments";
                 public static METHOD_SET_STYLE_PARAMETER: string = "setStyleParameter";
+                public static METHOD_SET_STYLE_PARAMETERS: string = "setStyleParameters";
+                public static METHOD_SET_SUN_POSITION_FROM_TIME: string = "setSunPositionFromTime";
+                public static METHOD_SET_SURFACE_PARAMETER: string = "setSurfaceParameter";
+                public static METHOD_START_DOWNLOAD_AREA: string = "startDownloadArea";
+                public static METHOD_STOP_ALL_DOWNLOADS: string = "stopAllDownloads";
                 public static METHOD_STOP_FLIGHT: string = "stopFlight";
+                public static METHOD_UPDATE_FEATURE: string = "updateFeature";
+                public static EVENT_CELESTIAL_CLICKED: string = "celestial.clicked";
+                public static EVENT_DOWNLOAD_COMPLETED: string = "download.completed";
+                public static EVENT_DOWNLOAD_FAILED: string = "download.failed";
+                public static EVENT_DOWNLOAD_PROGRESS: string = "download.progress";
+                public static EVENT_DOWNLOAD_STARTED: string = "download.started";
                 public static EVENT_MAP_CLICKED: string = "map.clicked";
                 public static EVENT_MAP_IDLE: string = "map.idle";
                 public static EVENT_MAP_INTERACTION: string = "map.interaction";
                 public static EVENT_MAP_MOVED: string = "map.moved";
                 public static EVENT_MAP_STABLE: string = "map.stable";
+                public static EVENT_SKY_CLICKED: string = "sky.clicked";
                 public static EVENT_VECTORELEMENT_CLICKED: string = "vectorelement.clicked";
                 public static EVENT_VECTORTILE_CLICKED: string = "vectortile.clicked";
                 public static KIND_ASSETS: string = "assets";
+                public static KIND_CELESTIAL: string = "celestial";
+                public static KIND_EFFECT: string = "effect";
                 public static KIND_ELEMENT: string = "element";
                 public static KIND_ELEMENTSTYLE: string = "elementstyle";
                 public static KIND_FEATURE: string = "feature";
+                public static KIND_GEOCODING: string = "geocoding";
                 public static KIND_GEOMETRY: string = "geometry";
                 public static KIND_LAYER: string = "layer";
                 public static KIND_OPTIONS: string = "options";
@@ -516,13 +643,34 @@ declare namespace com {
                 public static TYPE_ASSETS_BUNDLE: string = "bundle";
                 public static TYPE_ASSETS_DIR: string = "dir";
                 public static TYPE_ASSETS_ZIP: string = "zip";
+                public static TYPE_CELESTIAL_ARC: string = "arc";
+                public static TYPE_CELESTIAL_IMAGE: string = "image";
+                public static TYPE_CELESTIAL_LABEL: string = "label";
+                public static TYPE_CELESTIAL_SPRITE: string = "sprite";
+                public static TYPE_EFFECT_POSTPROCESS: string = "postprocess";
                 public static TYPE_ELEMENT_BALLOON: string = "balloon";
+                public static TYPE_ELEMENT_LINE: string = "line";
                 public static TYPE_ELEMENT_MARKER: string = "marker";
+                public static TYPE_ELEMENT_POINT: string = "point";
+                public static TYPE_ELEMENT_POLYGON: string = "polygon";
+                public static TYPE_ELEMENT_TEXT: string = "text";
                 public static TYPE_ELEMENTSTYLE_BALLOON: string = "balloon";
+                public static TYPE_ELEMENTSTYLE_LINE: string = "line";
                 public static TYPE_ELEMENTSTYLE_MARKER: string = "marker";
+                public static TYPE_ELEMENTSTYLE_POINT: string = "point";
+                public static TYPE_ELEMENTSTYLE_POLYGON: string = "polygon";
+                public static TYPE_ELEMENTSTYLE_TEXT: string = "text";
                 public static TYPE_FEATURE_FEATURE: string = "feature";
+                public static TYPE_GEOCODING_MULTI_OSM_OFFLINE: string = "multi-osm-offline";
+                public static TYPE_GEOCODING_MULTI_OSM_OFFLINE_REVERSE: string = "multi-osm-offline-reverse";
+                public static TYPE_GEOMETRY_LINE: string = "line";
+                public static TYPE_GEOMETRY_MANEUVER_ARROW: string = "maneuver-arrow";
                 public static TYPE_GEOMETRY_POINT: string = "point";
+                public static TYPE_GEOMETRY_POLYGON: string = "polygon";
+                public static TYPE_LAYER_ANIMATED_RASTER: string = "animated-raster";
+                public static TYPE_LAYER_CELESTIAL: string = "celestial";
                 public static TYPE_LAYER_COMPOSITE_VECTOR: string = "composite-vector";
+                public static TYPE_LAYER_CUSTOM_RASTER: string = "custom-raster";
                 public static TYPE_LAYER_ELEMENTS: string = "elements";
                 public static TYPE_LAYER_HILLSHADE: string = "hillshade";
                 public static TYPE_LAYER_RASTER: string = "raster";
@@ -532,20 +680,26 @@ declare namespace com {
                 public static TYPE_OPTIONS_LIGHT: string = "light";
                 public static TYPE_OPTIONS_SKY: string = "sky";
                 public static TYPE_OPTIONS_TERRAIN: string = "terrain";
+                public static TYPE_ROUTING_MULTI_VALHALLA_OFFLINE: string = "multi-valhalla-offline";
                 public static TYPE_ROUTING_VALHALLA_OFFLINE: string = "valhalla-offline";
                 public static TYPE_ROUTING_VALHALLA_ONLINE: string = "valhalla-online";
                 public static TYPE_SEARCH_REQUEST: string = "request";
                 public static TYPE_SEARCH_VECTORTILE: string = "vectortile";
                 public static TYPE_SOURCE_ASSETS: string = "assets";
                 public static TYPE_SOURCE_COMBINED: string = "combined";
+                public static TYPE_SOURCE_CONTOUR: string = "contour";
                 public static TYPE_SOURCE_GEOJSON: string = "geojson";
                 public static TYPE_SOURCE_HTTP: string = "http";
                 public static TYPE_SOURCE_LOCAL: string = "local";
+                public static TYPE_SOURCE_MAPTILER: string = "maptiler";
                 public static TYPE_SOURCE_MBTILES: string = "mbtiles";
                 public static TYPE_SOURCE_MEMORY_CACHE: string = "memory-cache";
+                public static TYPE_SOURCE_MERGED_MBVT: string = "merged-mbvt";
                 public static TYPE_SOURCE_MULTI: string = "multi";
                 public static TYPE_SOURCE_ORDERED: string = "ordered";
                 public static TYPE_SOURCE_PERSISTENT_CACHE: string = "persistent-cache";
+                public static TYPE_SOURCE_PMTILES: string = "pmtiles";
+                public static TYPE_SOURCE_POINT_DETAIL: string = "point-detail";
                 public static TYPE_STYLE_MBVT: string = "mbvt";
                 public static TYPE_STYLESET_CARTOCSS: string = "cartocss";
                 public static TYPE_STYLESET_PROJECT: string = "project";
@@ -602,6 +756,7 @@ declare namespace com {
                 public mapToScreen(pos: com.massifmaps.api.Position): com.massifmaps.api.ScreenPoint;
                 public fitBounds(bounds: com.massifmaps.api.Bounds, width: number, height: number): com.massifmaps.api.MapCamera;
                 public fitBounds(bounds: com.massifmaps.api.Bounds, screenRect: com.massifmaps.api.ScreenRect, integerZoom: boolean, resetRotation: boolean, resetTilt: boolean): com.massifmaps.api.MapCamera;
+                public eyePosition(): com.massifmaps.api.Position;
                 public screenToMap(x: number, y: number): com.massifmaps.api.Position;
                 public fitBounds(bounds: com.massifmaps.api.Bounds, screenRect: com.massifmaps.api.ScreenRect, integerZoom: boolean): com.massifmaps.api.MapCamera;
                 public zoom(zoom: number): com.massifmaps.api.MapCamera;
@@ -629,6 +784,7 @@ declare namespace com {
                 public static INTERACTION: string = "map.interaction";
                 public static VECTOR_TILE_CLICKED: string = "vectortile.clicked";
                 public static VECTOR_ELEMENT_CLICKED: string = "vectorelement.clicked";
+                public static CELESTIAL_CLICKED: string = "celestial.clicked";
             }
             export namespace MapEvents {
                 export class Click extends com.massifmaps.api.MapEvents.Event {
@@ -676,6 +832,17 @@ declare namespace com {
                     public isRotate(): boolean;
                     public isZoom(): boolean;
                 }
+                export class Move extends com.massifmaps.api.MapEvents.Event {
+                    public static class: java.lang.Class<com.massifmaps.api.MapEvents.Move>;
+                    public reason(): string;
+                    public byUser(): boolean;
+                }
+                export class Reason extends java.lang.Object {
+                    public static class: java.lang.Class<com.massifmaps.api.MapEvents.Reason>;
+                    public static GESTURE: string = "gesture";
+                    public static ANIMATION: string = "animation";
+                    public static API: string = "api";
+                }
                 export class VectorTileClick extends com.massifmaps.api.MapEvents.Event {
                     public static class: java.lang.Class<com.massifmaps.api.MapEvents.VectorTileClick>;
                     public propertyDouble(key: string, defaultValue: number): number;
@@ -709,6 +876,7 @@ declare namespace com {
                 public static source(id: string): com.massifmaps.api.MassifSource;
                 public static destroy(kind: string, id: string): boolean;
                 public static rawSource(id: string): com.massifmaps.datasources.TileDataSource;
+                public static find(kind: string, id: string): com.massifmaps.api.MassifObject;
                 public static style(id: string, spec: com.massifmaps.api.Spec): com.massifmaps.api.MassifObject;
                 public static layer(id: string, spec: com.massifmaps.api.Spec): com.massifmaps.api.MassifLayer;
             }
@@ -729,27 +897,34 @@ declare namespace com {
                 public static setFloat(handle: number, path: string, value: number): number;
                 public static drain(): number;
                 public static getPos(handle: number, path: string, projection: string): string;
-                public static on(handle: number, event: string, listener: com.massifmaps.api.EventListener, consume: boolean, delivery: number, coalesce: boolean): number;
                 public static unregisterObject(kind: string, objectId: string): boolean;
                 public static setBool(handle: number, path: string, value: boolean): number;
                 public static cancelCalls(handle: number): number;
                 public static setInt(handle: number, path: string, value: number): number;
                 public static getDoubles(handle: number): androidNative.Array<number>;
                 public static call(handle: number, method: string, argsJson: string): number;
+                public static on(handle: number, event: string, listener: com.massifmaps.api.EventListener, delivery: number, coalesce: boolean, projection: string): number;
                 public static setUiDispatcher(dispatcher: com.massifmaps.api.UiDispatcher): void;
+                public static on(handle: number, event: string, listener: com.massifmaps.api.EventListener, delivery: number, coalesce: boolean): number;
                 public static getPos(handle: number, path: string): string;
                 public static getData(handle: number, path: string): androidNative.Array<number>;
-                public static on(handle: number, event: string, listener: com.massifmaps.api.EventListener, consume: boolean, delivery: number, coalesce: boolean, projection: string): number;
+                public static on(handle: number, event: string, listener: com.massifmaps.api.EventListener, delivery: number, coalesce: boolean, projection: string, consume: boolean, throttleMs: number): number;
+                public static setAll(handle: number, json: string, projection: string): number;
                 public static setObject(handle: number, path: string, value: number): number;
                 public static getBool(handle: number, path: string, defaultValue: boolean): boolean;
+                public static on(handle: number, event: string, listener: com.massifmaps.api.EventListener, delivery: number, coalesce: boolean, projection: string, consume: boolean): number;
                 public static findObject(kind: string, objectId: string): number;
                 public static create(kind: string, objectId: string, json: string): number;
+                public static setAll(handle: number, json: string): number;
                 public static offEvent(handle: number, event: string): number;
+                public static getObject(handle: number, path: string): number;
                 public static setString(handle: number, path: string, value: string): number;
                 public static getString(handle: number, path: string, defaultValue: string): string;
                 public static offAll(handle: number): number;
+                public static setPos(handle: number, path: string, json: string, projection: string): number;
                 public static isValid(handle: number): boolean;
                 public static getInt(handle: number, path: string, defaultValue: number): number;
+                public static setPos(handle: number, path: string, json: string): number;
                 public static cancelCall(call: number): boolean;
                 public static getFloat(handle: number, path: string, defaultValue: number): number;
             }
@@ -792,16 +967,26 @@ declare namespace com {
             export class MassifInterop extends java.lang.Object {
                 public static class: java.lang.Class<com.massifmaps.api.MassifInterop>;
                 public swigCMemOwn: boolean;
-                public static adopt(kind: string, objectId: string, assets: com.massifmaps.utils.AssetPackage): number;
+                public static getViewByHandle(handle: number): com.massifmaps.ui.BaseMapView;
                 public static adopt(kind: string, objectId: string, layer: com.massifmaps.layers.Layer): number;
-                public static adopt(kind: string, objectId: string, layers: com.massifmaps.components.Layers): number;
+                public static attachVectorElementEvents(handle: number): boolean;
+                public static getLayerByHandle(handle: number): com.massifmaps.layers.Layer;
+                public static getOptionsByHandle(handle: number): com.massifmaps.components.Options;
                 public static getSource(objectId: string): com.massifmaps.datasources.TileDataSource;
+                public static getLayerListByHandle(handle: number): com.massifmaps.components.Layers;
                 public static adopt(kind: string, objectId: string, options: com.massifmaps.components.Options): number;
                 public static adopt(kind: string, objectId: string, source: com.massifmaps.datasources.TileDataSource): number;
-                public static createVectorElementEventBridge(handle: number, chained: com.massifmaps.layers.VectorElementEventListener): com.massifmaps.layers.VectorElementEventListener;
                 public static createEventBridge(handle: number, chained: com.massifmaps.ui.MapEventListener): com.massifmaps.ui.MapEventListener;
+                public static getSourceByHandle(handle: number): com.massifmaps.datasources.TileDataSource;
                 public static createVectorTileEventBridge(handle: number, chained: com.massifmaps.layers.VectorTileEventListener): com.massifmaps.layers.VectorTileEventListener;
+                public static attachCelestialEvents(handle: number): boolean;
+                public static adopt(kind: string, objectId: string, assets: com.massifmaps.utils.AssetPackage): number;
+                public static adopt(kind: string, objectId: string, layers: com.massifmaps.components.Layers): number;
+                public static createVectorElementEventBridge(handle: number, chained: com.massifmaps.layers.VectorElementEventListener): com.massifmaps.layers.VectorElementEventListener;
+                public static adopt(kind: string, objectId: string, vectorSource: com.massifmaps.datasources.VectorDataSource): number;
+                public static attachVectorTileEvents(handle: number): boolean;
                 public static adopt(kind: string, objectId: string, view: com.massifmaps.ui.BaseMapView): number;
+                public static createCelestialEventBridge(handle: number, chained: com.massifmaps.layers.CelestialEventListener): com.massifmaps.layers.CelestialEventListener;
                 public static getLayer(objectId: string): com.massifmaps.layers.Layer;
             }
         }
@@ -835,45 +1020,53 @@ declare namespace com {
         export namespace api {
             export class MassifMap extends java.lang.Object implements java.lang.AutoCloseable {
                 public static class: java.lang.Class<com.massifmaps.api.MassifMap>;
+                public getBool(path: string, defaultValue: boolean): boolean;
                 public sky(spec: com.massifmaps.api.Spec): com.massifmaps.api.PropertyGroup;
                 public layerCount(): number;
                 public source(id: string, spec: com.massifmaps.api.Spec): com.massifmaps.api.MassifSource;
-                public static attach(view: com.massifmaps.ui.MapView): com.massifmaps.api.MassifMap;
                 public offAll(): com.massifmaps.api.MassifMap;
+                public getLong(path: string, defaultValue: number): number;
                 public mapToScreen(pos: com.massifmaps.api.Position): com.massifmaps.api.ScreenPoint;
                 public terrain(): com.massifmaps.api.PropertyGroup;
                 public terrain(spec: com.massifmaps.api.Spec): com.massifmaps.api.PropertyGroup;
                 public onInteraction(handler: com.massifmaps.api.MapEvents.Handler<com.massifmaps.api.MapEvents.Interaction>): com.massifmaps.api.Subscription;
-                public static attach(view: com.massifmaps.ui.MapView, id: string): com.massifmaps.api.MassifMap;
                 public remove(layer: com.massifmaps.api.MassifLayer): com.massifmaps.api.MassifMap;
                 public options(): com.massifmaps.api.MassifObject;
+                public removeLayer(it: string): boolean;
                 public addPopup(spec: com.massifmaps.api.Spec): com.massifmaps.api.MassifObject;
                 public layer(id: string): com.massifmaps.api.MassifLayer;
                 public onClick(handler: com.massifmaps.api.MapEvents.Handler<com.massifmaps.api.MapEvents.Click>): com.massifmaps.api.Subscription;
                 public light(spec: com.massifmaps.api.Spec): com.massifmaps.api.PropertyGroup;
-                public view(): com.massifmaps.ui.MapView;
                 public sky(): com.massifmaps.api.PropertyGroup;
                 public light(): com.massifmaps.api.PropertyGroup;
+                public view(): globalAndroid.view.View;
                 public fog(): com.massifmaps.api.PropertyGroup;
                 public style(id: string, spec: com.massifmaps.api.Spec): com.massifmaps.api.MassifObject;
                 public onIdle(handler: com.massifmaps.api.MapEvents.Handler<com.massifmaps.api.MapEvents.Event>): com.massifmaps.api.Subscription;
+                public set(path: string, value: any): com.massifmaps.api.MassifMap;
                 public close(): void;
                 public addLayer(id: string, spec: com.massifmaps.api.Spec): com.massifmaps.api.MassifLayer;
                 public adoptFirst(this_: string, id: java.lang.Class<any>): com.massifmaps.api.MassifLayer;
-                public onMove(handler: com.massifmaps.api.MapEvents.Handler<com.massifmaps.api.MapEvents.Event>): com.massifmaps.api.Subscription;
+                public apply(values: com.massifmaps.api.Spec): com.massifmaps.api.MassifMap;
                 public elements(sourceSpec: com.massifmaps.api.Spec): com.massifmaps.api.MassifElements;
                 public adoptLayer(id: string, index: number): com.massifmaps.api.MassifLayer;
                 public fog(spec: com.massifmaps.api.Spec): com.massifmaps.api.PropertyGroup;
                 public elements(): com.massifmaps.api.MassifElements;
+                public group(prefix: string): com.massifmaps.api.PropertyGroup;
+                public getString(path: string, defaultValue: string): string;
                 public camera(): com.massifmaps.api.MapCamera;
                 public addMarker(spec: com.massifmaps.api.Spec): com.massifmaps.api.MassifObject;
                 public screenToMap(x: number, y: number): com.massifmaps.api.Position;
+                public onMove(handler: com.massifmaps.api.MapEvents.Handler<com.massifmaps.api.MapEvents.Move>): com.massifmaps.api.Subscription;
                 public add(layer: com.massifmaps.api.MassifLayer): com.massifmaps.api.MassifLayer;
                 public eventProjection(name: string): com.massifmaps.api.MassifMap;
+                public onMove(handler: com.massifmaps.api.MapEvents.Handler<com.massifmaps.api.MapEvents.Move>, throttleMs: number): com.massifmaps.api.Subscription;
                 public object(kind: string, id: string, spec: com.massifmaps.api.Spec): com.massifmaps.api.MassifObject;
                 public rawLayer(index: number): com.massifmaps.layers.Layer;
-                public onStable(handler: com.massifmaps.api.MapEvents.Handler<com.massifmaps.api.MapEvents.Event>): com.massifmaps.api.Subscription;
+                public static attach(view: com.massifmaps.ui.MapViewInterface): com.massifmaps.api.MassifMap;
+                public getDouble(path: string, defaultValue: number): number;
                 public add(layer: com.massifmaps.api.MassifLayer, index: number): com.massifmaps.api.MassifLayer;
+                public onStable(handler: com.massifmaps.api.MapEvents.Handler<com.massifmaps.api.MapEvents.Move>): com.massifmaps.api.Subscription;
             }
         }
     }
@@ -899,6 +1092,7 @@ declare namespace com {
                 public on(event: string, handler: com.massifmaps.api.MapEvents.Handler<com.massifmaps.api.MapEvents.Event>): com.massifmaps.api.Subscription;
                 public cancel(call: number): boolean;
                 public equals(other: any): boolean;
+                public child(path: string): com.massifmaps.api.MassifObject;
                 public hashCode(): number;
                 public getBounds(path: string): com.massifmaps.api.Bounds;
                 public callAsync(this_: string, method: com.massifmaps.api.MassifObject.Callback, callback: androidNative.Array<any>): number;
@@ -915,9 +1109,11 @@ declare namespace com {
                 public getString(path: string, defaultValue: string): string;
                 public getString(property: com.massifmaps.api.MassifObject.Key<string>, defaultValue: string): string;
                 public getPos(path: string, projection: string): com.massifmaps.api.Position;
+                public set(path: string, value: com.massifmaps.api.Position, projection: string): com.massifmaps.api.MassifObject;
                 public getDouble(property: com.massifmaps.api.MassifObject.Key<java.lang.Double>, defaultValue: number): number;
                 public off(event: string): number;
                 public handle(): number;
+                public apply(values: com.massifmaps.api.Spec): com.massifmaps.api.MassifObject;
                 public getDouble(path: string, defaultValue: number): number;
             }
             export namespace MassifObject {
@@ -942,6 +1138,7 @@ declare namespace com {
                 export class EventKind {
                     public static class: java.lang.Class<com.massifmaps.api.MassifObject.EventKind>;
                     public static PLAIN: com.massifmaps.api.MassifObject.EventKind;
+                    public static MOVE: com.massifmaps.api.MassifObject.EventKind;
                     public static CLICK: com.massifmaps.api.MassifObject.EventKind;
                     public static INTERACTION: com.massifmaps.api.MassifObject.EventKind;
                     public static TILE_CLICK: com.massifmaps.api.MassifObject.EventKind;
@@ -1017,6 +1214,7 @@ declare namespace com {
                 public getDouble(name: string, defaultValue: number): number;
                 public set(property: com.massifmaps.api.MassifObject.Key<java.lang.Integer>, value: number): com.massifmaps.api.PropertyGroup;
                 public toString(): string;
+                public apply(this_: com.massifmaps.api.Spec): com.massifmaps.api.PropertyGroup;
                 public getPos(name: string): com.massifmaps.api.Position;
                 public set(property: com.massifmaps.api.MassifObject.Key<java.lang.Long>, value: number): com.massifmaps.api.PropertyGroup;
                 public set(property: com.massifmaps.api.MassifObject.Key<string>, value: string): com.massifmaps.api.PropertyGroup;
@@ -1145,25 +1343,85 @@ declare namespace com {
 declare namespace com {
     export namespace massifmaps {
         export namespace celestial {
+            export class CelestialImage extends com.massifmaps.celestial.CelestialObject {
+                public static class: java.lang.Class<com.massifmaps.celestial.CelestialImage>;
+                public setAnchors(anchors: com.massifmaps.core.DoubleVector): void;
+                public getBitmap(): com.massifmaps.graphics.Bitmap;
+                public getAnchors(): com.massifmaps.core.DoubleVector;
+                public isLuminanceAlpha(): boolean;
+                public constructor();
+                public setBitmap(bitmap: com.massifmaps.graphics.Bitmap): void;
+                public setLuminanceAlpha(luminanceAlpha: boolean): void;
+            }
+        }
+    }
+}
+
+declare namespace com {
+    export namespace massifmaps {
+        export namespace celestial {
+            export class CelestialLabel extends com.massifmaps.celestial.CelestialObject {
+                public static class: java.lang.Class<com.massifmaps.celestial.CelestialLabel>;
+                public getTextColor(): com.massifmaps.graphics.Color;
+                public setHaloColor(color: com.massifmaps.graphics.Color): void;
+                public setPaddingX(padding: number): void;
+                public getOffsetY(): number;
+                public getPaddingX(): number;
+                public getBackgroundRadius(): number;
+                public isClickable(): boolean;
+                public constructor();
+                public setAnchorPoint(x: number, y: number): void;
+                public getHaloColor(): com.massifmaps.graphics.Color;
+                public setClickable(clickable: boolean): void;
+                public setFontSize(size: number): void;
+                public getPaddingY(): number;
+                public getAnchorPointX(): number;
+                public setText(text: string): void;
+                public setTextColor(color: com.massifmaps.graphics.Color): void;
+                public getBackgroundColor(): com.massifmaps.graphics.Color;
+                public getFontName(): string;
+                public setOffset(x: number, y: number): void;
+                public setHaloWidth(width: number): void;
+                public getAnchorPointY(): number;
+                public setBackgroundColor(color: com.massifmaps.graphics.Color): void;
+                public getText(): string;
+                public getHaloWidth(): number;
+                public getFontSize(): number;
+                public getOffsetX(): number;
+                public setFontName(fontName: string): void;
+                public setPaddingY(padding: number): void;
+                public setBackgroundRadius(radius: number): void;
+            }
+        }
+    }
+}
+
+declare namespace com {
+    export namespace massifmaps {
+        export namespace celestial {
             export class CelestialObject extends java.lang.Object {
                 public static class: java.lang.Class<com.massifmaps.celestial.CelestialObject>;
                 public swigCMemOwn: boolean;
-                public getMetaDataElement(key: string): com.massifmaps.core.Variant;
                 public isVisible(): boolean;
-                public isDirectionAnchored(): boolean;
                 public setMetaDataElement(key: string, element: com.massifmaps.core.Variant): void;
-                public setColor(color: com.massifmaps.graphics.Color): void;
                 public getPositionAltitude(): number;
+                public setMetaData(metaData: com.massifmaps.core.StringVariantMap): void;
+                public hashCode(): number;
+                public getPosition(): com.massifmaps.core.MapPos;
+                public setOccludedByMap(occluded: boolean): void;
+                public getAzimuth(): number;
+                public setVisible(visible: boolean): void;
+                public setPosition(pos: com.massifmaps.core.MapPos, altitude: number): void;
+                public getMetaDataElement(key: string): com.massifmaps.core.Variant;
+                public isDirectionAnchored(): boolean;
+                public setColor(color: com.massifmaps.graphics.Color): void;
+                public isOccludedByMap(): boolean;
                 public getColor(): com.massifmaps.graphics.Color;
                 public getAltitude(): number;
                 public setDirection(azimuth: number, altitude: number, distance: number): void;
                 public equals(obj: any): boolean;
-                public hashCode(): number;
-                public getPosition(): com.massifmaps.core.MapPos;
                 public getDistance(): number;
-                public getAzimuth(): number;
-                public setVisible(visible: boolean): void;
-                public setPosition(pos: com.massifmaps.core.MapPos, altitude: number): void;
+                public getMetaData(): com.massifmaps.core.StringVariantMap;
             }
         }
     }
@@ -1217,15 +1475,16 @@ declare namespace com {
             export class FogOptions extends java.lang.Object {
                 public static class: java.lang.Class<com.massifmaps.components.FogOptions>;
                 public swigCMemOwn: boolean;
+                public getVerticalRangeEnd(): number;
                 public getRangeEnd(): number;
+                public setVerticalRangeEnd(endMeters: number): void;
                 public constructor();
                 public getRangeStart(): number;
                 public getHighColor(): com.massifmaps.graphics.Color;
                 public setHorizonBlend(horizonBlend: number): void;
-                public getHorizonAngle(): number;
-                public setHorizonAngle(degrees: number): void;
                 public getShaderSource(): string;
                 public setSpaceColor(color: com.massifmaps.graphics.Color): void;
+                public getVerticalRangeStart(): number;
                 public getSpaceColor(): com.massifmaps.graphics.Color;
                 public setStarIntensity(starIntensity: number): void;
                 public getHorizonBlend(): number;
@@ -1235,6 +1494,7 @@ declare namespace com {
                 public setColor(color: com.massifmaps.graphics.Color): void;
                 public setRangeEnd(rangeEnd: number): void;
                 public getColor(): com.massifmaps.graphics.Color;
+                public setVerticalRangeStart(startMeters: number): void;
                 public getStarIntensity(): number;
                 public isEnabled(): boolean;
                 public setEnabled(enabled: boolean): void;
@@ -1301,38 +1561,93 @@ declare namespace com {
             export class LightOptions extends java.lang.Object {
                 public static class: java.lang.Class<com.massifmaps.components.LightOptions>;
                 public swigCMemOwn: boolean;
-                public getSunAltitude(): number;
-                public getAmbientColor(): com.massifmaps.graphics.Color;
                 public setAmbientColor(color: com.massifmaps.graphics.Color): void;
-                public isTerrainLightingEnabled(): boolean;
                 public getShadowCascades(): number;
-                public getSunIntensity(): number;
-                public getShadowDistance(): number;
-                public setSunColor(color: com.massifmaps.graphics.Color): void;
+                public getDayCycleRisingLightStops(): com.massifmaps.components.LightStopVector;
+                public setDayCycleLightsEnabled(enabled: boolean): void;
                 public getShadowStrength(): number;
                 public constructor();
+                public setShadowFollowsBuildingHeight(enabled: boolean): void;
+                public getShadowMapSize(): number;
+                public getShadowNormalOffset(): number;
+                public setDayCycleLightStops(stops: com.massifmaps.components.LightStopVector): void;
+                public setShadowNormalOffset(offset: number): void;
+                public setShadowSoftness(softness: number): void;
+                public getSunColor(): com.massifmaps.graphics.Color;
+                public setSunPositionFromTime(year: number, month: number, day: number, hour: number, minute: number, latitude: number, longitude: number): void;
+                public isDayCycleLightsEnabled(): boolean;
+                public setShadowBias(bias: number): void;
+                public setSunOverridingStyle(overriding: boolean): void;
+                public setSunIntensity(intensity: number): void;
+                public isSunOverridingStyle(): boolean;
+                public getShadowCasterMargin(): number;
+                public getSunAltitude(): number;
+                public getAmbientColor(): com.massifmaps.graphics.Color;
+                public isTerrainLightingEnabled(): boolean;
+                public getSunIntensity(): number;
+                public getShadowDistance(): number;
+                public isSunIntensityStated(): boolean;
+                public isTerrainShadowCastingEnabled(): boolean;
+                public setSunColor(color: com.massifmaps.graphics.Color): void;
                 public getSunAzimuth(): number;
                 public setShadowCasterMargin(margin: number): void;
                 public setShadowCascades(cascades: number): void;
                 public getAmbientIntensity(): number;
-                public getShadowMapSize(): number;
-                public getShadowNormalOffset(): number;
-                public setShadowNormalOffset(offset: number): void;
                 public setShadowStrength(strength: number): void;
                 public setAmbientIntensity(intensity: number): void;
-                public setShadowSoftness(softness: number): void;
-                public getSunColor(): com.massifmaps.graphics.Color;
-                public setSunPositionFromTime(year: number, month: number, day: number, hour: number, minute: number, latitude: number, longitude: number): void;
                 public setSunAzimuth(azimuth: number): void;
                 public setShadowMapSize(size: number): void;
                 public setTerrainLightingEnabled(enabled: boolean): void;
                 public getShadowSoftness(): number;
                 public setShadowDistance(distance: number): void;
+                public setTerrainShadowCastingEnabled(enabled: boolean): void;
                 public getShadowBias(): number;
-                public setShadowBias(bias: number): void;
                 public setSunAltitude(altitude: number): void;
-                public setSunIntensity(intensity: number): void;
-                public getShadowCasterMargin(): number;
+                public setDayCycleRisingLightStops(stops: com.massifmaps.components.LightStopVector): void;
+                public getDayCycleLightStops(): com.massifmaps.components.LightStopVector;
+                public isShadowFollowsBuildingHeight(): boolean;
+            }
+        }
+    }
+}
+
+declare namespace com {
+    export namespace massifmaps {
+        export namespace components {
+            export class LightStop extends java.lang.Object {
+                public static class: java.lang.Class<com.massifmaps.components.LightStop>;
+                public swigCMemOwn: boolean;
+                public getSunAltitude(): number;
+                public getAmbientColor(): com.massifmaps.graphics.Color;
+                public constructor(sunAltitude: number, ambientColor: com.massifmaps.graphics.Color, ambientIntensity: number, sunColor: com.massifmaps.graphics.Color, sunIntensity: number);
+                public getSunColor(): com.massifmaps.graphics.Color;
+                public getSunIntensity(): number;
+                public toString(): string;
+                public constructor();
+                public equals(obj: any): boolean;
+                public hashCode(): number;
+                public getAmbientIntensity(): number;
+            }
+        }
+    }
+}
+
+declare namespace com {
+    export namespace massifmaps {
+        export namespace components {
+            export class LightStopVector extends java.lang.Object {
+                public static class: java.lang.Class<com.massifmaps.components.LightStopVector>;
+                public swigCMemOwn: boolean;
+                public add(x: com.massifmaps.components.LightStop): void;
+                public set(i: number, val: com.massifmaps.components.LightStop): void;
+                public constructor(n: number);
+                public constructor();
+                public size(): number;
+                public get(i: number): com.massifmaps.components.LightStop;
+                public capacity(): number;
+                public clear(): void;
+                public isEmpty(): boolean;
+                public reserve(n: number): void;
             }
         }
     }
@@ -1348,10 +1663,14 @@ declare namespace com {
                 public setRenderProjectionMode(renderProjectionMode: number): void;
                 public setZoomRange(zoomRange: com.massifmaps.core.MapRange): void;
                 public isDoubleClickDetection(): boolean;
+                public setClickMovingTolerance(tolerance: number): void;
+                public isOrbitAroundPivot(): boolean;
                 public setTiltGestureReversed(reversed: boolean): void;
                 public getFieldOfViewY(): number;
                 public setSkyColor(color: com.massifmaps.graphics.Color): void;
+                public getLabelViewDistance(): number;
                 public setDoubleClickDetection(enabled: boolean): void;
+                public setTileLODProfile(profile: number): void;
                 public setTileThreadPoolSize(poolSize: number): void;
                 public setClearColor(color: com.massifmaps.graphics.Color): void;
                 public isLayersLabelsProcessedInReverseOrder(): boolean;
@@ -1361,10 +1680,13 @@ declare namespace com {
                 public isSeamlessPanning(): boolean;
                 public getLightOptions(): com.massifmaps.components.LightOptions;
                 public isClickTypeDetection(): boolean;
+                public setZoomOffset(offset: number): void;
                 public getDrawDistance(): number;
                 public getFogOptions(): com.massifmaps.components.FogOptions;
                 public isTiltGestureReversed(): boolean;
+                public isModelShadowsEnabled(): boolean;
                 public isKineticRotation(): boolean;
+                public setTileLODTileCountRatio(ratio: number): void;
                 public isUserInput(): boolean;
                 public setMainLightDirection(direction: com.massifmaps.core.MapVec): void;
                 public getSkyColor(): com.massifmaps.graphics.Color;
@@ -1379,7 +1701,10 @@ declare namespace com {
                 public setRotationGestures(enabled: boolean): void;
                 public getMainLightDirection(): com.massifmaps.core.MapVec;
                 public getTileLODFactor(): number;
-                public getTileLODForeshorteningLimit(): number;
+                public getLabelPadding(): number;
+                public isModelAnimationsEnabled(): boolean;
+                public getTileStyleZoomLift(): number;
+                public getZoomOffset(): number;
                 public setDebugTileBorders(enabled: boolean): void;
                 public setSeamlessPanning(enabled: boolean): void;
                 public getBackgroundBitmap(): com.massifmaps.graphics.Bitmap;
@@ -1390,19 +1715,25 @@ declare namespace com {
                 public getZoomRange(): com.massifmaps.core.MapRange;
                 public getClearColor(): com.massifmaps.graphics.Color;
                 public getTileDrawSize(): number;
+                public setLabelViewDistance(viewDistance: number): void;
                 public isRestrictedPanning(): boolean;
                 public getMainLightColor(): com.massifmaps.graphics.Color;
+                public setTileLODMaxZoomLevelsOnScreen(levels: number): void;
                 public getEnvelopeThreadPoolSize(): number;
-                public setFreeRoamLookSensitivity(degreesPerInch: number): void;
+                public setModelAnimationsEnabled(enabled: boolean): void;
                 public setSkyOptions(skyOptions: com.massifmaps.components.SkyOptions): void;
                 public getTiltRange(): com.massifmaps.core.MapRange;
                 public getPivotMode(): number;
+                public setFreeRoamMoveSpeed(multiplier: number): void;
+                public setOrbitAroundPivot(enabled: boolean): void;
                 public getPanningSpeedMode(): number;
                 public isRotatable(): boolean;
                 public getRenderProjectionMode(): number;
                 public setDoubleClickMaxDuration(duration: number): void;
                 public setDPI(dpi: number): void;
                 public hashCode(): number;
+                public setLabelPadding(padding: number): void;
+                public getTileLODMaxZoomLevelsOnScreen(): number;
                 public setPivotMode(pivotMode: number): void;
                 public getFreeRoamLookSensitivity(): number;
                 public getDoubleClickMaxDuration(): number;
@@ -1412,14 +1743,15 @@ declare namespace com {
                 public setTileDrawSize(tileDrawSize: number): void;
                 public getLongClickDuration(): number;
                 public setBaseProjection(baseProjection: com.massifmaps.projections.Projection): void;
-                public setFreeRoamMoveSpeed(distancePerInch: number): void;
                 public setClickTypeDetection(enabled: boolean): void;
                 public setRestrictedPanning(enabled: boolean): void;
                 public getTileThreadPoolSize(): number;
                 public setTiltRange(tiltRange: com.massifmaps.core.MapRange): void;
+                public setModelShadowsEnabled(enabled: boolean): void;
                 public getAmbientLightColor(): com.massifmaps.graphics.Color;
                 public setFieldOfViewY(fovY: number): void;
                 public isDebugTileBorders(): boolean;
+                public setTileStyleZoomLift(levels: number): void;
                 public setTerrainOptions(terrainOptions: com.massifmaps.components.TerrainOptions): void;
                 public isKineticZoom(): boolean;
                 public getDPI(): number;
@@ -1427,17 +1759,19 @@ declare namespace com {
                 public setFocusPointOffset(offset: com.massifmaps.core.ScreenPos): void;
                 public getPanBounds(): com.massifmaps.core.MapBounds;
                 public setBackgroundBitmap(backgroundBitmap: com.massifmaps.graphics.Bitmap): void;
-                public setTileLODForeshorteningLimit(levels: number): void;
                 public setKineticZoom(enabled: boolean): void;
                 public setMainLightColor(color: com.massifmaps.graphics.Color): void;
+                public setFreeRoamLookSensitivity(degrees: number): void;
                 public isRotationGestures(): boolean;
                 public setKineticRotation(enabled: boolean): void;
+                public getTileLODTileCountRatio(): number;
                 public isKineticPan(): boolean;
                 public setRotatable(enabled: boolean): void;
                 public setPanningMode(panningMode: number): void;
                 public setPanningSpeedMode(mode: number): void;
                 public setDrawDistance(drawDistance: number): void;
                 public setAmbientLightColor(color: com.massifmaps.graphics.Color): void;
+                public getClickMovingTolerance(): number;
             }
         }
     }
@@ -1559,21 +1893,87 @@ declare namespace com {
             export class SkyOptions extends java.lang.Object {
                 public static class: java.lang.Class<com.massifmaps.components.SkyOptions>;
                 public swigCMemOwn: boolean;
+                public getAtmosphereLuminance(): number;
+                public setQuality(quality: number): void;
+                public getType(): number;
+                public setHaloColor(color: com.massifmaps.graphics.Color): void;
+                public constructor();
+                public setType(type: number): void;
+                public getAtmosphereSunIntensity(): number;
+                public getHaloColor(): com.massifmaps.graphics.Color;
+                public getSkyColor(): com.massifmaps.graphics.Color;
+                public getShaderSource(): string;
+                public setHorizonColor(color: com.massifmaps.graphics.Color): void;
+                public setSunDiscEnabled(enabled: boolean): void;
                 public isSunDiscEnabled(): boolean;
                 public getHorizonBlend(): number;
                 public setSkyColor(color: com.massifmaps.graphics.Color): void;
                 public setShaderSource(shaderSource: string): void;
+                public getQuality(): number;
+                public getAtmosphereColor(): com.massifmaps.graphics.Color;
+                public setAtmosphereColor(color: com.massifmaps.graphics.Color): void;
                 public getHorizonColor(): com.massifmaps.graphics.Color;
+                public setAtmosphereSunIntensity(intensity: number): void;
                 public setHorizonBlend(degrees: number): void;
-                public constructor();
+                public setAtmosphereLuminance(luminance: number): void;
                 public setGroundColor(color: com.massifmaps.graphics.Color): void;
-                public getSkyColor(): com.massifmaps.graphics.Color;
-                public getShaderSource(): string;
                 public isEnabled(): boolean;
-                public setHorizonColor(color: com.massifmaps.graphics.Color): void;
                 public getGroundColor(): com.massifmaps.graphics.Color;
                 public setEnabled(enabled: boolean): void;
-                public setSunDiscEnabled(enabled: boolean): void;
+            }
+        }
+    }
+}
+
+declare namespace com {
+    export namespace massifmaps {
+        export namespace components {
+            export class SkyQuality extends java.lang.Object {
+                public static class: java.lang.Class<com.massifmaps.components.SkyQuality>;
+                public static SKY_QUALITY_LOW: number = 0;
+                public static SKY_QUALITY_MEDIUM: number = 1;
+                public static SKY_QUALITY_HIGH: number = 2;
+                public constructor();
+            }
+        }
+    }
+}
+
+declare namespace com {
+    export namespace massifmaps {
+        export namespace components {
+            export class SkyType extends java.lang.Object {
+                public static class: java.lang.Class<com.massifmaps.components.SkyType>;
+                public static SKY_TYPE_GRADIENT: number = 0;
+                public static SKY_TYPE_ATMOSPHERE: number = 1;
+                public constructor();
+            }
+        }
+    }
+}
+
+declare namespace com {
+    export namespace massifmaps {
+        export namespace components {
+            export class TerrainFlattenMode extends java.lang.Object {
+                public static class: java.lang.Class<com.massifmaps.components.TerrainFlattenMode>;
+                public static TERRAIN_FLATTEN_MODE_RENDER: number = 0;
+                public static TERRAIN_FLATTEN_MODE_FULL: number = 1;
+                public constructor();
+            }
+            export namespace TerrainFlattenMode {
+                export class Value extends java.lang.Object implements java.lang.annotation.Annotation {
+                    public static class: java.lang.Class<com.massifmaps.components.TerrainFlattenMode.Value>;
+                    /**
+                     * Constructs a new instance of the com.massifmaps.components.TerrainFlattenMode$Value interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
+                     */
+                    public constructor(implementation: { annotationType(): java.lang.Class<any>; equals(param0: any): boolean; hashCode(): number; toString(): string; });
+                    public constructor();
+                    public equals(param0: any): boolean;
+                    public toString(): string;
+                    public annotationType(): java.lang.Class<any>;
+                    public hashCode(): number;
+                }
             }
         }
     }
@@ -1585,64 +1985,137 @@ declare namespace com {
             export class TerrainOptions extends java.lang.Object {
                 public static class: java.lang.Class<com.massifmaps.components.TerrainOptions>;
                 public swigCMemOwn: boolean;
-                public setSurfaceColorParameter(name: string, color: com.massifmaps.graphics.Color): void;
-                public isElevationPrefetchEnabled(): boolean;
-                public getTextOcclusionOpacity(): number;
-                public getCameraClampDuration(): number;
+                public getFlattenMode(): number;
+                public getElevationCacheSize(): number;
+                public getCameraClearanceFraction(): number;
                 public setMaxTileZoomCoarsening(levels: number): void;
                 public getViewDistance(): number;
+                public getAutoFlattenTilt(): number;
                 public setExaggeration(exaggeration: number): void;
                 public setBackgroundBitmapEnabled(enabled: boolean): void;
                 public isSeamlessTileEdgesEnabled(): boolean;
+                public getSubdivideDistance(): number;
+                public getFlattenRatio(): number;
+                public setAutoFlattenTilt(tilt: number): void;
+                public setMeshResolution(meshResolution: number): void;
+                public setAutoFlattenDuration(duration: number): void;
+                public getNormalSampleDistance(): number;
+                public constructor(dataSource: com.massifmaps.datasources.TileDataSource, elevationDecoder: com.massifmaps.rastertiles.ElevationDecoder);
+                public setSurfaceShaderSource(shaderSource: string): void;
+                public setAutoFlattenRiseDuration(duration: number): void;
+                public isBackgroundBitmapEnabled(): boolean;
+                public isFlattened(): boolean;
+                public getElevations(poses: com.massifmaps.core.MapPosVector): com.massifmaps.core.DoubleVector;
+                public setCameraClearanceFraction(fraction: number): void;
+                public getFocusLift(): number;
+                public getAutoFlattenParallax(): number;
+                public setEnabled(enabled: boolean): void;
+                public setBillboardOcclusionTolerance(tolerance: number): void;
+                public setSurfaceNodeResolution(resolution: number): void;
+                public getElevationDecoder(): com.massifmaps.rastertiles.ElevationDecoder;
+                public getMeshCacheSize(): number;
+                public setElevationPrefetchEnabled(enabled: boolean): void;
+                public setAlwaysDecode(alwaysDecode: boolean): void;
+                public setTextOcclusionOpacity(opacity: number): void;
+                public getAutoFlattenDuration(): number;
+                public setFlattenMode(mode: number): void;
+                public setDrapeFillsEnabled(enabled: boolean): void;
+                public getMaxTileZoomOffset(): number;
+                public constructor(dataSource: com.massifmaps.datasources.TileDataSource);
+                public isBridges3DEnabled(): boolean;
+                public isDrapeLinesEnabled(): boolean;
+                public setFocusLift(lift: number): void;
+                public setDrapeWorkingSet(tiles: number): void;
+                public getDrapeWorkingSet(): number;
+                public getMaxZoom(): number;
+                public isAlwaysDecode(): boolean;
+                public setTileEdgeStitchingEnabled(enabled: boolean): void;
+                public getSurfaceNodeResolution(): number;
+                public getViewDistanceMax(): number;
+                public getDataSource(): com.massifmaps.datasources.TileDataSource;
+                public setCameraClearance(clearance: number): void;
+                public setNoDrapeLayerFilter(filter: string): void;
+                public getMinZoom(): number;
+                public setAutoFlattenParallax(pixels: number): void;
+                public setSurfaceColorParameter(name: string, color: com.massifmaps.graphics.Color): void;
+                public isElevationPrefetchEnabled(): boolean;
+                public setElevationCacheSize(megabytes: number): void;
+                public getTextOcclusionOpacity(): number;
+                public getCameraClampDuration(): number;
+                public setFlattenRatio(ratio: number): void;
+                public isSwitching(): boolean;
                 public getNoDrapeLayerFilter(): string;
                 public setViewDistance(distance: number): void;
                 public getCameraClearance(): number;
                 public isBillboardOcclusionEnabled(): boolean;
-                public setMeshResolution(meshResolution: number): void;
                 public isDrapeFillsEnabled(): boolean;
                 public setDepthBias(depthBias: number): void;
                 public getDepthBias(): number;
                 public setSeamlessTileEdgesEnabled(enabled: boolean): void;
                 public getBackgroundColor(): com.massifmaps.graphics.Color;
-                public constructor(dataSource: com.massifmaps.datasources.TileDataSource, elevationDecoder: com.massifmaps.rastertiles.ElevationDecoder);
-                public setSurfaceShaderSource(shaderSource: string): void;
+                public setMaxZoom(maxZoom: number): void;
                 public setBackgroundColor(color: com.massifmaps.graphics.Color): void;
-                public isBackgroundBitmapEnabled(): boolean;
-                public getElevations(poses: com.massifmaps.core.MapPosVector): com.massifmaps.core.DoubleVector;
+                public getDrapeCacheSize(): number;
                 public isTileEdgeStitchingEnabled(): boolean;
+                public setBridges3DEnabled(enabled: boolean): void;
+                public setPostProcessDownscale(downscale: number): void;
                 public getExaggeration(): number;
                 public getElevation(pos: com.massifmaps.core.MapPos): number;
                 public setCameraClampDuration(duration: number): void;
-                public setEnabled(enabled: boolean): void;
-                public setBillboardOcclusionTolerance(tolerance: number): void;
-                public getElevationDecoder(): com.massifmaps.rastertiles.ElevationDecoder;
                 public getDrapeResolution(): number;
-                public setElevationPrefetchEnabled(enabled: boolean): void;
                 public setDrapeResolution(resolution: number): void;
-                public setTextOcclusionOpacity(opacity: number): void;
                 public getSurfaceShaderSource(): string;
                 public setMaxTileZoomOffset(offset: number): void;
                 public getMaxTileZoomCoarsening(): number;
-                public setDrapeFillsEnabled(enabled: boolean): void;
-                public getMaxTileZoomOffset(): number;
                 public getBillboardOcclusionTolerance(): number;
-                public constructor(dataSource: com.massifmaps.datasources.TileDataSource);
+                public isSharedGroundEnabled(): boolean;
                 public setViewDistanceFactor(factor: number): void;
                 public setSurfaceParameter(name: string, value: number): void;
+                public getPostProcessDownscale(): number;
                 public setDrapeLinesEnabled(enabled: boolean): void;
-                public isDrapeLinesEnabled(): boolean;
+                public setDrapeCacheSize(megabytes: number): void;
                 public getMeshResolution(): number;
+                public setFlattened(flattened: boolean): void;
+                public setSubdivideDistance(distance: number): void;
                 public getSurfaceColorParameter(name: string): com.massifmaps.graphics.Color;
                 public getViewDistanceFactor(): number;
+                public setViewDistanceMax(distance: number): void;
                 public setBillboardOcclusionEnabled(enabled: boolean): void;
-                public setTileEdgeStitchingEnabled(enabled: boolean): void;
-                public getDataSource(): com.massifmaps.datasources.TileDataSource;
+                public getAutoFlattenRiseDuration(): number;
+                public setMeshCacheSize(meshes: number): void;
                 public getSurfaceParameter(name: string): number;
-                public setCameraClearance(clearance: number): void;
                 public isEnabled(): boolean;
+                public setSharedGroundEnabled(enabled: boolean): void;
+                public setNormalSampleDistance(distance: number): void;
                 public setMinZoom(minZoom: number): void;
-                public setNoDrapeLayerFilter(filter: string): void;
-                public getMinZoom(): number;
+            }
+        }
+    }
+}
+
+declare namespace com {
+    export namespace massifmaps {
+        export namespace components {
+            export class TileLODProfile extends java.lang.Object {
+                public static class: java.lang.Class<com.massifmaps.components.TileLODProfile>;
+                public static TILE_LOD_PROFILE_REFERENCE: number = 0;
+                public static TILE_LOD_PROFILE_MOBILE: number = 1;
+                public static TILE_LOD_PROFILE_DESKTOP: number = 2;
+                public constructor();
+            }
+            export namespace TileLODProfile {
+                export class Value extends java.lang.Object implements java.lang.annotation.Annotation {
+                    public static class: java.lang.Class<com.massifmaps.components.TileLODProfile.Value>;
+                    /**
+                     * Constructs a new instance of the com.massifmaps.components.TileLODProfile$Value interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
+                     */
+                    public constructor(implementation: { annotationType(): java.lang.Class<any>; equals(param0: any): boolean; hashCode(): number; toString(): string; });
+                    public constructor();
+                    public equals(param0: any): boolean;
+                    public toString(): string;
+                    public annotationType(): java.lang.Class<any>;
+                    public hashCode(): number;
+                }
             }
         }
     }
@@ -2209,14 +2682,13 @@ declare namespace com {
                 public setCapacity(capacityInBytes: number): void;
                 public constructor(dataSource: com.massifmaps.datasources.TileDataSource);
                 public constructor();
-                public getMetaData(key: string): string;
                 public clear(): void;
                 public getDataExtent(): com.massifmaps.core.MapBounds;
-                public getEncoding(): string;
                 public constructor(minZoom: number, maxZoom: number);
                 public getCapacity(): number;
                 public getMaxZoom(): number;
                 public notifyTilesChanged(removeTiles: boolean): void;
+                public getContainerMetaData(key: string): string;
                 public getDataSource(): com.massifmaps.datasources.TileDataSource;
                 public getMinZoom(): number;
             }
@@ -2235,7 +2707,7 @@ declare namespace com {
                 public constructor(dataSource1: com.massifmaps.datasources.TileDataSource, dataSource2: com.massifmaps.datasources.TileDataSource, zoomLevel: number);
                 public getMaxZoom(): number;
                 public constructor();
-                public getMetaData(key: string): string;
+                public getContainerMetaData(key: string): string;
                 public getDataExtent(): com.massifmaps.core.MapBounds;
                 public getMinZoom(): number;
             }
@@ -2263,12 +2735,10 @@ declare namespace com {
                 public getResolution(): number;
                 public setTerrainOptions(terrainOptions: com.massifmaps.components.TerrainOptions): void;
                 public setSimplifyTolerance(tolerance: number): void;
-                public getMetaData(key: string): string;
                 public getBaseInterval(): number;
                 public getTerrainOptions(): com.massifmaps.components.TerrainOptions;
                 public getDataExtent(): com.massifmaps.core.MapBounds;
                 public getSimplifyTolerance(): number;
-                public getEncoding(): string;
                 public constructor(minZoom: number, maxZoom: number);
                 public setLayerName(name: string): void;
                 public getResolutionForZoom(zoom: number): number;
@@ -2279,6 +2749,7 @@ declare namespace com {
                 public getLayerName(): string;
                 public getMaxZoom(): number;
                 public setIntervalMultiplier(maxZoom: number, multiplier: number): void;
+                public getContainerMetaData(key: string): string;
                 public setBaseInterval(interval: number): void;
                 public isSeamlessEdgesEnabled(): boolean;
                 public setResolutionForZoom(maxZoom: number, resolution: number): void;
@@ -2324,8 +2795,10 @@ declare namespace com {
                 public static class: java.lang.Class<com.massifmaps.datasources.HTTPTileDataSource>;
                 public swigDirectorDisconnect(): void;
                 public setTimeout(timeout: number): void;
+                public setFrameTimestamps(timestamps: com.massifmaps.core.StringVector): void;
                 public constructor();
                 public setBaseURL(baseURL: string): void;
+                public getFrameTimestamps(): com.massifmaps.core.StringVector;
                 public buildTileURL(baseURL: string, tile: com.massifmaps.core.MapTile): string;
                 public constructor(minZoom: number, maxZoom: number, baseURL: string);
                 public setHTTPHeaders(headers: com.massifmaps.core.StringMap): void;
@@ -2340,6 +2813,7 @@ declare namespace com {
                 public isMaxAgeHeaderCheck(): boolean;
                 public getBaseURL(): string;
                 public getSubdomains(): com.massifmaps.core.StringVector;
+                public buildTagValues(tile: com.massifmaps.core.MapTile): com.massifmaps.core.StringMap;
             }
         }
     }
@@ -2434,13 +2908,13 @@ declare namespace com {
                 public constructor(minZoom: number, maxZoom: number, path: string);
                 public swigDirectorDisconnect(): void;
                 public constructor();
-                public getMetaData(): com.massifmaps.core.StringMap;
                 public constructor(path: string);
-                public getMetaData(key: string): string;
                 public loadTile(mapTile: com.massifmaps.core.MapTile): com.massifmaps.datasources.components.TileData;
                 public getDataExtent(): com.massifmaps.core.MapBounds;
                 public constructor(minZoom: number, maxZoom: number);
+                public getContainerMetaData(): com.massifmaps.core.StringMap;
                 public getMaxZoom(): number;
+                public getContainerMetaData(key: string): string;
                 public constructor(minZoom: number, maxZoom: number, path: string, scheme: number);
                 public getMinZoom(): number;
             }
@@ -2536,7 +3010,7 @@ declare namespace com {
                 public constructor(dataSource1: com.massifmaps.datasources.TileDataSource, dataSource2: com.massifmaps.datasources.TileDataSource);
                 public getMaxZoom(): number;
                 public constructor();
-                public getMetaData(key: string): string;
+                public getContainerMetaData(key: string): string;
                 public getDataExtent(): com.massifmaps.core.MapBounds;
                 public getMinZoom(): number;
             }
@@ -2550,13 +3024,13 @@ declare namespace com {
             export class PMTilesTileDataSource extends com.massifmaps.datasources.TileDataSource {
                 public static class: java.lang.Class<com.massifmaps.datasources.PMTilesTileDataSource>;
                 public constructor(minZoom: number, maxZoom: number, path: string);
+                public getContainerMetaData(): string;
                 public swigDirectorDisconnect(): void;
                 public constructor(minZoom: number, maxZoom: number);
-                public getMetaData(): string;
                 public getMaxZoom(): number;
                 public constructor();
                 public constructor(path: string);
-                public getMetaData(key: string): string;
+                public getContainerMetaData(key: string): string;
                 public loadTile(mapTile: com.massifmaps.core.MapTile): com.massifmaps.datasources.components.TileData;
                 public getDataExtent(): com.massifmaps.core.MapBounds;
                 public getMinZoom(): number;
@@ -2600,7 +3074,35 @@ declare namespace com {
                 public setCacheOnlyMode(enabled: boolean): void;
                 public getCapacity(): number;
                 public constructor(dataSource: com.massifmaps.datasources.TileDataSource, databasePath: string);
+                public purgeExpired(): void;
                 public isOpen(): boolean;
+            }
+        }
+    }
+}
+
+declare namespace com {
+    export namespace massifmaps {
+        export namespace datasources {
+            export class PointDetailTileDataSource extends com.massifmaps.datasources.TileDataSource {
+                public static class: java.lang.Class<com.massifmaps.datasources.PointDetailTileDataSource>;
+                public swigDirectorDisconnect(): void;
+                public loadTile(tile: com.massifmaps.core.MapTile): com.massifmaps.datasources.components.TileData;
+                public setMaxDetailLevels(levels: number): void;
+                public constructor();
+                public getRankProperty(): string;
+                public constructor(dataSource: com.massifmaps.datasources.TileDataSource, layerName: string, detailZoom: number);
+                public getDetailZoom(): number;
+                public setMaxFeatures(maxFeatures: number): void;
+                public getDataExtent(): com.massifmaps.core.MapBounds;
+                public getMaxFeatures(): number;
+                public constructor(minZoom: number, maxZoom: number);
+                public getMaxDetailLevels(): number;
+                public getLayerName(): string;
+                public setRankProperty(name: string): void;
+                public getMaxZoom(): number;
+                public setDetailZoom(detailZoom: number): void;
+                public getMinZoom(): number;
             }
         }
     }
@@ -2612,23 +3114,43 @@ declare namespace com {
             export class TileDataSource extends java.lang.Object {
                 public static class: java.lang.Class<com.massifmaps.datasources.TileDataSource>;
                 public swigCMemOwn: boolean;
-                public setEncoding(encoding: string): void;
                 public swigDirectorDisconnect(): void;
+                public containsMetaDataKey(key: string): boolean;
                 public loadTile(tile: com.massifmaps.core.MapTile): com.massifmaps.datasources.components.TileData;
+                public setMetaDataElement(key: string, element: com.massifmaps.core.Variant): void;
+                public setMetaData(metaData: com.massifmaps.core.StringVariantMap): void;
                 public constructor();
-                public getMetaData(key: string): string;
                 public getProjection(): com.massifmaps.projections.Projection;
                 public getDataExtent(): com.massifmaps.core.MapBounds;
-                public getEncoding(): string;
+                public getMetaDataElement(key: string): com.massifmaps.core.Variant;
                 public constructor(minZoom: number, maxZoom: number);
                 public setMaxOverzoomLevel(overzoomLevel: number): void;
                 public getMaxOverzoomLevel(): number;
                 public getMaxZoom(): number;
                 public notifyTilesChanged(removeTiles: boolean): void;
+                public getContainerMetaData(key: string): string;
+                public getMetaData(): com.massifmaps.core.StringVariantMap;
                 public buildTagValues(tile: com.massifmaps.core.MapTile): com.massifmaps.core.StringMap;
                 public getMaxZoomWithOverzoom(): number;
                 public isMaxOverzoomLevelSet(): boolean;
                 public getMinZoom(): number;
+            }
+        }
+    }
+}
+
+declare namespace com {
+    export namespace massifmaps {
+        export namespace datasources {
+            export class TileDownloadInfo extends java.lang.Object {
+                public static class: java.lang.Class<com.massifmaps.datasources.TileDownloadInfo>;
+                public swigCMemOwn: boolean;
+                public getTile(): com.massifmaps.core.MapTile;
+                public equals(obj: any): boolean;
+                public getProgress(): number;
+                public hashCode(): number;
+                public getTileCount(): number;
+                public toString(): string;
             }
         }
     }
@@ -2676,11 +3198,18 @@ declare namespace com {
                     public static class: java.lang.Class<com.massifmaps.datasources.components.TileData>;
                     public swigCMemOwn: boolean;
                     public getData(): com.massifmaps.core.BinaryData;
+                    public containsMetaDataKey(key: string): boolean;
                     public equals(obj: any): boolean;
+                    public getMetaDataElement(key: string): com.massifmaps.core.Variant;
+                    public setMetaDataElement(key: string, element: com.massifmaps.core.Variant): void;
                     public isOverZoom(): boolean;
                     public setMaxAge(maxAge: number): void;
+                    public isRawPixels(): boolean;
+                    public getHeight(): number;
+                    public getWidth(): number;
                     public isReplaceWithParent(): boolean;
                     public getMaxAge(): number;
+                    public constructor(pixels: com.massifmaps.core.BinaryData, width: number, height: number);
                     public setIsOverZoom(flag: boolean): void;
                     public setReplaceWithParent(flag: boolean): void;
                     public hashCode(): number;
@@ -2756,6 +3285,7 @@ declare namespace com {
                 public hashCode(): number;
                 public constructor(projection: com.massifmaps.projections.Projection, address: com.massifmaps.geocoding.GeocodingAddress, rank: number, featureCollection: com.massifmaps.geometry.FeatureCollection);
                 public getRank(): number;
+                public getGeoJSON(): string;
                 public getProjection(): com.massifmaps.projections.Projection;
             }
         }
@@ -3198,6 +3728,7 @@ declare namespace com {
                 public getBounds(): com.massifmaps.core.MapBounds;
                 public equals(obj: any): boolean;
                 public hashCode(): number;
+                public getGeoJSON(): string;
                 public getCenterPos(): com.massifmaps.core.MapPos;
             }
         }
@@ -3619,20 +4150,25 @@ declare namespace com {
                 public static class: java.lang.Class<com.massifmaps.graphics.ViewState>;
                 public swigCMemOwn: boolean;
                 public getHeight(): number;
+                public getSpanPerZoom(): number;
                 public setTerrainHeightRange(minZ: number, maxZ: number): void;
                 public getZoom(): number;
                 public getCameraTilt(): number;
                 public setViewTilt(tilt: number): void;
+                public setFocusHeight(internalZ: number): void;
                 public getScreenWidth(): number;
                 public isCameraChanged(): boolean;
+                public worldPerInternal(): number;
                 public getNear(): number;
                 public getUnitToDPCoef(): number;
                 public getScreenHeight(): number;
+                public getRenderZoom(): number;
                 public getUnitToPXCoef(): number;
                 public getSkyHorizonNDC(): number;
                 public hashCode(): number;
                 public getDPI(): number;
                 public getTerrainMaxZoom(): number;
+                public clearTerrainCameraReference(): void;
                 public calculateCameraDistance(): number;
                 public calculateViewDistance(options: com.massifmaps.components.Options): number;
                 public getAspectRatio(): number;
@@ -3642,8 +4178,30 @@ declare namespace com {
                 public equals(obj: any): boolean;
                 public getRotation(): number;
                 public getTilt(): number;
+                public getOrbitDistance(zoom: number): number;
+                public liftFocus(deltaZ: number): void;
                 public getZoom0Distance(): number;
                 public getDPToPX(): number;
+                public calculateFogDistance(options: com.massifmaps.components.Options): number;
+            }
+        }
+    }
+}
+
+declare namespace com {
+    export namespace massifmaps {
+        export namespace layers {
+            export class AnimatedRasterTileLayer extends com.massifmaps.layers.CustomRasterTileLayer {
+                public static class: java.lang.Class<com.massifmaps.layers.AnimatedRasterTileLayer>;
+                public setAnimationPosition(position: number): void;
+                public setFrameTimestamps(timestamps: com.massifmaps.core.StringVector): void;
+                public constructor(dataSource: com.massifmaps.datasources.TileDataSource);
+                public getPrefetchBudget(): number;
+                public setPrefetchBudget(megabytes: number): void;
+                public getFrameTimestamps(): com.massifmaps.core.StringVector;
+                public setPrefetchFrames(frames: number): void;
+                public getAnimationPosition(): number;
+                public getPrefetchFrames(): number;
             }
         }
     }
@@ -3658,6 +4216,7 @@ declare namespace com {
                 public swigDirectorDisconnect(): void;
                 public onCelestialObjectClicked(clickInfo: com.massifmaps.ui.ClickInfo, celestialObject: com.massifmaps.celestial.CelestialObject): boolean;
                 public constructor();
+                public onSkyClicked(clickInfo: com.massifmaps.ui.ClickInfo, azimuth: number, altitude: number): boolean;
             }
         }
     }
@@ -3783,12 +4342,14 @@ declare namespace com {
                 public constructor(dataSource: com.massifmaps.datasources.TileDataSource, decoder: com.massifmaps.vectortiles.VectorTileDecoder);
                 public removeExternalDataSource(name: string): boolean;
                 public getExternalDataSourceNames(): com.massifmaps.core.StringVector;
+                public getExternalChildLayer(name: string): com.massifmaps.layers.Layer;
                 public addVectorDataSource(name: string, dataSource: com.massifmaps.datasources.TileDataSource): void;
                 public setExternalDataSourceMaxOverzoomLevel(name: string, level: number): void;
                 public setZoomLevelBias(bias: number): void;
                 public addExternalDataSource(name: string, dataSource: com.massifmaps.datasources.TileDataSource, type: number, elevationDecoder: com.massifmaps.rastertiles.ElevationDecoder): void;
                 public clearExternalDataSourceZoomLevelBias(name: string): void;
                 public setPreloading(preloading: boolean): void;
+                public setOpacity(opacity: number): void;
                 public setExternalDataSourceZoomLevelBias(name: string, bias: number): void;
                 public getExternalDataSourceZoomLevelBias(name: string): number;
                 public getExternalDataSourceMaxOverzoomLevel(name: string): number;
@@ -3802,9 +4363,15 @@ declare namespace com {
         export namespace layers {
             export class CustomRasterTileLayer extends com.massifmaps.layers.RasterTileLayer {
                 public static class: java.lang.Class<com.massifmaps.layers.CustomRasterTileLayer>;
+                public getDataSourceCount(): number;
                 public setShaderSource(shaderSource: string): void;
+                public getShaderParameter(name: string): number;
                 public constructor(dataSource: com.massifmaps.datasources.TileDataSource);
+                public setShaderParameter(name: string, value: number): void;
+                public addDataSource(dataSource: com.massifmaps.datasources.TileDataSource): void;
                 public getShaderSource(): string;
+                public setShaderParameters(parameters: com.massifmaps.core.StringVariantMap): void;
+                public getShaderParameters(): com.massifmaps.core.StringVariantMap;
             }
         }
     }
@@ -3917,10 +4484,12 @@ declare namespace com {
                 public containsMetaDataKey(key: string): boolean;
                 public setMetaDataElement(key: string, element: com.massifmaps.core.Variant): void;
                 public getVisibleZoomRange(): com.massifmaps.core.MapRange;
+                public isBillboardsUnderLabels(): boolean;
                 public setVisibleZoomRange(range: com.massifmaps.core.MapRange): void;
                 public isPostProcessed(): boolean;
                 public setMetaData(metaData: com.massifmaps.core.StringVariantMap): void;
                 public setCullDelay(delay: number): void;
+                public setBillboardsUnderLabels(underLabels: boolean): void;
                 public update(cullState: com.massifmaps.renderers.components.CullState): void;
                 public hashCode(): number;
                 public simulateClick(clickType: number, screenPos: com.massifmaps.core.ScreenPos, viewState: com.massifmaps.graphics.ViewState): void;
@@ -4047,11 +4616,12 @@ declare namespace com {
             export class TileLayer extends com.massifmaps.layers.Layer {
                 public static class: java.lang.Class<com.massifmaps.layers.TileLayer>;
                 public getTileLoadListener(): com.massifmaps.layers.TileLoadListener;
+                public isTerrainDecodeSettled(): boolean;
+                public usesDistanceTileZoom(): boolean;
                 public getTileSubstitutionPolicy(): number;
                 public isGroundAOActive(): boolean;
                 public calculateMapTile(mapPos: com.massifmaps.core.MapPos, zoom: number): com.massifmaps.core.MapTile;
                 public isUpdateInProgress(): boolean;
-                public setLabelOcclusionDepth(depthTexture: number, occluderSize: number): void;
                 public getUTFGridEventListener(): com.massifmaps.layers.UTFGridEventListener;
                 public setZoomLevelBias(bias: number): void;
                 public calculateMapTileOrigin(mapTile: com.massifmaps.core.MapTile): com.massifmaps.core.MapPos;
@@ -4062,9 +4632,8 @@ declare namespace com {
                 public isGroundAOBakeable(): boolean;
                 public setUTFGridEventListener(utfGridEventListener: com.massifmaps.layers.UTFGridEventListener): void;
                 public getUTFGridDataSource(): com.massifmaps.datasources.TileDataSource;
+                public getPreloadingTileCount(): number;
                 public setMaxUnderzoomLevel(underzoomLevel: number): void;
-                public renderLabelOcclusionDepth(): number;
-                public isLabelOcclusionWanted(): boolean;
                 public isPreloading(): boolean;
                 public setMaxStandInLevel(standInLevel: number): void;
                 public setTileLoadListener(tileLoadListener: com.massifmaps.layers.TileLoadListener): void;
@@ -4075,14 +4644,18 @@ declare namespace com {
                 public setUTFGridDataSource(dataSource: com.massifmaps.datasources.TileDataSource): void;
                 public renderGroundAOMask(): number;
                 public isSynchronizedRefresh(): boolean;
+                public areVisibleTilesSettledSince(count: number): boolean;
+                public hasGroundContent(): boolean;
                 public getProjection(): com.massifmaps.projections.Projection;
                 public getMaxStandInLevel(): number;
+                public getTileCalculationCount(): number;
                 public setMaxOverzoomLevel(overzoomLevel: number): void;
                 public setPreloading(preloading: boolean): void;
                 public getMaxUnderzoomLevel(): number;
                 public getDataSource(): com.massifmaps.datasources.TileDataSource;
                 public setFrameNr(frameNr: number): void;
                 public getFrameNr(): number;
+                public getVisibleTileCount(): number;
             }
         }
     }
@@ -4126,19 +4699,6 @@ declare namespace com {
                     public annotationType(): java.lang.Class<any>;
                     public hashCode(): number;
                 }
-            }
-        }
-    }
-}
-
-declare namespace com {
-    export namespace massifmaps {
-        export namespace layers {
-            export class TorqueTileLayer extends com.massifmaps.layers.VectorTileLayer {
-                public static class: java.lang.Class<com.massifmaps.layers.TorqueTileLayer>;
-                public countVisibleFeatures(frameNr: number): number;
-                public constructor(dataSource: com.massifmaps.datasources.TileDataSource, decoder: com.massifmaps.vectortiles.VectorTileDecoder);
-                public constructor(dataSource: com.massifmaps.datasources.TileDataSource, decoder: com.massifmaps.vectortiles.TorqueTileDecoder);
             }
         }
     }
@@ -4289,7 +4849,11 @@ declare namespace com {
                 public getTileCacheCapacity(): number;
                 public getClickRadius(): number;
                 public setRendererLayerFilter(filter: string): void;
+                public setLabelPerspectiveScaling(scaling: number): void;
                 public constructor(dataSource: com.massifmaps.datasources.TileDataSource, decoder: com.massifmaps.vectortiles.VectorTileDecoder);
+                public clearModelHighlight(): void;
+                public getLabelPerspectiveScaling(): number;
+                public setModelHighlight(featureId: number, featurePosIndex: number, color: com.massifmaps.graphics.Color): void;
                 public getRendererLayerFilter(): string;
                 public setBuildingRenderOrder(renderOrder: number): void;
                 public setClickHandlerLayerFilter(filter: string): void;
@@ -4655,9 +5219,10 @@ declare namespace com {
             export class ElevationDecoder extends java.lang.Object {
                 public static class: java.lang.Class<com.massifmaps.rastertiles.ElevationDecoder>;
                 public swigCMemOwn: boolean;
+                public getMinimumHeightScale(): number;
                 public equals(obj: any): boolean;
                 public hashCode(): number;
-                public getMinimumHeightScale(): number;
+                public static getENCODING_KEY(): string;
             }
         }
     }
@@ -4699,16 +5264,19 @@ declare namespace com {
             export class MapRenderer extends java.lang.Object {
                 public static class: java.lang.Class<com.massifmaps.renderers.MapRenderer>;
                 public swigCMemOwn: boolean;
-                public captureRendering(listener: com.massifmaps.renderers.RendererCaptureListener, waitWhileUpdating: boolean): void;
+                public getViewStateSnapshot(): com.massifmaps.graphics.ViewState;
                 public drawMaskQuad(texture: number, invWidth: number, invHeight: number): void;
+                public resetCameraPlaced(): void;
                 public requestRedraw(callerFile: string, callerLine: number): void;
                 public requestRedraw(): void;
-                public equals(obj: any): boolean;
                 public multiplyScreenMask(texture: number, invWidth: number, invHeight: number): void;
                 public getViewState(): com.massifmaps.graphics.ViewState;
                 public setPostProcessEffect(postProcessEffect: com.massifmaps.renderers.PostProcessEffect): void;
                 public hashCode(): number;
                 public getPostProcessEffect(): com.massifmaps.renderers.PostProcessEffect;
+                public captureRendering(listener: com.massifmaps.renderers.RendererCaptureListener, waitWhileUpdating: boolean): void;
+                public setTouchGestureActive(active: boolean): void;
+                public equals(obj: any): boolean;
                 public getMapRendererListener(): com.massifmaps.renderers.MapRendererListener;
                 public setMapRendererListener(listener: com.massifmaps.renderers.MapRendererListener): void;
                 public requestRedraw(callerFile: string): void;
@@ -4740,11 +5308,13 @@ declare namespace com {
                 public static class: java.lang.Class<com.massifmaps.renderers.PostProcessEffect>;
                 public swigCMemOwn: boolean;
                 public constructor(name: string, fragmentShader: string);
+                public isTerrainNormalsRequired(): boolean;
                 public setFloatParameter(name: string, value: number): void;
                 public isTerrainDepthRequired(): boolean;
                 public setTerrainDepthRequired(required: boolean): void;
                 public getName(): string;
                 public getColorParameter(name: string): com.massifmaps.graphics.Color;
+                public setTerrainNormalsRequired(required: boolean): void;
                 public getFloatParameter(name: string): number;
                 public equals(obj: any): boolean;
                 public hashCode(): number;
@@ -5150,6 +5720,7 @@ declare namespace com {
                 public getPoints(): com.massifmaps.core.MapPosVector;
                 public constructor(projection: com.massifmaps.projections.Projection, points: com.massifmaps.core.MapPosVector, instructions: com.massifmaps.routing.RoutingInstructionVector, rawResult: string);
                 public equals(obj: any): boolean;
+                public getInstructionsJSON(): string;
                 public hashCode(): number;
                 public getInstructionCount(): number;
                 public getInstructions(): com.massifmaps.routing.RoutingInstructionVector;
@@ -6193,7 +6764,9 @@ declare namespace com {
                 public constructor();
                 public rotate(deltaAngle: number, durationSeconds: number): void;
                 public cancelAllTasks(): void;
+                public onWheelZoom(zoomDelta: number, x: number, y: number): void;
                 public tilt(deltaTilt: number, durationSeconds: number): void;
+                public moveCameraTo(pos: com.massifmaps.core.MapPos, zoom: number): void;
                 public mapToScreen(mapPos: com.massifmaps.core.MapPos): com.massifmaps.core.ScreenPos;
                 public clearPreloadingCaches(): void;
                 public clearAllCaches(): void;
@@ -6206,6 +6779,7 @@ declare namespace com {
                 public pan(deltaPos: com.massifmaps.core.MapVec, durationSeconds: number): void;
                 public getMapRenderer(): com.massifmaps.renderers.MapRenderer;
                 public moveTo(pos: com.massifmaps.core.MapPos, zoom: number, rotation: number, tilt: number): void;
+                public flyTo(pos: com.massifmaps.core.MapPos, zoom: number, rotation: number, tilt: number, climbHeight: number, durationSeconds: number, easing: number): void;
                 public zoom(deltaZoom: number, durationSeconds: number): void;
                 public onInputEvent(event: number, x1: number, y1: number, x2: number, y2: number): void;
                 public getFlightProgress(): number;
@@ -6227,13 +6801,33 @@ declare namespace com {
                 public moveToFitBounds(mapBounds: com.massifmaps.core.MapBounds, screenBounds: com.massifmaps.core.ScreenBounds, integerZoom: boolean, resetRotation: boolean, resetTilt: boolean, durationSeconds: number): void;
                 public setZoom(zoom: number, durationSeconds: number): void;
                 public onWheelEvent(delta: number, x: number, y: number): void;
+                public getCameraPos(): com.massifmaps.core.MapPos;
                 public screenToMap(screenPos: com.massifmaps.core.ScreenPos): com.massifmaps.core.MapPos;
+                public moveCameraTo(pos: com.massifmaps.core.MapPos, zoom: number, rotation: number, tilt: number): void;
                 public getRotation(): number;
                 public flyTo(pos: com.massifmaps.core.MapPos, zoom: number, durationSeconds: number): void;
                 public zoom(deltaZoom: number, targetPos: com.massifmaps.core.MapPos, durationSeconds: number): void;
                 public getTilt(): number;
                 public onDrawFrame(): void;
                 public getRedrawRequestListener(): com.massifmaps.renderers.RedrawRequestListener;
+            }
+        }
+    }
+}
+
+declare namespace com {
+    export namespace massifmaps {
+        export namespace ui {
+            export class CelestialClickInfo extends java.lang.Object {
+                public static class: java.lang.Class<com.massifmaps.ui.CelestialClickInfo>;
+                public swigCMemOwn: boolean;
+                public getClickInfo(): com.massifmaps.ui.ClickInfo;
+                public getCelestialObject(): com.massifmaps.celestial.CelestialObject;
+                public equals(obj: any): boolean;
+                public hashCode(): number;
+                public getAzimuth(): number;
+                public getClickType(): number;
+                public getAltitude(): number;
             }
         }
     }
@@ -6293,6 +6887,36 @@ declare namespace com {
                 public chooseConfig(configs: javax.microedition.khronos.egl.EGL10, i: javax.microedition.khronos.egl.EGLDisplay): javax.microedition.khronos.egl.EGLConfig;
                 public chooseConfig(param0: javax.microedition.khronos.egl.EGL10, param1: javax.microedition.khronos.egl.EGLDisplay): javax.microedition.khronos.egl.EGLConfig;
                 public constructor();
+            }
+        }
+    }
+}
+
+declare namespace com {
+    export namespace massifmaps {
+        export namespace ui {
+            export class FlightEasing extends java.lang.Object {
+                public static class: java.lang.Class<com.massifmaps.ui.FlightEasing>;
+                public static FLIGHT_EASING_EASE: number = 0;
+                public static FLIGHT_EASING_LINEAR: number = 1;
+                public static FLIGHT_EASING_EASE_IN: number = 2;
+                public static FLIGHT_EASING_EASE_OUT: number = 3;
+                public static FLIGHT_EASING_EASE_IN_OUT: number = 4;
+                public constructor();
+            }
+            export namespace FlightEasing {
+                export class Value extends java.lang.Object implements java.lang.annotation.Annotation {
+                    public static class: java.lang.Class<com.massifmaps.ui.FlightEasing.Value>;
+                    /**
+                     * Constructs a new instance of the com.massifmaps.ui.FlightEasing$Value interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
+                     */
+                    public constructor(implementation: { annotationType(): java.lang.Class<any>; equals(param0: any): boolean; hashCode(): number; toString(): string; });
+                    public constructor();
+                    public equals(param0: any): boolean;
+                    public toString(): string;
+                    public annotationType(): java.lang.Class<any>;
+                    public hashCode(): number;
+                }
             }
         }
     }
@@ -6479,11 +7103,11 @@ declare namespace com {
             export class MapEventListener extends java.lang.Object {
                 public static class: java.lang.Class<com.massifmaps.ui.MapEventListener>;
                 public swigCMemOwn: boolean;
-                public onMapMoved(): void;
                 public swigDirectorDisconnect(): void;
                 public onMapClicked(mapClickInfo: com.massifmaps.ui.MapClickInfo): void;
                 public constructor();
-                public onMapStable(): void;
+                public onMapMoved(reason: number): void;
+                public onMapStable(reason: number): void;
                 public onMapIdle(): void;
                 public onMapInteraction(mapInteractionInfo: com.massifmaps.ui.MapInteractionInfo): void;
             }
@@ -6512,11 +7136,40 @@ declare namespace com {
 declare namespace com {
     export namespace massifmaps {
         export namespace ui {
-            export class MapRedrawRequestListener extends com.massifmaps.renderers.RedrawRequestListener {
-                public static class: java.lang.Class<com.massifmaps.ui.MapRedrawRequestListener>;
-                public constructor(mapView: com.massifmaps.ui.MapView);
-                public onRedrawRequested(): void;
+            export class MapMoveInfo extends java.lang.Object {
+                public static class: java.lang.Class<com.massifmaps.ui.MapMoveInfo>;
+                public swigCMemOwn: boolean;
+                public equals(obj: any): boolean;
+                public hashCode(): number;
+                public getReason(): number;
+            }
+        }
+    }
+}
+
+declare namespace com {
+    export namespace massifmaps {
+        export namespace ui {
+            export class MapMoveReason extends java.lang.Object {
+                public static class: java.lang.Class<com.massifmaps.ui.MapMoveReason>;
+                public static MAP_MOVE_REASON_GESTURE: number = 0;
+                public static MAP_MOVE_REASON_ANIMATION: number = 1;
+                public static MAP_MOVE_REASON_API: number = 2;
                 public constructor();
+            }
+            export namespace MapMoveReason {
+                export class Value extends java.lang.Object implements java.lang.annotation.Annotation {
+                    public static class: java.lang.Class<com.massifmaps.ui.MapMoveReason.Value>;
+                    /**
+                     * Constructs a new instance of the com.massifmaps.ui.MapMoveReason$Value interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
+                     */
+                    public constructor(implementation: { annotationType(): java.lang.Class<any>; equals(param0: any): boolean; hashCode(): number; toString(): string; });
+                    public constructor();
+                    public equals(param0: any): boolean;
+                    public toString(): string;
+                    public annotationType(): java.lang.Class<any>;
+                    public hashCode(): number;
+                }
             }
         }
     }
@@ -6527,85 +7180,48 @@ declare namespace com {
         export namespace ui {
             export class MapView extends globalAndroid.opengl.GLSurfaceView implements globalAndroid.opengl.GLSurfaceView.Renderer, com.massifmaps.ui.MapViewInterface {
                 public static class: java.lang.Class<com.massifmaps.ui.MapView>;
-                public setMapEventListener(mapEventListener: com.massifmaps.ui.MapEventListener): void;
                 public constructor(context: globalAndroid.content.Context);
+                public setTranslucent(translucent: boolean): void;
                 public onKeyDown(param0: number, param1: globalAndroid.view.KeyEvent): boolean;
                 public onSurfaceChanged(param0: javax.microedition.khronos.opengles.GL10, param1: number, param2: number): void;
-                public zoom(param0: number, param1: com.massifmaps.core.MapPos, param2: number): void;
-                public getOptions(): com.massifmaps.components.Options;
+                public getMapHandle(): number;
                 public onDrawFrame(param0: javax.microedition.khronos.opengles.GL10): void;
-                public rotate(deltaAngle: number, durationSeconds: number): void;
                 public cancelAllTasks(): void;
+                public unscheduleDrawable(who: globalAndroid.graphics.drawable.Drawable): void;
                 public sendAccessibilityEvent(param0: number): void;
-                public moveToFitBounds(param0: com.massifmaps.core.MapBounds, param1: com.massifmaps.core.ScreenBounds, param2: boolean, param3: boolean, param4: boolean, param5: number): void;
-                public setZoom(param0: number, param1: com.massifmaps.core.MapPos, param2: number): void;
+                public getMapId(): string;
                 public constructor(context: globalAndroid.content.Context, attrs: globalAndroid.util.AttributeSet);
-                public tilt(deltaTilt: number, durationSeconds: number): void;
                 public onKeyUp(param0: number, param1: globalAndroid.view.KeyEvent): boolean;
-                public setTilt(param0: number, param1: number): void;
-                public mapToScreen(mapPos: com.massifmaps.core.MapPos): com.massifmaps.core.ScreenPos;
+                public onKeyLongPress(param0: number, param1: globalAndroid.view.KeyEvent): boolean;
                 public onKeyMultiple(param0: number, param1: number, param2: globalAndroid.view.KeyEvent): boolean;
-                public onSurfaceChanged(gl: javax.microedition.khronos.opengles.GL10, width: number, height: number): void;
+                public onSurfaceCreated(param0: javax.microedition.khronos.opengles.GL10, param1: javax.microedition.khronos.egl.EGLConfig): void;
                 public clearPreloadingCaches(): void;
                 public clearAllCaches(): void;
-                public unscheduleDrawable(param0: globalAndroid.graphics.drawable.Drawable, param1: java.lang.Runnable): void;
-                public getMapEventListener(): com.massifmaps.ui.MapEventListener;
-                public screenToMap(param0: com.massifmaps.core.ScreenPos): com.massifmaps.core.MapPos;
-                public stopFlight(): void;
-                public flyTo(pos: com.massifmaps.core.MapPos, zoom: number, rotation: number, tilt: number, durationSeconds: number): void;
-                public zoom(param0: number, param1: number): void;
-                public setTilt(tilt: number, durationSeconds: number): void;
-                public pan(deltaPos: com.massifmaps.core.MapVec, durationSeconds: number): void;
-                public setFocusPos(param0: com.massifmaps.core.MapPos, param1: number): void;
-                public getMapRenderer(): com.massifmaps.renderers.MapRenderer;
-                public rotate(param0: number, param1: number): void;
-                public moveTo(pos: com.massifmaps.core.MapPos, zoom: number, rotation: number, tilt: number): void;
-                public setMapEventListener(param0: com.massifmaps.ui.MapEventListener): void;
-                public rotate(param0: number, param1: com.massifmaps.core.MapPos, param2: number): void;
-                public constructor(context: globalAndroid.content.Context, attrs: globalAndroid.util.AttributeSet, defStyleAttr: number);
-                public zoom(deltaZoom: number, durationSeconds: number): void;
-                public constructor(e: globalAndroid.content.Context, m: globalAndroid.util.AttributeSet);
-                public surfaceRedrawNeededAsync(holder: globalAndroid.view.SurfaceHolder, drawingFinished: java.lang.Runnable): void;
-                public getFlightProgress(): number;
-                public getFocusPos(): com.massifmaps.core.MapPos;
-                public surfaceRedrawNeeded(param0: globalAndroid.view.SurfaceHolder): void;
-                public setMapRotation(angle: number, durationSeconds: number): void;
-                public setMapRotation(param0: number, param1: number): void;
-                public mapToScreen(param0: com.massifmaps.core.MapPos): com.massifmaps.core.ScreenPos;
-                public setTranslucent(translucent: boolean): void;
-                public getZoom(): number;
-                public setZoom(param0: number, param1: number): void;
-                public setFocusPos(pos: com.massifmaps.core.MapPos, durationSeconds: number): void;
-                public getMapRotation(): number;
-                public unscheduleDrawable(who: globalAndroid.graphics.drawable.Drawable): void;
-                public onTouchEvent(pointer1Index: globalAndroid.view.MotionEvent): boolean;
-                public moveTo(pos: com.massifmaps.core.MapPos, zoom: number): void;
-                public pan(param0: com.massifmaps.core.MapVec, param1: number): void;
-                public onKeyLongPress(param0: number, param1: globalAndroid.view.KeyEvent): boolean;
-                public setMapRotation(angle: number, targetPos: com.massifmaps.core.MapPos, durationSeconds: number): void;
-                public setZoom(zoom: number, targetPos: com.massifmaps.core.MapPos, durationSeconds: number): void;
-                public isFlightActive(): boolean;
-                public onSurfaceCreated(param0: javax.microedition.khronos.opengles.GL10, param1: javax.microedition.khronos.egl.EGLConfig): void;
                 public onSurfaceCreated(gl: javax.microedition.khronos.opengles.GL10, config: javax.microedition.khronos.egl.EGLConfig): void;
-                public getLayers(): com.massifmaps.components.Layers;
+                public onSurfaceChanged(gl: javax.microedition.khronos.opengles.GL10, width: number, height: number): void;
+                public unscheduleDrawable(param0: globalAndroid.graphics.drawable.Drawable, param1: java.lang.Runnable): void;
                 public onDrawFrame(gl: javax.microedition.khronos.opengles.GL10): void;
-                public flyTo(pos: com.massifmaps.core.MapPos, zoom: number, rotation: number, tilt: number, climbHeight: number, durationSeconds: number): void;
-                public tilt(param0: number, param1: number): void;
-                public rotate(deltaAngle: number, targetPos: com.massifmaps.core.MapPos, durationSeconds: number): void;
-                public moveToFitBounds(mapBounds: com.massifmaps.core.MapBounds, screenBounds: com.massifmaps.core.ScreenBounds, integerZoom: boolean, durationSeconds: number): void;
+                public constructor(context: globalAndroid.content.Context, id: string);
                 public constructor(context: globalAndroid.content.Context, attrs: globalAndroid.util.AttributeSet, defStyleAttr: number, defStyleRes: number);
-                public moveToFitBounds(mapBounds: com.massifmaps.core.MapBounds, screenBounds: com.massifmaps.core.ScreenBounds, integerZoom: boolean, resetRotation: boolean, resetTilt: boolean, durationSeconds: number): void;
-                public getBaseMapView(): com.massifmaps.ui.BaseMapView;
-                public setZoom(zoom: number, durationSeconds: number): void;
-                public setMapRotation(param0: number, param1: com.massifmaps.core.MapPos, param2: number): void;
-                public screenToMap(screenPos: com.massifmaps.core.ScreenPos): com.massifmaps.core.MapPos;
+                public constructor(context: globalAndroid.content.Context, attrs: globalAndroid.util.AttributeSet, defStyleAttr: number);
+                public getViewHandle(): number;
                 public invalidateDrawable(param0: globalAndroid.graphics.drawable.Drawable): void;
+                public surfaceRedrawNeededAsync(holder: globalAndroid.view.SurfaceHolder, drawingFinished: java.lang.Runnable): void;
                 public sendAccessibilityEventUnchecked(param0: globalAndroid.view.accessibility.AccessibilityEvent): void;
-                public flyTo(pos: com.massifmaps.core.MapPos, zoom: number, durationSeconds: number): void;
-                public zoom(deltaZoom: number, targetPos: com.massifmaps.core.MapPos, durationSeconds: number): void;
-                public getTilt(): number;
+                public onTouchEvent(event: globalAndroid.view.MotionEvent): boolean;
                 public scheduleDrawable(param0: globalAndroid.graphics.drawable.Drawable, param1: java.lang.Runnable, param2: number): void;
-                public moveToFitBounds(param0: com.massifmaps.core.MapBounds, param1: com.massifmaps.core.ScreenBounds, param2: boolean, param3: number): void;
+                public getLayersHandle(): number;
+                public surfaceRedrawNeeded(param0: globalAndroid.view.SurfaceHolder): void;
+            }
+        }
+    }
+}
+
+declare namespace com {
+    export namespace massifmaps {
+        export namespace ui {
+            export class MapViewHandle extends java.lang.Object {
+                public static class: java.lang.Class<com.massifmaps.ui.MapViewHandle>;
             }
         }
     }
@@ -6619,36 +7235,24 @@ declare namespace com {
                 /**
                  * Constructs a new instance of the com.massifmaps.ui.MapViewInterface interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
                  */
-                public constructor(implementation: { getLayers(): com.massifmaps.components.Layers; getOptions(): com.massifmaps.components.Options; getMapRenderer(): com.massifmaps.renderers.MapRenderer; getFocusPos(): com.massifmaps.core.MapPos; getMapRotation(): number; getTilt(): number; getZoom(): number; pan(param0: com.massifmaps.core.MapVec, param1: number): void; setFocusPos(param0: com.massifmaps.core.MapPos, param1: number): void; rotate(param0: number, param1: number): void; rotate(param0: number, param1: com.massifmaps.core.MapPos, param2: number): void; setMapRotation(param0: number, param1: number): void; setMapRotation(param0: number, param1: com.massifmaps.core.MapPos, param2: number): void; tilt(param0: number, param1: number): void; setTilt(param0: number, param1: number): void; zoom(param0: number, param1: number): void; zoom(param0: number, param1: com.massifmaps.core.MapPos, param2: number): void; setZoom(param0: number, param1: number): void; setZoom(param0: number, param1: com.massifmaps.core.MapPos, param2: number): void; moveToFitBounds(param0: com.massifmaps.core.MapBounds, param1: com.massifmaps.core.ScreenBounds, param2: boolean, param3: number): void; moveToFitBounds(param0: com.massifmaps.core.MapBounds, param1: com.massifmaps.core.ScreenBounds, param2: boolean, param3: boolean, param4: boolean, param5: number): void; getMapEventListener(): com.massifmaps.ui.MapEventListener; setMapEventListener(param0: com.massifmaps.ui.MapEventListener): void; screenToMap(param0: com.massifmaps.core.ScreenPos): com.massifmaps.core.MapPos; mapToScreen(param0: com.massifmaps.core.MapPos): com.massifmaps.core.ScreenPos; cancelAllTasks(): void; clearPreloadingCaches(): void; clearAllCaches(): void; });
                 public constructor();
-                public setMapRotation(param0: number, param1: number): void;
-                public mapToScreen(param0: com.massifmaps.core.MapPos): com.massifmaps.core.ScreenPos;
-                public getZoom(): number;
-                public setZoom(param0: number, param1: number): void;
-                public zoom(param0: number, param1: com.massifmaps.core.MapPos, param2: number): void;
-                public getOptions(): com.massifmaps.components.Options;
-                public getMapRotation(): number;
-                public cancelAllTasks(): void;
-                public moveToFitBounds(param0: com.massifmaps.core.MapBounds, param1: com.massifmaps.core.ScreenBounds, param2: boolean, param3: boolean, param4: boolean, param5: number): void;
-                public setZoom(param0: number, param1: com.massifmaps.core.MapPos, param2: number): void;
-                public pan(param0: com.massifmaps.core.MapVec, param1: number): void;
-                public setTilt(param0: number, param1: number): void;
-                public getLayers(): com.massifmaps.components.Layers;
+                public getMapId(): string;
+                public getMapHandle(): number;
                 public clearPreloadingCaches(): void;
                 public clearAllCaches(): void;
-                public getMapEventListener(): com.massifmaps.ui.MapEventListener;
-                public tilt(param0: number, param1: number): void;
-                public screenToMap(param0: com.massifmaps.core.ScreenPos): com.massifmaps.core.MapPos;
-                public zoom(param0: number, param1: number): void;
-                public setFocusPos(param0: com.massifmaps.core.MapPos, param1: number): void;
-                public getMapRenderer(): com.massifmaps.renderers.MapRenderer;
-                public rotate(param0: number, param1: number): void;
-                public setMapRotation(param0: number, param1: com.massifmaps.core.MapPos, param2: number): void;
-                public setMapEventListener(param0: com.massifmaps.ui.MapEventListener): void;
-                public rotate(param0: number, param1: com.massifmaps.core.MapPos, param2: number): void;
-                public getTilt(): number;
-                public getFocusPos(): com.massifmaps.core.MapPos;
-                public moveToFitBounds(param0: com.massifmaps.core.MapBounds, param1: com.massifmaps.core.ScreenBounds, param2: boolean, param3: number): void;
+                public getLayersHandle(): number;
+                public getViewHandle(): number;
+                public cancelAllTasks(): void;
+            }
+        }
+    }
+}
+
+declare namespace com {
+    export namespace massifmaps {
+        export namespace ui {
+            export class MapViewNative extends java.lang.Object {
+                public static class: java.lang.Class<com.massifmaps.ui.MapViewNative>;
             }
         }
     }
@@ -6713,94 +7317,43 @@ declare namespace com {
 declare namespace com {
     export namespace massifmaps {
         export namespace ui {
-            export class TextureMapRedrawRequestListener extends com.massifmaps.renderers.RedrawRequestListener {
-                public static class: java.lang.Class<com.massifmaps.ui.TextureMapRedrawRequestListener>;
-                public onRedrawRequested(): void;
-                public constructor();
-                public constructor(mapView: com.massifmaps.ui.TextureMapView);
-            }
-        }
-    }
-}
-
-declare namespace com {
-    export namespace massifmaps {
-        export namespace ui {
             export class TextureMapView extends com.massifmaps.ui.GLTextureView implements globalAndroid.opengl.GLSurfaceView.Renderer, com.massifmaps.ui.MapViewInterface {
                 public static class: java.lang.Class<com.massifmaps.ui.TextureMapView>;
-                public setMapEventListener(mapEventListener: com.massifmaps.ui.MapEventListener): void;
                 public onSurfaceTextureDestroyed(param0: globalAndroid.graphics.SurfaceTexture): boolean;
                 public constructor(context: globalAndroid.content.Context);
+                public setTranslucent(translucent: boolean): void;
                 public onKeyDown(param0: number, param1: globalAndroid.view.KeyEvent): boolean;
                 public onSurfaceChanged(param0: javax.microedition.khronos.opengles.GL10, param1: number, param2: number): void;
-                public zoom(param0: number, param1: com.massifmaps.core.MapPos, param2: number): void;
-                public getOptions(): com.massifmaps.components.Options;
+                public getMapHandle(): number;
                 public onDrawFrame(param0: javax.microedition.khronos.opengles.GL10): void;
-                public rotate(deltaAngle: number, durationSeconds: number): void;
                 public cancelAllTasks(): void;
+                public unscheduleDrawable(who: globalAndroid.graphics.drawable.Drawable): void;
                 public onSurfaceTextureAvailable(param0: globalAndroid.graphics.SurfaceTexture, param1: number, param2: number): void;
                 public sendAccessibilityEvent(param0: number): void;
-                public moveToFitBounds(param0: com.massifmaps.core.MapBounds, param1: com.massifmaps.core.ScreenBounds, param2: boolean, param3: boolean, param4: boolean, param5: number): void;
-                public setZoom(param0: number, param1: com.massifmaps.core.MapPos, param2: number): void;
+                public getMapId(): string;
                 public constructor(context: globalAndroid.content.Context, attrs: globalAndroid.util.AttributeSet);
-                public tilt(deltaTilt: number, durationSeconds: number): void;
                 public onKeyUp(param0: number, param1: globalAndroid.view.KeyEvent): boolean;
-                public setTilt(param0: number, param1: number): void;
-                public mapToScreen(mapPos: com.massifmaps.core.MapPos): com.massifmaps.core.ScreenPos;
+                public onKeyLongPress(param0: number, param1: globalAndroid.view.KeyEvent): boolean;
                 public onKeyMultiple(param0: number, param1: number, param2: globalAndroid.view.KeyEvent): boolean;
-                public onSurfaceChanged(gl: javax.microedition.khronos.opengles.GL10, width: number, height: number): void;
+                public onSurfaceCreated(param0: javax.microedition.khronos.opengles.GL10, param1: javax.microedition.khronos.egl.EGLConfig): void;
                 public clearPreloadingCaches(): void;
                 public clearAllCaches(): void;
-                public unscheduleDrawable(param0: globalAndroid.graphics.drawable.Drawable, param1: java.lang.Runnable): void;
-                public getMapEventListener(): com.massifmaps.ui.MapEventListener;
-                public screenToMap(param0: com.massifmaps.core.ScreenPos): com.massifmaps.core.MapPos;
-                public zoom(param0: number, param1: number): void;
-                public setTilt(tilt: number, durationSeconds: number): void;
-                public pan(deltaPos: com.massifmaps.core.MapVec, durationSeconds: number): void;
-                public setFocusPos(param0: com.massifmaps.core.MapPos, param1: number): void;
-                public getMapRenderer(): com.massifmaps.renderers.MapRenderer;
-                public rotate(param0: number, param1: number): void;
-                public setMapEventListener(param0: com.massifmaps.ui.MapEventListener): void;
-                public constructor(e: globalAndroid.content.Context, this_: globalAndroid.util.AttributeSet);
-                public rotate(param0: number, param1: com.massifmaps.core.MapPos, param2: number): void;
-                public constructor(context: globalAndroid.content.Context, attrs: globalAndroid.util.AttributeSet, defStyleAttr: number);
-                public zoom(deltaZoom: number, durationSeconds: number): void;
-                public getFocusPos(): com.massifmaps.core.MapPos;
-                public onSurfaceTextureSizeChanged(param0: globalAndroid.graphics.SurfaceTexture, param1: number, param2: number): void;
-                public setMapRotation(angle: number, durationSeconds: number): void;
-                public setMapRotation(param0: number, param1: number): void;
-                public mapToScreen(param0: com.massifmaps.core.MapPos): com.massifmaps.core.ScreenPos;
-                public setTranslucent(translucent: boolean): void;
-                public getZoom(): number;
-                public setZoom(param0: number, param1: number): void;
-                public setFocusPos(pos: com.massifmaps.core.MapPos, durationSeconds: number): void;
-                public getMapRotation(): number;
-                public unscheduleDrawable(who: globalAndroid.graphics.drawable.Drawable): void;
-                public onTouchEvent(pointer1Index: globalAndroid.view.MotionEvent): boolean;
-                public pan(param0: com.massifmaps.core.MapVec, param1: number): void;
-                public onKeyLongPress(param0: number, param1: globalAndroid.view.KeyEvent): boolean;
-                public setMapRotation(angle: number, targetPos: com.massifmaps.core.MapPos, durationSeconds: number): void;
-                public setZoom(zoom: number, targetPos: com.massifmaps.core.MapPos, durationSeconds: number): void;
-                public onSurfaceCreated(param0: javax.microedition.khronos.opengles.GL10, param1: javax.microedition.khronos.egl.EGLConfig): void;
                 public onSurfaceCreated(gl: javax.microedition.khronos.opengles.GL10, config: javax.microedition.khronos.egl.EGLConfig): void;
-                public getLayers(): com.massifmaps.components.Layers;
+                public onSurfaceChanged(gl: javax.microedition.khronos.opengles.GL10, width: number, height: number): void;
+                public unscheduleDrawable(param0: globalAndroid.graphics.drawable.Drawable, param1: java.lang.Runnable): void;
                 public onDrawFrame(gl: javax.microedition.khronos.opengles.GL10): void;
-                public tilt(param0: number, param1: number): void;
-                public rotate(deltaAngle: number, targetPos: com.massifmaps.core.MapPos, durationSeconds: number): void;
-                public moveToFitBounds(mapBounds: com.massifmaps.core.MapBounds, screenBounds: com.massifmaps.core.ScreenBounds, integerZoom: boolean, durationSeconds: number): void;
+                public constructor(context: globalAndroid.content.Context, id: string);
                 public onLayoutChange(param0: globalAndroid.view.View, param1: number, param2: number, param3: number, param4: number, param5: number, param6: number, param7: number, param8: number): void;
                 public constructor(context: globalAndroid.content.Context, attrs: globalAndroid.util.AttributeSet, defStyleAttr: number, defStyleRes: number);
-                public moveToFitBounds(mapBounds: com.massifmaps.core.MapBounds, screenBounds: com.massifmaps.core.ScreenBounds, integerZoom: boolean, resetRotation: boolean, resetTilt: boolean, durationSeconds: number): void;
-                public setZoom(zoom: number, durationSeconds: number): void;
-                public setMapRotation(param0: number, param1: com.massifmaps.core.MapPos, param2: number): void;
-                public screenToMap(screenPos: com.massifmaps.core.ScreenPos): com.massifmaps.core.MapPos;
+                public constructor(context: globalAndroid.content.Context, attrs: globalAndroid.util.AttributeSet, defStyleAttr: number);
+                public getViewHandle(): number;
                 public invalidateDrawable(param0: globalAndroid.graphics.drawable.Drawable): void;
                 public onSurfaceTextureUpdated(param0: globalAndroid.graphics.SurfaceTexture): void;
                 public sendAccessibilityEventUnchecked(param0: globalAndroid.view.accessibility.AccessibilityEvent): void;
-                public zoom(deltaZoom: number, targetPos: com.massifmaps.core.MapPos, durationSeconds: number): void;
-                public getTilt(): number;
+                public onTouchEvent(event: globalAndroid.view.MotionEvent): boolean;
                 public scheduleDrawable(param0: globalAndroid.graphics.drawable.Drawable, param1: java.lang.Runnable, param2: number): void;
-                public moveToFitBounds(param0: com.massifmaps.core.MapBounds, param1: com.massifmaps.core.ScreenBounds, param2: boolean, param3: number): void;
+                public getLayersHandle(): number;
+                public onSurfaceTextureSizeChanged(param0: globalAndroid.graphics.SurfaceTexture, param1: number, param2: number): void;
             }
         }
     }
@@ -7488,6 +8041,7 @@ declare namespace com {
                 public setCartoCSSStyleSet(styleSet: com.massifmaps.styles.CartoCSSStyleSet): void;
                 public getStyleParameters(): com.massifmaps.core.StringVector;
                 public getStyleLayerNames(): com.massifmaps.core.StringVector;
+                public getLegend(spec: string): string;
                 public getMaxZoom(): number;
                 public setStyleParameters(params: com.massifmaps.core.StringMap): void;
                 public getStyleParameter(param: string): string;
@@ -7531,29 +8085,11 @@ declare namespace com {
 declare namespace com {
     export namespace massifmaps {
         export namespace vectortiles {
-            export class TorqueTileDecoder extends com.massifmaps.vectortiles.VectorTileDecoder {
-                public static class: java.lang.Class<com.massifmaps.vectortiles.TorqueTileDecoder>;
-                public getFrameCount(): number;
-                public getMaxZoom(): number;
-                public getStyleSet(): com.massifmaps.styles.CartoCSSStyleSet;
-                public getResolution(): number;
-                public setStyleSet(styleSet: com.massifmaps.styles.CartoCSSStyleSet): void;
-                public addFallbackFont(fontData: com.massifmaps.core.BinaryData): void;
-                public constructor(styleSet: com.massifmaps.styles.CartoCSSStyleSet);
-                public getAnimationDuration(): number;
-                public getMinZoom(): number;
-            }
-        }
-    }
-}
-
-declare namespace com {
-    export namespace massifmaps {
-        export namespace vectortiles {
             export class VectorTileDecoder extends java.lang.Object {
                 public static class: java.lang.Class<com.massifmaps.vectortiles.VectorTileDecoder>;
                 public swigCMemOwn: boolean;
                 public notifyDecoderRefreshed(): void;
+                public getConfigVersion(): number;
                 public getMaxZoom(): number;
                 public equals(obj: any): boolean;
                 public notifyDecoderChanged(): void;

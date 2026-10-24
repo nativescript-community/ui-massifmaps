@@ -205,8 +205,6 @@
         "MassifMaps:MSFTileUtils",
         "MassifMaps:MSFTomTomOnlineGeocodingService",
         "MassifMaps:MSFTomTomOnlineReverseGeocodingService",
-        "MassifMaps:MSFTorqueTileDecoder",
-        "MassifMaps:MSFTorqueTileLayer",
         "MassifMaps:MSFUTFGridClickInfo",
         "MassifMaps:MSFUTFGridEventListener",
         "MassifMaps:MSFValhallaOfflineRoutingService",
