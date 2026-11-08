@@ -894,6 +894,106 @@ function resultName(result: number): string {
     return `result ${result}`;
 }
 
+/**
+ * What `MassifLayer.sunExposure` marches with; every default is the SDK's, set only what differs (the eye
+ * height, mostly). Meanings and units: docs/features/sun-exposure.md in the SDK.
+ */
+export interface SunExposureOptions {
+    /** Metres above the ground at each point. Default 1.5. */
+    eyeHeight?: number;
+    /** Cap on the march, metres. Default 30000. */
+    maxDistance?: number;
+    /** Sun disc radius in degrees, the penumbra's half-width. Default 0.2666. */
+    discRadius?: number;
+    /** Apparent altitude under which a point is DARK. Default -0.2666; -0.833 for a true altitude. */
+    darkBelow?: number;
+    /** Apparent altitude under which a point is flagged LOW_SUN. Default 2. */
+    lowSunBelow?: number;
+    firstStep?: number;
+    stepGrowth?: number;
+    lodRatio?: number;
+    minTexel?: number;
+    refraction?: number;
+    /** `'cached'` never waits for tiles: it asks for them in the background and flags what it lacked. Default `'allow'`. */
+    load?: 'allow' | 'cached';
+    /** Deadline for loading tiles in one call, ms; 0 for none. Default 20000. */
+    loadTimeoutMs?: number;
+    /** What one call may hold in decoded elevation grids, MB. Default 96. */
+    cacheMB?: number;
+    /** Empty the elevation cache after the call: set it on the last chunk of a route. */
+    releaseCache?: boolean;
+}
+
+/** The bits of `SunExposure.status`. */
+export const SunExposureStatus = {
+    /** Some answer came from a grid more than two levels coarser than wanted, or a tile beyond 500 m was missing. */
+    COARSE_DEM: 1,
+    /** No ground at the point or within 500 m: `sunFraction` is -1. */
+    NO_DEM: 2,
+    /** The sun is under `darkBelow`; not marched. */
+    DARK: 4,
+    LOW_SUN: 8,
+    /** Lit, but the march stopped at `maxDistance` with the sun under 4 degrees: a ridge further out may hide it. */
+    TRUNCATED: 16
+} as const;
+
+/** The result of `MassifLayer.sunExposure`, one entry per input position in each array. */
+export interface SunExposure {
+    count: number;
+    /** Share of the sun's disc the terrain leaves visible: 0 hidden to 1 lit, -1 unknown (`NO_DEM`). */
+    sunFraction: number[];
+    /** Degrees; a lower bound where the sun is hidden, -90 for none. */
+    horizon: number[];
+    /** Metres to the first ground that hid the sun's centre, -1 for none. */
+    shadowDistance: number[];
+    /** Bit set of `SunExposureStatus`. */
+    status: number[];
+    tilesLoaded: number;
+    tilesMissing: number;
+    /** Zoom range of the elevation tiles the answers used, -1 when none. */
+    minZoomUsed: number;
+    maxZoomUsed: number;
+    /** The load deadline passed: what was not loaded is flagged, not guessed. */
+    deadlineHit: boolean;
+    /** Some point was lit with a low sun and a march cut at `maxDistance`. */
+    truncated: boolean;
+}
+
+const SUN_EXPOSURE_VERSION = 1;
+const SUN_EXPOSURE_HEADER = 8;
+
+/** The flat array the SDK returns: 8 header numbers, then four per position. */
+export function parseSunExposure(doubles: ArrayLike<number>): SunExposure {
+    if (doubles.length < SUN_EXPOSURE_HEADER || doubles[0] !== SUN_EXPOSURE_VERSION) {
+        throw new MassifApiError(`unsupported sun exposure result (version ${doubles[0]}): the plugin and the SDK differ`);
+    }
+    const count = doubles[1];
+    const stride = doubles[2];
+    if (stride !== 4 || doubles.length !== SUN_EXPOSURE_HEADER + count * stride) {
+        throw new MassifApiError(`malformed sun exposure result: ${doubles.length} numbers for ${count} positions`);
+    }
+    const column = (offset: number) => {
+        const values: number[] = new Array(count);
+        for (let i = 0; i < count; i++) {
+            values[i] = doubles[SUN_EXPOSURE_HEADER + i * stride + offset];
+        }
+        return values;
+    };
+    return {
+        count,
+        sunFraction: column(0),
+        horizon: column(1),
+        shadowDistance: column(2),
+        status: column(3),
+        tilesLoaded: doubles[3],
+        tilesMissing: doubles[4],
+        minZoomUsed: doubles[5],
+        maxZoomUsed: doubles[6],
+        deadlineHit: (doubles[7] & 1) !== 0,
+        truncated: (doubles[7] & 2) !== 0
+    };
+}
+
 /** Click events need a listener on the NATIVE layer, installed on first subscription (chaining any existing one). */
 export class MassifLayer<C extends ClassName = any> extends MassifObject<C> {
     private mBridged: { [event: string]: boolean } = {};
@@ -984,6 +1084,25 @@ export class MassifLayer<C extends ClassName = any> extends MassifObject<C> {
         } catch (e) {
             return [];
         }
+    }
+
+    /**
+     * Whether the terrain hides the sun at each position, off the main thread (it loads elevation tiles). Only a
+     * hillshade layer answers. `sun` is `[azimuth, apparent altitude]` in degrees per position, from the caller's own
+     * astronomy; send a route in chunks of about 250 positions, a running chunk cannot be cancelled.
+     */
+    sunExposure(positions: AnyPosition[], sun: [number, number][], options?: SunExposureOptions): CancellablePromise<SunExposure> {
+        if (sun.length !== positions.length) {
+            throw new MassifApiError(`sunExposure needs one sun direction per position, got ${sun.length} for ${positions.length}`);
+        }
+        const directions: number[] = [];
+        for (const [azimuth, altitude] of sun) {
+            directions.push(azimuth, altitude);
+        }
+        const call = this.callAsync('computeSunExposure' as never, [positions.map(toPosition), directions, options ?? null] as never) as CancellablePromise<number[]>;
+        const promise = call.then(parseSunExposure) as CancellablePromise<SunExposure>;
+        promise.cancel = () => call.cancel();
+        return promise;
     }
 
     // payload class named OUTRIGHT: on an unnarrowed MassifLayer (the common case) MassifEventData<C, EventName<C>>

@@ -8,6 +8,7 @@
  * Run with `npm run typings.api.check`.
  */
 import { MapCamera, MassifLayer, MassifMap, MassifObject, attach, create, createLayer, createSource, find } from '../../../../src/ui-massifmaps/api/index.common';
+import { SunExposureStatus } from '../../../../src/ui-massifmaps/api/index.common';
 import type { Json } from '../../../../src/ui-massifmaps/api/index.common';
 
 declare const view: any;
@@ -243,6 +244,19 @@ dem.loadTile([8467, 5852]);
 
 const profile: number[] = hillshade.elevations([[5.76, 45.24], { lat: 45.25, lon: 5.77 }]);
 void profile;
+
+// sun and shade along a route: one sun direction per position, one array per answer
+const shade = await hillshade.sunExposure([[5.76, 45.24], { lat: 45.25, lon: 5.77 }], [[135, 10], [136, 10.5]], { eyeHeight: 1.2, load: 'cached' });
+const lit: number[] = shade.sunFraction;
+const hidden: boolean = (shade.status[0] & SunExposureStatus.NO_DEM) !== 0 || shade.deadlineHit;
+void lit;
+void hidden;
+
+// @ts-expect-error `load` is 'allow' or 'cached'
+hillshade.sunExposure([[5.76, 45.24]], [[135, 10]], { load: 'sometimes' });
+
+// @ts-expect-error a sun direction is [azimuth, altitude]
+hillshade.sunExposure([[5.76, 45.24]], [[135]]);
 
 // --- threads and throttling ----------------------------------------------------------------------
 
