@@ -164,7 +164,7 @@ base.visible(true).opacity(0.5).zoomRange([4, 18]).refresh();
 if (!base.visible()) { … }
 ```
 
-That list is **closed** (`opacity`, `visible`, `zoomRange`, plus `refresh`, `clearTileCaches`, `moveTo`, `detach`, `elevations`). A named accessor per property is a non-goal — there are 700 and the list grows with the SDK, which is what `set` / `apply` / `group` are for.
+That list is **closed** (`opacity`, `visible`, `zoomRange`, plus `refresh`, `clearTileCaches`, `moveTo`, `detach`, `elevations`, `sunExposure`). A named accessor per property is a non-goal — there are 700 and the list grows with the SDK, which is what `set` / `apply` / `group` are for.
 
 ### The camera
 
@@ -233,6 +233,21 @@ const data = await source.callAsync('loadTile', [[8467, 5852, 14]], (t) => t.get
 ```
 
 A method can be addressed through a path: `base.call('tileDecoder.loadTile', [8467, 5852, 14])`. A style parameter is *not* one of them any more - it is a property, `base.set('style.params.buildings', 'false')`.
+
+### Sun and shade along a route
+
+A hillshade layer can tell whether the terrain hides the sun at each position of a route, offline. The
+sun is yours (one `[azimuth, apparent altitude]` per position, from your own astronomy at each position's time);
+the SDK does the terrain:
+
+```ts
+const shade = await hillshade.sunExposure(points, sunAt, { eyeHeight: 1.5 }); // in chunks of ~250 points
+shade.sunFraction[i];                                   // 0 hidden .. 1 lit, -1 unknown
+(shade.status[i] & SunExposureStatus.NO_DEM) !== 0;     // no elevation data: a gap, not a guess
+```
+
+It loads elevation tiles, so it runs on a worker and `cancel()` only drops the result of a chunk already running.
+`shade.tilesMissing` and `deadlineHit` say how complete the answer is. Terrain only: no trees, buildings or tunnels.
 
 ### Routing
 
