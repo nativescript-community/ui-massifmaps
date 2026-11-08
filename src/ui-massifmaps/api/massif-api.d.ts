@@ -236,6 +236,7 @@ export type ClassName =
     | 'massif::SolidLayer'
     | 'massif::Style'
     | 'massif::StyleBuilder'
+    | 'massif::SunExposureOptions'
     | 'massif::TerrainOptions'
     | 'massif::TerrariumElevationDataDecoder'
     | 'massif::Text'
@@ -1431,13 +1432,13 @@ export interface PropertyTypes {
         /** Returns the current post-process effect. Can be null. */
         'mapRenderer.postProcessEffect': Handle;
         /** Returns the value of a color parameter. */
-        'mapRenderer.postProcessEffect.colorParams': Record<string, number>;
+        'mapRenderer.postProcessEffect.colorParams': Record<string, Json>;
         /** Returns the value of a color parameter. */
-        [key: `mapRenderer.postProcessEffect.colorParams.${string}`]: number;
+        [key: `mapRenderer.postProcessEffect.colorParams.${string}`]: Json;
         /** Returns the value of a float parameter. */
-        'mapRenderer.postProcessEffect.floatParams': Record<string, number>;
+        'mapRenderer.postProcessEffect.floatParams': Record<string, Json>;
         /** Returns the value of a float parameter. */
-        [key: `mapRenderer.postProcessEffect.floatParams.${string}`]: number;
+        [key: `mapRenderer.postProcessEffect.floatParams.${string}`]: Json;
         /** (read-only) Returns the fragment shader source of the effect. */
         readonly 'mapRenderer.postProcessEffect.fragmentShader': string;
         /** (read-only) Returns the name of the effect. */
@@ -2222,15 +2223,15 @@ export interface PropertyTypes {
         /** Returns the distance geo-three's terrain LOD subdivides at. */
         'terrainOptions.subdivideDistance': number;
         /** Returns the value of a terrain surface shader color parameter. */
-        'terrainOptions.surfaceColorParams': Record<string, number>;
+        'terrainOptions.surfaceColorParams': Record<string, Json>;
         /** Returns the value of a terrain surface shader color parameter. */
-        [key: `terrainOptions.surfaceColorParams.${string}`]: number;
+        [key: `terrainOptions.surfaceColorParams.${string}`]: Json;
         /** Returns the resolution the elevation node field is built at. */
         'terrainOptions.surfaceNodeResolution': number;
         /** Returns the value of a terrain surface shader float parameter. */
-        'terrainOptions.surfaceParams': Record<string, number>;
+        'terrainOptions.surfaceParams': Record<string, Json>;
         /** Returns the value of a terrain surface shader float parameter. */
-        [key: `terrainOptions.surfaceParams.${string}`]: number;
+        [key: `terrainOptions.surfaceParams.${string}`]: Json;
         /** Returns the custom terrain surface fragment shader source, or an empty string if no shaded surface is drawn. */
         'terrainOptions.surfaceShaderSource': string;
         /** (read-only) Returns whether the switch is holding the ground flat while the tiles 3D needs load. */
@@ -3353,6 +3354,8 @@ export interface PropertyTypes {
         'shadowFollowsBuildingHeight': boolean;
         /** Returns the shadow map resolution. */
         'shadowMapSize': number;
+        /** Returns the lowest sun altitude the shadows are drawn at. */
+        'shadowMinSunAltitude': number;
         /** Returns the shadow normal offset. */
         'shadowNormalOffset': number;
         /** Returns the shadow softness. */
@@ -3653,13 +3656,13 @@ export interface PropertyTypes {
         /** Returns the current post-process effect. Can be null. */
         'postProcessEffect': Handle;
         /** Returns the value of a color parameter. */
-        'postProcessEffect.colorParams': Record<string, number>;
+        'postProcessEffect.colorParams': Record<string, Json>;
         /** Returns the value of a color parameter. */
-        [key: `postProcessEffect.colorParams.${string}`]: number;
+        [key: `postProcessEffect.colorParams.${string}`]: Json;
         /** Returns the value of a float parameter. */
-        'postProcessEffect.floatParams': Record<string, number>;
+        'postProcessEffect.floatParams': Record<string, Json>;
         /** Returns the value of a float parameter. */
-        [key: `postProcessEffect.floatParams.${string}`]: number;
+        [key: `postProcessEffect.floatParams.${string}`]: Json;
         /** (read-only) Returns the fragment shader source of the effect. */
         readonly 'postProcessEffect.fragmentShader': string;
         /** (read-only) Returns the name of the effect. */
@@ -4415,6 +4418,8 @@ export interface PropertyTypes {
         'light.shadowFollowsBuildingHeight': boolean;
         /** Returns the shadow map resolution. */
         'light.shadowMapSize': number;
+        /** Returns the lowest sun altitude the shadows are drawn at. */
+        'light.shadowMinSunAltitude': number;
         /** Returns the shadow normal offset. */
         'light.shadowNormalOffset': number;
         /** Returns the shadow softness. */
@@ -4459,6 +4464,8 @@ export interface PropertyTypes {
         'lightOptions.shadowFollowsBuildingHeight': boolean;
         /** Returns the shadow map resolution. */
         'lightOptions.shadowMapSize': number;
+        /** Returns the lowest sun altitude the shadows are drawn at. */
+        'lightOptions.shadowMinSunAltitude': number;
         /** Returns the shadow normal offset. */
         'lightOptions.shadowNormalOffset': number;
         /** Returns the shadow softness. */
@@ -4653,15 +4660,15 @@ export interface PropertyTypes {
         /** Returns the distance geo-three's terrain LOD subdivides at. */
         'terrain.subdivideDistance': number;
         /** Returns the value of a terrain surface shader color parameter. */
-        'terrain.surfaceColorParams': Record<string, number>;
+        'terrain.surfaceColorParams': Record<string, Json>;
         /** Returns the value of a terrain surface shader color parameter. */
-        [key: `terrain.surfaceColorParams.${string}`]: number;
+        [key: `terrain.surfaceColorParams.${string}`]: Json;
         /** Returns the resolution the elevation node field is built at. */
         'terrain.surfaceNodeResolution': number;
         /** Returns the value of a terrain surface shader float parameter. */
-        'terrain.surfaceParams': Record<string, number>;
+        'terrain.surfaceParams': Record<string, Json>;
         /** Returns the value of a terrain surface shader float parameter. */
-        [key: `terrain.surfaceParams.${string}`]: number;
+        [key: `terrain.surfaceParams.${string}`]: Json;
         /** Returns the custom terrain surface fragment shader source, or an empty string if no shaded surface is drawn. */
         'terrain.surfaceShaderSource': string;
         /** (read-only) Returns whether the switch is holding the ground flat while the tiles 3D needs load. */
@@ -4757,15 +4764,15 @@ export interface PropertyTypes {
         /** Returns the distance geo-three's terrain LOD subdivides at. */
         'terrainOptions.subdivideDistance': number;
         /** Returns the value of a terrain surface shader color parameter. */
-        'terrainOptions.surfaceColorParams': Record<string, number>;
+        'terrainOptions.surfaceColorParams': Record<string, Json>;
         /** Returns the value of a terrain surface shader color parameter. */
-        [key: `terrainOptions.surfaceColorParams.${string}`]: number;
+        [key: `terrainOptions.surfaceColorParams.${string}`]: Json;
         /** Returns the resolution the elevation node field is built at. */
         'terrainOptions.surfaceNodeResolution': number;
         /** Returns the value of a terrain surface shader float parameter. */
-        'terrainOptions.surfaceParams': Record<string, number>;
+        'terrainOptions.surfaceParams': Record<string, Json>;
         /** Returns the value of a terrain surface shader float parameter. */
-        [key: `terrainOptions.surfaceParams.${string}`]: number;
+        [key: `terrainOptions.surfaceParams.${string}`]: Json;
         /** Returns the custom terrain surface fragment shader source, or an empty string if no shaded surface is drawn. */
         'terrainOptions.surfaceShaderSource': string;
         /** (read-only) Returns whether the switch is holding the ground flat while the tiles 3D needs load. */
@@ -5605,13 +5612,13 @@ export interface PropertyTypes {
     };
     'massif::PostProcessEffect': {
         /** Returns the value of a color parameter. */
-        'colorParams': Record<string, number>;
+        'colorParams': Record<string, Json>;
         /** Returns the value of a color parameter. */
-        [key: `colorParams.${string}`]: number;
+        [key: `colorParams.${string}`]: Json;
         /** Returns the value of a float parameter. */
-        'floatParams': Record<string, number>;
+        'floatParams': Record<string, Json>;
         /** Returns the value of a float parameter. */
-        [key: `floatParams.${string}`]: number;
+        [key: `floatParams.${string}`]: Json;
         /** (read-only) Returns the fragment shader source of the effect. */
         readonly 'fragmentShader': string;
         /** (read-only) Returns the name of the effect. */
@@ -5996,6 +6003,36 @@ export interface PropertyTypes {
         /** Returns the color of the vector element. */
         'color': number;
     };
+    'massif::SunExposureOptions': {
+        /** Returns the memory one call may hold in decoded elevation grids. */
+        'cacheMB': number;
+        /** Returns the apparent altitude under which a point is DARK and not marched. */
+        'darkBelow': number;
+        /** Returns the sun disc's angular radius, the half-width of the penumbra. */
+        'discRadius': number;
+        /** Returns the height of the eye above the ground at each point. */
+        'eyeHeight': number;
+        /** Returns the first march step, also the smallest. */
+        'firstStep': number;
+        /** Returns whether the call loads the elevation tiles it needs. */
+        'loadMissingTiles': boolean;
+        /** Returns the deadline for loading tiles in one call. */
+        'loadTimeoutMs': number;
+        /** Returns the wanted elevation texel size per meter of distance. */
+        'lodRatio': number;
+        /** Returns the apparent altitude under which a point is flagged LOW_SUN. */
+        'lowSunBelow': number;
+        /** Returns how far toward the sun the march goes. */
+        'maxDistance': number;
+        /** Returns the finest texel size the march asks for. */
+        'minTexel': number;
+        /** Returns the atmospheric refraction coefficient. */
+        'refraction': number;
+        /** Returns whether the call empties the elevation cache once it is done. */
+        'releaseCache': boolean;
+        /** Returns how fast the march step grows with distance. */
+        'stepGrowth': number;
+    };
     'massif::TerrainOptions': {
         /** Returns whether tiles are decoded for terrain even while the terrain is disabled. */
         'alwaysDecode': boolean;
@@ -6076,15 +6113,15 @@ export interface PropertyTypes {
         /** Returns the distance geo-three's terrain LOD subdivides at. */
         'subdivideDistance': number;
         /** Returns the value of a terrain surface shader color parameter. */
-        'surfaceColorParams': Record<string, number>;
+        'surfaceColorParams': Record<string, Json>;
         /** Returns the value of a terrain surface shader color parameter. */
-        [key: `surfaceColorParams.${string}`]: number;
+        [key: `surfaceColorParams.${string}`]: Json;
         /** Returns the resolution the elevation node field is built at. */
         'surfaceNodeResolution': number;
         /** Returns the value of a terrain surface shader float parameter. */
-        'surfaceParams': Record<string, number>;
+        'surfaceParams': Record<string, Json>;
         /** Returns the value of a terrain surface shader float parameter. */
-        [key: `surfaceParams.${string}`]: number;
+        [key: `surfaceParams.${string}`]: Json;
         /** Returns the custom terrain surface fragment shader source, or an empty string if no shaded surface is drawn. */
         'surfaceShaderSource': string;
         /** (read-only) Returns whether the switch is holding the ground flat while the tiles 3D needs load. */
@@ -7736,6 +7773,8 @@ export interface PositionPaths {
     };
     'massif::StyleBuilder': {
     };
+    'massif::SunExposureOptions': {
+    };
     'massif::TerrainOptions': {
     };
     'massif::TerrariumElevationDataDecoder': {
@@ -8565,6 +8604,8 @@ export interface ObjectPaths {
     'massif::Style': {
     };
     'massif::StyleBuilder': {
+    };
+    'massif::SunExposureOptions': {
     };
     'massif::TerrainOptions': {
     };
@@ -9534,6 +9575,8 @@ export interface VariantPaths {
     };
     'massif::StyleBuilder': {
     };
+    'massif::SunExposureOptions': {
+    };
     'massif::TerrainOptions': {
     };
     'massif::TerrariumElevationDataDecoder': {
@@ -9995,9 +10038,9 @@ export type CelestialSpec = CelestialSpec_arc | CelestialSpec_image | CelestialS
 export interface EffectSpec_postprocess {
     type: 'postprocess';
     /** Returns the value of a color parameter. */
-    colorParams?: Record<string, number>;
+    colorParams?: Record<string, Json>;
     /** Returns the value of a float parameter. */
-    floatParams?: Record<string, number>;
+    floatParams?: Record<string, Json>;
     fragmentShader: string;
     name: string;
     /** Returns true if the effect needs the terrain depth pre-pass (uTerrainDepthTex). */
@@ -10904,6 +10947,8 @@ export interface OptionsSpec_light {
     shadowFollowsBuildingHeight?: boolean;
     /** Returns the shadow map resolution. */
     shadowMapSize?: number;
+    /** Returns the lowest sun altitude the shadows are drawn at. */
+    shadowMinSunAltitude?: number;
     /** Returns the shadow normal offset. */
     shadowNormalOffset?: number;
     /** Returns the shadow softness. */
@@ -11038,11 +11083,11 @@ export interface OptionsSpec_terrain {
     /** Returns the distance geo-three's terrain LOD subdivides at. */
     subdivideDistance?: number;
     /** Returns the value of a terrain surface shader color parameter. */
-    surfaceColorParams?: Record<string, number>;
+    surfaceColorParams?: Record<string, Json>;
     /** Returns the resolution the elevation node field is built at. */
     surfaceNodeResolution?: number;
     /** Returns the value of a terrain surface shader float parameter. */
-    surfaceParams?: Record<string, number>;
+    surfaceParams?: Record<string, Json>;
     /** Returns the custom terrain surface fragment shader source, or an empty string if no shaded surface is drawn. */
     surfaceShaderSource?: string;
     /** Returns the opacity a label keeps while its anchor is behind 3D content. */
@@ -11750,6 +11795,7 @@ export interface MethodTypes {
     'massif::HillshadeRasterTileLayer': {
         addDataSource: { args: [dataSource: Handle]; result: void };
         clearTileCaches: { args: [all: boolean]; result: void };
+        computeSunExposure: { args: [positions: Position[], sunDirections: Json, options: Json]; result: number[] };
         getElevation: { args: [pos: Position]; result: number };
         getElevations: { args: [positions: Position[]]; result: number[] };
         refresh: { args: []; result: void };
@@ -12088,8 +12134,11 @@ export interface MethodTypes {
     };
     'massif::StyleBuilder': {
     };
+    'massif::SunExposureOptions': {
+    };
     'massif::TerrainOptions': {
         calculateHorizon: { args: [pos: Position, eyeHeight: number, azimuths: Json, maxDistance: number]; result: number[] };
+        computeSunExposure: { args: [positions: Position[], sunDirections: Json, options: Json]; result: number[] };
         getElevation: { args: [pos: Position]; result: number };
         getElevations: { args: [positions: Position[]]; result: number[] };
     };
@@ -12629,6 +12678,8 @@ export interface EventTypes {
     'massif::Style': {
     };
     'massif::StyleBuilder': {
+    };
+    'massif::SunExposureOptions': {
     };
     'massif::TerrainOptions': {
     };
