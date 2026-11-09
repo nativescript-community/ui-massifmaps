@@ -290,16 +290,17 @@ The concrete class is read off the native object, so an adopted `VectorTileLayer
 
 ### Typings
 
-`src/ui-massifmaps/api/massif-api.d.ts` and `schema.ts` are **generated** from the SDK's own `docs/api/massif-api.json` — the same schema its C++ property table is built from.
+The types and the runtime tables of the surface API come from [`@massif-maps/typings`](https://www.npmjs.com/package/@massif-maps/typings), **generated** from the SDK's own `docs/api/massif-api.json` — the same schema its C++ property table is built from. Its version is the SDK's.
 
-`massif-api.d.ts` is types only — a `.d.ts`, so it is never compiled and never reaches your bundle, whatever its size. The only runtime cost is `schema.ts` (~34 KB): each class' own properties, its base, the enum constants, and the method and event tables — the minimum a dotted path needs to be resolved the way the C++ resolves it. It is tree-shaken away entirely if you never import `api`.
+The types are a `.d.ts`, so they never reach your bundle, whatever their size. The only runtime cost is the schema (~34 KB): each class' own properties, its base, the enum constants, and the method and event tables — the minimum a dotted path needs to be resolved the way the C++ resolves it. It is tree-shaken away entirely if you never import `api`.
 
-Regenerate them after an SDK bump:
+After an SDK bump that adds or changes properties, bump the package in your app to the same version — no plugin release is needed:
 
 ```sh
-npm run typings.api        # reads $MASSIF_SDK_HOME/docs/api/massif-api.json
-npm run typings.api.check  # typechecks the layer and its typing tests
+npm install @massif-maps/typings@<sdk version>
 ```
+
+In this repo, `npm run typings.api.check` typechecks the layer and its typing tests.
 
 That is what makes a wrong path, a misspelt spec key, an enum constant from the wrong enum, a method on the wrong class and an unknown event name all **compile errors**.
 

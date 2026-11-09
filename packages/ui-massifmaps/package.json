@@ -12,6 +12,9 @@
         "tsc": "cpy '**/*.d.ts' '../../packages/ui-massifmaps' --parents --cwd=../../src/ui-massifmaps && tsc  --build",
         "clean": "bin/rimraf ./*.d.ts ./*.js ./*.js.map ./*.tsbuildinfo ./*.mjs ./*.mjs.map ./angular ./svelte ./vue* ./react"
     },
+    "dependencies": {
+        "@massif-maps/typings": "^6.6.0"
+    },
     "nativescript": {
         "platforms": {
             "android": "6.0.0",

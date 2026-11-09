@@ -1,7 +1,7 @@
 import { EventData, Observable } from '@nativescript/core';
 import { bridge } from './bridge';
 import type { Delivery as NativeDelivery } from './bridge';
-import { classOfShortName, classOfSpec, enumName, enumValue, eventNames, findEvent, isKnownClass, isSubclassOf, propertyNames, resolveMethod, resolvePath, specKindOf } from './resolve';
+import { classOfShortName, classOfSpec, enumName, enumValue, eventNames, findEvent, isKnownClass, isSubclassOf, propertyNames, resolveMethod, resolvePath, specKindOf } from '@massif-maps/typings';
 import type {
     Bounds,
     ClassName,
@@ -28,10 +28,10 @@ import type {
     WriteAt,
     ValuePath,
     WritablePath
-} from './massif-api';
+} from '@massif-maps/typings';
 
-// `export type *`: massif-api is a .d.ts with no runtime module, and a plain `export *` is NOT elided
-export type * from './massif-api';
+// `export type *`, not `export *`: the types have no runtime module and a value re-export would not be elided
+export type * from '@massif-maps/typings';
 
 /**
  * Typed layer over the SDK's string facade (create, destroy, set, get, call, on). Paths, spec keys,
@@ -546,7 +546,7 @@ export class MassifObject<C extends ClassName = any> extends Observable {
                 case 'o': {
                     if (!cls) {
                         // a missing class means the tables are older than the SDK
-                        throw new MassifApiError('an object result with no class - regenerate the typings with `npm run typings.api`');
+                        throw new MassifApiError('an object result with no class - update @massif-maps/typings');
                     }
                     // The caller owns it, so it must NOT be destroyed here.
                     owned = false;
@@ -1305,7 +1305,7 @@ export function adoptAssets(id: string, nativeAssets: any, className?: ClassName
 function resolveNativeClass(nativeObject: any, given: ClassName | undefined, fallback: ClassName): ClassName {
     if (given) {
         if (!isKnownClass(given)) {
-            throw new MassifApiError(`${given} is not a class the typings know - regenerate them with \`npm run typings.api\``);
+            throw new MassifApiError(`${given} is not a class the typings know - update @massif-maps/typings`);
         }
         return given;
     }
