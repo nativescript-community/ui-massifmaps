@@ -5,7 +5,7 @@ import { Layer } from '../layers';
 import { bearingProperty, focusPosProperty, tiltProperty, zoomProperty } from './cssproperties';
 import { MapInfo } from '.';
 import { attach as attachFacade, isAvailable as isApiAvailable } from '../api';
-import { enumValue } from '../api/resolve';
+import { enumValue } from '@massif-maps/typings';
 
 export const MapReadyEvent = 'mapReady';
 export const MapStableEvent = 'mapStable';
