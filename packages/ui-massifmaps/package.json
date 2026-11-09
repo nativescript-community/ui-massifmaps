@@ -13,7 +13,7 @@
         "clean": "bin/rimraf ./*.d.ts ./*.js ./*.js.map ./*.tsbuildinfo ./*.mjs ./*.mjs.map ./angular ./svelte ./vue* ./react"
     },
     "dependencies": {
-        "@massif-maps/typings": "^6.6.0"
+        "@massif-maps/typings": "^6.5.0"
     },
     "nativescript": {
         "platforms": {
