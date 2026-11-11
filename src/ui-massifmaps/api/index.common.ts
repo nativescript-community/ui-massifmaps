@@ -4,6 +4,7 @@ import type { Delivery as NativeDelivery } from './bridge';
 import { classOfShortName, classOfSpec, enumName, enumValue, eventNames, findEvent, isKnownClass, isSubclassOf, propertyNames, resolveMethod, resolvePath, specKindOf } from '@massif-maps/typings';
 import type {
     Bounds,
+    ClassAtPath,
     ClassName,
     ClassOfSpec,
     EventName,
@@ -14,20 +15,19 @@ import type {
     MethodName,
     MethodResult,
     MethodResultClass,
-    ClassAtPath,
     ObjectPath,
     PayloadClass,
     Position,
     PositionAt,
     PositionPath,
-    Tile,
     ProjectionName,
     SpecArg,
     SpecType,
+    Tile,
     ValueAt,
-    WriteAt,
     ValuePath,
-    WritablePath
+    WritablePath,
+    WriteAt
 } from '@massif-maps/typings';
 
 // `export type *`, not `export *`: the types have no runtime module and a value re-export would not be elided
@@ -119,7 +119,6 @@ function payloadProto(payloadClass: string): object {
     }
     return proto;
 }
-
 
 type TopLevelPath<P> = P extends `${string}.${string}` ? never : P;
 
@@ -389,9 +388,7 @@ export class MassifObject<C extends ClassName = any> extends Observable {
             case 'e':
                 return bridge.setInt(this.handle, path, enumValue(String(value)) ?? Number(value));
             case 'o':
-                return isSpec(value)
-                    ? this.writeSpec(path, info.arg as string, value)
-                    : bridge.setObject(this.handle, path, handleOf(value));
+                return isSpec(value) ? this.writeSpec(path, info.arg as string, value) : bridge.setObject(this.handle, path, handleOf(value));
             case 'p':
             case 't':
             case 'v':
@@ -1091,7 +1088,7 @@ export class MassifLayer<C extends ClassName = any> extends MassifObject<C> {
      * hillshade layer answers. `sun` is `[azimuth, apparent altitude]` in degrees per position, from the caller's own
      * astronomy; send a route in chunks of about 250 positions, a running chunk cannot be cancelled.
      */
-    sunExposure(positions: AnyPosition[], sun: [number, number][], options?: SunExposureOptions): CancellablePromise<SunExposure> {
+    sunExposure(this: MassifLayer<'massif::HillshadeRasterTileLayer'>, positions: AnyPosition[], sun: [number, number][], options?: SunExposureOptions): CancellablePromise<SunExposure> {
         if (sun.length !== positions.length) {
             throw new MassifApiError(`sunExposure needs one sun direction per position, got ${sun.length} for ${positions.length}`);
         }
@@ -1099,7 +1096,7 @@ export class MassifLayer<C extends ClassName = any> extends MassifObject<C> {
         for (const [azimuth, altitude] of sun) {
             directions.push(azimuth, altitude);
         }
-        const call = this.callAsync('computeSunExposure' as never, [positions.map(toPosition), directions, options ?? null] as never) as CancellablePromise<number[]>;
+        const call = this.callAsync('computeSunExposure', [positions.map(toPosition), directions, options ? { ...options } : null]);
         const promise = call.then(parseSunExposure) as CancellablePromise<SunExposure>;
         promise.cancel = () => call.cancel();
         return promise;
@@ -1180,7 +1177,7 @@ export class MassifSource<C extends ClassName = any> extends MassifObject<C> {
     }
 
     loadTileAsync(tile: Tile): CancellablePromise<ArrayBuffer | null> {
-        return this.callAsync('loadTile' as never, [tile] as never, ((result: MassifObject) => result.getData('data')) as never) as CancellablePromise<ArrayBuffer | null>;
+        return this.callAsync('loadTile' as never, [tile] as never, ((result: MassifObject) => result.getData('data')) as never);
     }
 }
 
@@ -1392,7 +1389,7 @@ export function log(): MassifObject<'massif::Log'> {
 
 export function mapViewClass(): any {
     // required lazily, so `api` does not pull `ui` in at import time
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
+
     return require('../ui').MassifMap;
 }
 
@@ -1600,19 +1597,17 @@ export class MapCamera {
         bounds: Bounds,
         options: { screen?: { min: { x: number; y: number }; max: { x: number; y: number } }; integerZoom?: boolean; resetRotation?: boolean; resetTilt?: boolean; duration?: number } = {}
     ): this {
-        const { width, height } = this.size();
+        const { height, width } = this.size();
         const screen = options.screen
-            ? [[options.screen.min.x, options.screen.min.y], [options.screen.max.x, options.screen.max.y]]
-            : [[0, 0], [width, height]];
-        this.view.call(
-            'fitBounds',
-            [toPosition(bounds[0]), toPosition(bounds[1])],
-            screen,
-            !!options.integerZoom,
-            !!options.resetRotation,
-            !!options.resetTilt,
-            this.take(options.duration)
-        );
+            ? [
+                  [options.screen.min.x, options.screen.min.y],
+                  [options.screen.max.x, options.screen.max.y]
+              ]
+            : [
+                  [0, 0],
+                  [width, height]
+              ];
+        this.view.call('fitBounds', [toPosition(bounds[0]), toPosition(bounds[1])], screen, !!options.integerZoom, !!options.resetRotation, !!options.resetTilt, this.take(options.duration));
         return this;
     }
 
@@ -1745,7 +1740,7 @@ export class MassifMap extends MassifObject<'massif::Options'> {
     addLayer<T extends SpecType<'layer'>>(id: string, spec: SpecArg<'layer', T>): MassifLayer<ClassOfSpec<'layer', T>> {
         // this.object, not the module-level createLayer: a map-built layer must be released with
         // the map, or a revisited screen fails on a duplicate id
-        return this.add(this.object('layer', id, spec) as never) as never;
+        return this.add(this.object('layer', id, spec) as never);
     }
 
     /** Owned by the map but not placed: for `add(layer, index)` or `layers().insert(...)`. */
@@ -1864,7 +1859,9 @@ export class MassifMap extends MassifObject<'massif::Options'> {
      * the capture until the tiles have settled. Null when the capture failed or timed out.
      */
     capturePng(wait = false): CancellablePromise<ArrayBuffer | null> {
-        return this.camera().renderer().callAsync('capturePNG', [wait] as never, ((result: MassifObject) => result.getData('')) as never) as CancellablePromise<ArrayBuffer | null>;
+        return this.camera()
+            .renderer()
+            .callAsync('capturePNG', [wait] as never, ((result: MassifObject) => result.getData('')) as never);
     }
 
     camera(): MapCamera {
@@ -1940,7 +1937,7 @@ export function attach(view: MapViewLike, options: AttachOptions = {}): MassifMa
     // object, one dangling once the other is destroyed
     const existing = (view as any).facadeMap?.();
     if (existing) {
-        const { projection: existingProjection, throttle: existingThrottle, debounce: existingDebounce } = options;
+        const { debounce: existingDebounce, projection: existingProjection, throttle: existingThrottle } = options;
         if (existingProjection || existingThrottle || existingDebounce) {
             existing.eventOptions({ projection: existingProjection, throttle: existingThrottle, debounce: existingDebounce });
             // Re-subscribes the view's own events, which were made before these options existed.
@@ -1973,7 +1970,7 @@ export function attach(view: MapViewLike, options: AttachOptions = {}): MassifMa
     }
 
     const map = new MassifMap(handle as Handle<'massif::Options'>, id, view, native);
-    const { projection, throttle, debounce } = options;
+    const { debounce, projection, throttle } = options;
     if (projection || throttle || debounce) {
         map.eventOptions({ projection, throttle, debounce });
     }

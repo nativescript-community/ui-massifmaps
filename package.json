@@ -50,6 +50,7 @@
         ]
     },
     "dependencies": {
+        "@massif-maps/typings": "^6.5.0",
         "@nativescript-community/plugin-seed-tools": "portal:tools",
         "@nativescript-community/template-snippet": "file:demo-snippets"
     },
