@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.0](https://github.com/nativescript-community/ui-massifmaps/compare/v4.0.2...v5.0.0) (2026-11-12)
+
+### ⚠ BREAKING CHANGES
+
+* **android:** on the default (surface-only) AAR the legacy-typed view methods listed above
+throw. Use the `objectapi` AAR variant, or the surface API.
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>
+* **android:** requires an Android SDK where com.massifmaps.ui.MapView has no object API.
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>
+
+### Features
+
+* **android:** captureRendering through the surface API ([b6c4e69](https://github.com/nativescript-community/ui-massifmaps/commit/b6c4e6912af3cab91946bc378b175203beca923b))
+* **android:** read the native view's map instead of adopting it ([dc0c6e1](https://github.com/nativescript-community/ui-massifmaps/commit/dc0c6e19093a456a26af871619d213803d106124))
+* **android:** run the map view on the surface API, so it needs no object API ([6e7d276](https://github.com/nativescript-community/ui-massifmaps/commit/6e7d276059c3d9c9b5a485a3cb364d5c1b98b402))
+* **android:** take a local AAR from a folder with massifAarDir ([8382375](https://github.com/nativescript-community/ui-massifmaps/commit/8382375f9cf323fd31479fbb982f31212f1748ed))
+* **api:** add panBy, zoomBy, rotateBy and tiltBy to the camera ([541ff4c](https://github.com/nativescript-community/ui-massifmaps/commit/541ff4c2e978da6747876488cc840333e3fad5df))
+* **api:** compute sun and shade along a route with MassifLayer.sunExposure ([96f2c4f](https://github.com/nativescript-community/ui-massifmaps/commit/96f2c4fb7400c4e2bbd2c3f78d521a32d7faa4db)), closes [massif-maps/MassifMaps#493](https://github.com/massif-maps/MassifMaps/issues/493)
+* **api:** create a data object from bytes, and type the shader-uniform bags ([253afa2](https://github.com/nativescript-community/ui-massifmaps/commit/253afa22290b1538fa9da6fd1b57c03c7b0fc5e3))
+* **api:** take the surface API typings and tables from @massif-maps/typings ([a8425a5](https://github.com/nativescript-community/ui-massifmaps/commit/a8425a5e376ff79cb5f3f410565e00cc57eed9fb))
+* **api:** type computeSunExposure and LightOptions.shadowMinSunAltitude ([2bdbe93](https://github.com/nativescript-community/ui-massifmaps/commit/2bdbe9357d4a348c39a6357541a212482e8ad4e8)), closes [massif-maps/MassifMaps#493](https://github.com/massif-maps/MassifMaps/issues/493)
+* **api:** type FeatureCollection.toGeoJSON ([52ce740](https://github.com/nativescript-community/ui-massifmaps/commit/52ce740d53f8d8065cbd2e9bf808d1ce8a59ecc4))
+* **api:** type GeoJSONVectorTileDataSource.lineMetrics ([b88269a](https://github.com/nativescript-community/ui-massifmaps/commit/b88269af3bd5e4acc4170100aafa0f00a66e6f2e))
+* **examples:** add an animated weather radar example ([4b9e5db](https://github.com/nativescript-community/ui-massifmaps/commit/4b9e5db0e1c13f1851bddb76c55010c2e07eadd9))
+* **examples:** add line-gradient, hillshade, contour-lines and map-legend ([94fd32d](https://github.com/nativescript-community/ui-massifmaps/commit/94fd32d5d07184e32de04a05d53b6f8b5872aa77))
+
+### Bug Fixes
+
+* **android:** redraw through the view, and name the method that needs the object API ([3d60ee4](https://github.com/nativescript-community/ui-massifmaps/commit/3d60ee4116b6b3df384f582e3f135dba4040e566))
+* **api:** depend on the published @massif-maps/typings ^6.5.0 ([cd624f4](https://github.com/nativescript-community/ui-massifmaps/commit/cd624f4c29728f79baf0ee7f7606ff5f0faaea11))
+
 ## [4.0.2](https://github.com/nativescript-community/ui-massifmaps/compare/v4.0.1...v4.0.2) (2026-10-19)
 
 **Note:** Version bump only for package ui-massifmaps

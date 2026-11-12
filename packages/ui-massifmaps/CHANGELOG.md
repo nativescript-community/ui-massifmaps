@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.0](https://github.com/nativescript-community/ui-massifmaps/compare/v4.0.2...v5.0.0) (2026-11-12)
+
+### ⚠ BREAKING CHANGES
+
+* **android:** on the default (surface-only) AAR the legacy-typed view methods listed above
+throw. Use the `objectapi` AAR variant, or the surface API.
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>
+* **android:** requires an Android SDK where com.massifmaps.ui.MapView has no object API.
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>
+
+### Features
+
+* **android:** read the native view's map instead of adopting it ([dc0c6e1](https://github.com/nativescript-community/ui-massifmaps/commit/dc0c6e19093a456a26af871619d213803d106124))
+* **android:** run the map view on the surface API, so it needs no object API ([6e7d276](https://github.com/nativescript-community/ui-massifmaps/commit/6e7d276059c3d9c9b5a485a3cb364d5c1b98b402))
+* **android:** take a local AAR from a folder with massifAarDir ([8382375](https://github.com/nativescript-community/ui-massifmaps/commit/8382375f9cf323fd31479fbb982f31212f1748ed))
+* **api:** take the surface API typings and tables from @massif-maps/typings ([a8425a5](https://github.com/nativescript-community/ui-massifmaps/commit/a8425a5e376ff79cb5f3f410565e00cc57eed9fb))
+
+### Bug Fixes
+
+* **api:** depend on the published @massif-maps/typings ^6.5.0 ([cd624f4](https://github.com/nativescript-community/ui-massifmaps/commit/cd624f4c29728f79baf0ee7f7606ff5f0faaea11))
+
 ## [4.0.2](https://github.com/nativescript-community/ui-massifmaps/compare/v4.0.1...v4.0.2) (2026-10-19)
 
 **Note:** Version bump only for package @nativescript-community/ui-massifmaps
