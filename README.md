@@ -164,7 +164,7 @@ base.visible(true).opacity(0.5).zoomRange([4, 18]).refresh();
 if (!base.visible()) { … }
 ```
 
-That list is **closed** (`opacity`, `visible`, `zoomRange`, plus `refresh`, `clearTileCaches`, `moveTo`, `detach`, `elevations`, `sunExposure`). A named accessor per property is a non-goal — there are 700 and the list grows with the SDK, which is what `set` / `apply` / `group` are for.
+That list is **closed** (`opacity`, `visible`, `zoomRange`, plus `refresh`, `clearTileCaches`, `moveTo`, `detach`, `elevations`). A named accessor per property is a non-goal — there are 700 and the list grows with the SDK, which is what `set` / `apply` / `group` are for.
 
 ### The camera
 
@@ -234,21 +234,6 @@ const data = await source.callAsync('loadTile', [[8467, 5852, 14]], (t) => t.get
 
 A method can be addressed through a path: `base.call('tileDecoder.loadTile', [8467, 5852, 14])`. A style parameter is *not* one of them any more - it is a property, `base.set('style.params.buildings', 'false')`.
 
-### Sun and shade along a route
-
-A hillshade layer can tell whether the terrain hides the sun at each position of a route, offline. The
-sun is yours (one `[azimuth, apparent altitude]` per position, from your own astronomy at each position's time);
-the SDK does the terrain:
-
-```ts
-const shade = await hillshade.sunExposure(points, sunAt, { eyeHeight: 1.5 }); // in chunks of ~250 points
-shade.sunFraction[i];                                   // 0 hidden .. 1 lit, -1 unknown
-(shade.status[i] & SunExposureStatus.NO_DEM) !== 0;     // no elevation data: a gap, not a guess
-```
-
-It loads elevation tiles, so it runs on a worker and `cancel()` only drops the result of a chunk already running.
-`shade.tilesMissing` and `deadlineHit` say how complete the answer is. Terrain only: no trees, buildings or tunnels.
-
 ### Routing
 
 Routing needs no plugin code — it is `create` plus `callAsync`, like everything else:
@@ -303,10 +288,6 @@ npm install @massif-maps/typings@<sdk version>
 In this repo, `npm run typings.api.check` typechecks the layer and its typing tests.
 
 That is what makes a wrong path, a misspelt spec key, an enum constant from the wrong enum, a method on the wrong class and an unknown event name all **compile errors**.
-
-### Surface-only Android
-
-The default Android AAR no longer ships the object API (`objectapi` is a separate variant). On it the map view runs on the surface API alone: `zoom`, `tilt`, `bearing`, `focusPos`, `flyTo`, `setZoom`, `moveToFitBounds`, `screenToMap`, `mapToScreen`, `captureRendering`, `requestRedraw`, the map events and `map.api` (the map's surface `MassifMap`) work, and positions use the lon/lat of the view's keys. What still needs the object API fails with a message naming it: the legacy modules (`layers`, `datasources`, `vectorelements`, `components`...), `getOptions()` and its wrappers, `getPostProcessEffect`, the `projection` property (the view is lon/lat) and `getLayers()`. The plugin's Java listeners are compiled only for an `objectapi` variant (`-PmassifSDKVariant=objectapi...`, or `-PmassifObjectApi`).
 
 ### Requirements and known gaps
 
