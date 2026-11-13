@@ -63,3 +63,4 @@ packages/**/*.metadata.json
 
 # scratch tsconfig + extracted scripts from `npm run examples.check`
 scripts/examples/.check/
+!packages/ui-massifmaps/ios-dev/*.js
