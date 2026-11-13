@@ -15,7 +15,8 @@
         "preuninstall": "node ios-dev/preuninstall.js"
     },
     "dependencies": {
-        "@massif-maps/typings": "^6.5.0"
+        "@massif-maps/typings": "^6.5.0",
+        "@nativescript/hook": "~2.0.0"
     },
     "nativescript": {
         "platforms": {
@@ -59,8 +60,5 @@
     "readmeFilename": "README.md",
     "publishConfig": {
         "access": "public"
-    },
-    "dependencies": {
-        "@nativescript/hook": "~2.0.0"
     }
 }
