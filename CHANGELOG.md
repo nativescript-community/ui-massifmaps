@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.0](https://github.com/nativescript-community/ui-massifmaps/compare/v5.0.0...v5.1.0) (2026-11-13)
+
+### Features
+
+* **ios:** build the SDK from source before prepare when DEBUGMASSIF is set ([ed68efd](https://github.com/nativescript-community/ui-massifmaps/commit/ed68efda701cd5e957f929b66f598ef733a95e12))
+
 ## [5.0.0](https://github.com/nativescript-community/ui-massifmaps/compare/v4.0.2...v5.0.0) (2026-11-12)
 
 ### ⚠ BREAKING CHANGES

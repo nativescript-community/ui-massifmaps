@@ -1,6 +1,6 @@
 {
     "name": "@nativescript-community/ui-massifmaps",
-    "version": "5.0.0",
+    "version": "5.1.0",
     "description": "NativeScript plugin for MassifMaps SDK",
     "main": "index",
     "typings": "index.d.ts",
@@ -15,7 +15,7 @@
         "preuninstall": "node ios-dev/preuninstall.js"
     },
     "dependencies": {
-        "@massif-maps/typings": "^6.5.0"
+        "@nativescript/hook": "~2.0.0"
     },
     "nativescript": {
         "platforms": {
@@ -59,8 +59,5 @@
     "readmeFilename": "README.md",
     "publishConfig": {
         "access": "public"
-    },
-    "dependencies": {
-        "@nativescript/hook": "~2.0.0"
     }
 }
