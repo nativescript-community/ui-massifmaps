@@ -10,7 +10,9 @@
         "build.all": "npm run build",
         "readme": "readme generate -c ../../tools/readme/blueprint.json",
         "tsc": "cpy '**/*.d.ts' '../../packages/ui-massifmaps' --parents --cwd=../../src/ui-massifmaps && tsc  --build",
-        "clean": "bin/rimraf ./*.d.ts ./*.js ./*.js.map ./*.tsbuildinfo ./*.mjs ./*.mjs.map ./angular ./svelte ./vue* ./react"
+        "clean": "bin/rimraf ./*.d.ts ./*.js ./*.js.map ./*.tsbuildinfo ./*.mjs ./*.mjs.map ./angular ./svelte ./vue* ./react",
+        "postinstall": "node ios-dev/postinstall.js",
+        "preuninstall": "node ios-dev/preuninstall.js"
     },
     "dependencies": {
         "@massif-maps/typings": "^6.5.0"
@@ -19,7 +21,14 @@
         "platforms": {
             "android": "6.0.0",
             "ios": "6.0.0"
-        }
+        },
+        "hooks": [
+            {
+                "type": "before-prepareNativeApp",
+                "script": "ios-dev/before-prepareNativeApp.js",
+                "inject": true
+            }
+        ]
     },
     "keywords": [
         "NativeScript",
@@ -50,5 +59,8 @@
     "readmeFilename": "README.md",
     "publishConfig": {
         "access": "public"
+    },
+    "dependencies": {
+        "@nativescript/hook": "~2.0.0"
     }
 }
