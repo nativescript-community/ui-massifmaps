@@ -11,8 +11,8 @@
         "readme": "readme generate -c ../../tools/readme/blueprint.json",
         "tsc": "cpy '**/*.d.ts' '../../packages/ui-massifmaps' --parents --cwd=../../src/ui-massifmaps && tsc  --build",
         "clean": "bin/rimraf ./*.d.ts ./*.js ./*.js.map ./*.tsbuildinfo ./*.mjs ./*.mjs.map ./angular ./svelte ./vue* ./react",
-        "postinstall": "node ios-dev/postinstall.js",
-        "preuninstall": "node ios-dev/preuninstall.js"
+        "postinstall": "node platforms/ios/ios-dev/postinstall.js",
+        "preuninstall": "node platforms/ios/ios-dev/preuninstall.js"
     },
     "dependencies": {
         "@massif-maps/typings": "^6.5.0",

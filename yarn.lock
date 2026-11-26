@@ -5,25 +5,6 @@ __metadata:
   version: 8
   cacheKey: 10
 
-"@akylas/nativescript@npm:8.9.10":
-  version: 8.9.10
-  resolution: "@akylas/nativescript@npm:8.9.10"
-  dependencies:
-    "@csstools/css-calc": "npm:~2.1.2"
-    "@csstools/css-color-parser": "npm:^3.0.8"
-    "@csstools/css-parser-algorithms": "npm:^3.0.4"
-    "@csstools/css-tokenizer": "npm:^3.0.3"
-    "@nativescript/hook": "npm:~2.0.0"
-    acorn: "npm:^8.7.0"
-    css-tree: "npm:^1.1.2"
-    css-what: "npm:^6.1.0"
-    emoji-regex: "npm:^10.3.0"
-    reduce-css-calc: "npm:^2.1.8"
-    tslib: "npm:^2.6.3"
-  checksum: 10/c892cbdcadbbcd3d41db50f03455cb553d7a64e3bd0c5d47d9d55dc6e0e4549bfe92d8067e00a6ca2c0400e1c5eb909706a2a7bcf983c6ea66dd2e7c28d77bd4
-  languageName: node
-  linkType: hard
-
 "@akylas/nativescript@npm:8.9.15":
   version: 8.9.15
   resolution: "@akylas/nativescript@npm:8.9.15"
@@ -40,6 +21,26 @@ __metadata:
     reduce-css-calc: "npm:^2.1.8"
     tslib: "npm:^2.6.3"
   checksum: 10/9c0d29807984240a587fc177c12aa0ac13ebf551b84843a18bd90f2037c0931f10b2c51b1109cdada4ed112d4bb8d9a2b608cbcc4e416bb292bfce48fb50a29b
+  languageName: node
+  linkType: hard
+
+"@akylas/nativescript@npm:9.0.23":
+  version: 9.0.23
+  resolution: "@akylas/nativescript@npm:9.0.23"
+  dependencies:
+    "@csstools/css-calc": "npm:~2.1.4"
+    "@csstools/css-color-parser": "npm:^3.0.10"
+    "@csstools/css-parser-algorithms": "npm:^3.0.5"
+    "@csstools/css-tokenizer": "npm:^3.0.4"
+    "@nativescript/hook": "npm:~3.0.4"
+    acorn: "npm:^8.15.0"
+    css-tree: "npm:^3.1.0"
+    css-what: "npm:^6.1.0"
+    emoji-regex: "npm:^10.2.1"
+    source-map: "npm:0.7.6"
+    source-map-js: "npm:^1.2.1"
+    tslib: "npm:^2.0.0"
+  checksum: 10/976b2e07b7088a48856f95162395e6470874c3d89f5250ec467a221630594089e3c456579e0d747981c6aefe11f01453c2fff00c995cdc60b64ecccd8f9480ca
   languageName: node
   linkType: hard
 
@@ -1732,7 +1733,7 @@ __metadata:
 
 "@nativescript-community/template-snippet@file:demo-snippets::locator=root-workspace-0b6124%40workspace%3A.":
   version: 0.0.1
-  resolution: "@nativescript-community/template-snippet@file:demo-snippets#demo-snippets::hash=eb45f3&locator=root-workspace-0b6124%40workspace%3A."
+  resolution: "@nativescript-community/template-snippet@file:demo-snippets#demo-snippets::hash=25ac04&locator=root-workspace-0b6124%40workspace%3A."
   dependencies:
     "@massif-maps/styles": "npm:^1.0.0"
     "@nativescript-community/ui-drawer": "npm:^0.1.32"
@@ -1742,7 +1743,7 @@ __metadata:
     "@nativescript-community/ui-material-slider": "npm:^7.3.2"
     "@nativescript-community/ui-persistent-bottomsheet": "npm:^0.1.12"
     vue-property-decorator: "npm:9.1.2"
-  checksum: 10/d0dd29f6b724d15f7a5392a4ca4eb9c8adeb7c7fe0e324941283f81df908936f08e136c17af13cad728a9ae30503468432eaf7750db94acd0bb419bb1b19415e
+  checksum: 10/a4833bc4a01bd5b800ab16d01db760ac9cfab89a9fef403a50386891af79ebd6a7b925f99aa91f41d846fd8788f04fe19e378b1c2be7eeddc4897668c7c214e4
   languageName: node
   linkType: hard
 
@@ -1782,6 +1783,7 @@ __metadata:
   resolution: "@nativescript-community/ui-massifmaps@workspace:packages/ui-massifmaps"
   dependencies:
     "@massif-maps/typings": "npm:^6.5.0"
+    "@nativescript/hook": "npm:~2.0.0"
   languageName: unknown
   linkType: soft
 
@@ -1837,6 +1839,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nativescript/android@npm:9.1.1":
+  version: 9.1.1
+  resolution: "@nativescript/android@npm:9.1.1"
+  checksum: 10/97dc91516fe64be1731d3c142441b091f32465420a8663c3b268312de0b99fdd946a901ba9ad2efde78d5eff9f580ee2484561c3c3dcdabd6cbe0557c1f7baef
+  languageName: node
+  linkType: hard
+
 "@nativescript/angular@npm:19.0.1":
   version: 19.0.1
   resolution: "@nativescript/angular@npm:19.0.1"
@@ -1844,25 +1853,6 @@ __metadata:
     "@nativescript/zone-js": "npm:^3.0.4"
     tslib: "npm:^2.3.0"
   checksum: 10/de914fc45554f3e5b7e7f541d378e141cd2e5f176ab8210d1198a515af4f4386acc98cb7eb17046b0893d3f91b310b0b88a970264260955abd96597d82d161d6
-  languageName: node
-  linkType: hard
-
-"@nativescript/core@npm:8.9.9":
-  version: 8.9.9
-  resolution: "@nativescript/core@npm:8.9.9"
-  dependencies:
-    "@csstools/css-calc": "npm:~2.1.2"
-    "@csstools/css-color-parser": "npm:^3.0.8"
-    "@csstools/css-parser-algorithms": "npm:^3.0.4"
-    "@csstools/css-tokenizer": "npm:^3.0.3"
-    "@nativescript/hook": "npm:~2.0.0"
-    acorn: "npm:^8.7.0"
-    css-tree: "npm:^1.1.2"
-    css-what: "npm:^6.1.0"
-    emoji-regex: "npm:^10.2.1"
-    source-map: "npm:0.6.1"
-    tslib: "npm:^2.0.0"
-  checksum: 10/5122af3ae49a9ef69df8a0ebf12ca0efca5b1d1ec3e0315725e6044da3935e4f60520baa47798fa414e4e5c86c9838942943346f11cea35f0294fc5a1ab441f4
   languageName: node
   linkType: hard
 
@@ -1914,14 +1904,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@nativescript/template-blank-vue-ts@workspace:demo-vue"
   dependencies:
-    "@akylas/nativescript": "npm:8.9.10"
+    "@akylas/nativescript": "npm:9.0.23"
     "@nativescript-community/template-snippet": "npm:*"
     "@nativescript/android": "npm:8.9.2"
-    "@nativescript/core": "npm:8.9.9"
+    "@nativescript/core": "npm:9.0.20"
     "@nativescript/ios": "npm:8.9.5"
     "@nativescript/theme": "npm:3.1.0"
     "@nativescript/types": "npm:8.9.1"
-    "@nativescript/webpack": "npm:5.0.24"
+    "@nativescript/webpack": "npm:5.0.38"
     "@types/node": "npm:24.7.0"
     nativescript-vue: "npm:2.9.3"
     nativescript-vue-template-compiler: "npm:2.9.3"
@@ -5600,7 +5590,7 @@ __metadata:
     "@nativescript-community/svelte-native": "npm:1.0.32"
     "@nativescript-community/template-snippet": "npm:*"
     "@nativescript-community/ui-material-core": "npm:^7.3.2"
-    "@nativescript/android": "npm:8.9.2"
+    "@nativescript/android": "npm:9.1.1"
     "@nativescript/core": "npm:9.0.20"
     "@nativescript/ios": "npm:8.9.5"
     "@nativescript/theme": "npm:3.1.0"
@@ -11460,17 +11450,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"source-map@npm:0.6.1, source-map@npm:^0.6.0, source-map@npm:^0.6.1, source-map@npm:~0.6.0, source-map@npm:~0.6.1":
-  version: 0.6.1
-  resolution: "source-map@npm:0.6.1"
-  checksum: 10/59ef7462f1c29d502b3057e822cdbdae0b0e565302c4dd1a95e11e793d8d9d62006cdc10e0fd99163ca33ff2071360cf50ee13f90440806e7ed57d81cba2f7ff
-  languageName: node
-  linkType: hard
-
 "source-map@npm:0.7.6, source-map@npm:^0.7.0, source-map@npm:^0.7.3, source-map@npm:^0.7.4":
   version: 0.7.6
   resolution: "source-map@npm:0.7.6"
   checksum: 10/c8d2da7c57c14f3fd7568f764b39ad49bbf9dd7632b86df3542b31fed117d4af2fb74a4f886fc06baf7a510fee68e37998efc3080aacdac951c36211dc29a7a3
+  languageName: node
+  linkType: hard
+
+"source-map@npm:^0.6.0, source-map@npm:^0.6.1, source-map@npm:~0.6.0, source-map@npm:~0.6.1":
+  version: 0.6.1
+  resolution: "source-map@npm:0.6.1"
+  checksum: 10/59ef7462f1c29d502b3057e822cdbdae0b0e565302c4dd1a95e11e793d8d9d62006cdc10e0fd99163ca33ff2071360cf50ee13f90440806e7ed57d81cba2f7ff
   languageName: node
   linkType: hard
 
