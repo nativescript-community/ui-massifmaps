@@ -24,7 +24,7 @@
         "postinstall": "npm run setup",
         "publish": "npm run setup && npm run clean && npm run build.all && npm run readme && npm run doc && npm run commit_readme_doc_changes && lerna publish",
         "readme": "lerna run readme && node ./tools/readme.js",
-        "setup": "npm run submodules && ts-patch install && npm run hooks",
+        "setup": "npm run submodules && ts-patch install",
         "hooks": "node ./demo-snippets/scripts/install-hooks.js",
         "start": "./node_modules/.bin/ntl -A -s 15 -o",
         "submodules": "git submodule update --init",
@@ -42,7 +42,7 @@
         "update": "node ./tools/update.js",
         "fullclean": "npm run clean && rimraf -g 'packages/**/node_modules' 'demo-*/hooks' 'demo-*/node_modules' 'package-lock.json' 'pnpm-lock.yaml' 'node_modules'",
         "doc": "node tools/builddoc.mjs",
-        "commit_readme_doc_changes": "git add docs/** *.md ; git commit -m \"readme/doc\" ; echo \"commit readme doc done\""
+        "commit_readme_doc_changes": "git add docs *.md ; git commit -m \"readme/doc\" ; echo \"commit readme doc done\""
     },
     "commitlint": {
         "extends": [
@@ -63,9 +63,6 @@
             "demo.svelte.ios": "Runs the Svelte demo on iOS.",
             "demo.vue.android": "Runs the Vue demo on Android.",
             "demo.vue.ios": "Runs the Vue demo on iOS.",
-            "typings.api.check": "Typecheck the surface API and its typing tests.",
-            "examples": "Rebuild the example gallery from the SDK's example manifest.",
-            "examples.check": "Typecheck every example's script against the plugin typings.",
             "watch": "Watch for changes in the plugin source and re-build."
         }
     },

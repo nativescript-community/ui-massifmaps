@@ -56,11 +56,4 @@ packages/**/*.metadata.json
 
 /blueprint.md
 
-!demo-snippets/hooks
-!demo-snippets/hooks/**
-
 *.tsbuildinfo
-
-# scratch tsconfig + extracted scripts from `npm run examples.check`
-scripts/examples/.check/
-!packages/ui-massifmaps/platforms/ios/ios-dev/*.js

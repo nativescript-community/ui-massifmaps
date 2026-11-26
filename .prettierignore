@@ -2,7 +2,3 @@ package-lock.json
 node_modules/
 plugin/
 docs/
-
-# generated from the SDK's API schema by `npm run typings.api`
-src/ui-massifmaps/api/massif-api.d.ts
-src/ui-massifmaps/api/schema.ts
