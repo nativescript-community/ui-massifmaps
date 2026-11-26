@@ -26,7 +26,7 @@
         "hooks": [
             {
                 "type": "before-prepareNativeApp",
-                "script": "ios-dev/before-prepareNativeApp.js",
+                "script": "platforms/ios/ios-dev/before-prepareNativeApp.js",
                 "inject": true
             }
         ]
