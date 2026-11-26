@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.3](https://github.com/nativescript-community/ui-massifmaps/compare/v5.1.2...v5.1.3) (2026-11-26)
+
+### Bug Fixes
+
+* keep ios-dev hook scripts when cleaning before publish ([d3cdd33](https://github.com/nativescript-community/ui-massifmaps/commit/d3cdd33d02a5a770cacc69c62c9f754c0065ce30))
+* skip the platforms folder in clean, as in plugin-seed-tools ([cf2b921](https://github.com/nativescript-community/ui-massifmaps/commit/cf2b9214f3a09d2e9705f6e51020fdd7114c898c))
+
 ## [5.1.2](https://github.com/nativescript-community/ui-massifmaps/compare/v5.1.1...v5.1.2) (2026-11-26)
 
 **Note:** Version bump only for package ui-massifmaps
