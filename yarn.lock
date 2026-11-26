@@ -1441,12 +1441,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@massif-maps/typings@npm:^6.5.0":
-  version: 6.5.0
-  resolution: "@massif-maps/typings@npm:6.5.0"
-  checksum: 10/d78c714d0d41f4ecaeba8e79a4adc6f01f7645afb6c90429cef9a5bd6fa6a0647dca6cc38524623516f7b2cea7814ebce71b6baf6c1ca47f0151a9f95c133cfe
+"@massif-maps/typings@portal:../../massif/massif-sdk/bindings/typings::locator=root-workspace-0b6124%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "@massif-maps/typings@portal:../../massif/massif-sdk/bindings/typings::locator=root-workspace-0b6124%40workspace%3A."
   languageName: node
-  linkType: hard
+  linkType: soft
 
 "@napi-rs/lzma-linux-x64-gnu@npm:1.5.1":
   version: 1.5.1

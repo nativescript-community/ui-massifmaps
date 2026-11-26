@@ -79,5 +79,8 @@
         "packages/*",
         "demo*"
     ],
-    "packageManager": "yarn@4.10.2"
+    "packageManager": "yarn@4.10.2",
+    "resolutions": {
+        "@massif-maps/typings": "portal:../../massif/massif-sdk/bindings/typings"
+    }
 }
