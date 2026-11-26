@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.3](https://github.com/nativescript-community/ui-massifmaps/compare/v5.1.2...v5.1.3) (2026-11-26)
+
+**Note:** Version bump only for package @nativescript-community/ui-massifmaps
+
+## [5.1.2](https://github.com/nativescript-community/ui-massifmaps/compare/v5.1.1...v5.1.2) (2026-11-26)
+
+**Note:** Version bump only for package @nativescript-community/ui-massifmaps
+
 ## [5.1.1](https://github.com/nativescript-community/ui-massifmaps/compare/v5.1.0...v5.1.1) (2026-11-13)
 
 **Note:** Version bump only for package @nativescript-community/ui-massifmaps
